@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(pkill -f \"npm run preview\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/products/aps)",
+      "Bash(python3 *)",
+      "Bash(curl *)"
+    ]
+  }
+}

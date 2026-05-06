@@ -1,0 +1,424 @@
+{
+  "navbar": {
+    "home": "首頁",
+    "products": "產品",
+    "about": "公司介紹",
+    "contact": "聯絡我們",
+    "consultation": "免費諮詢",
+    "aps_name": "APS 生產排程系統",
+    "aps_desc": "有限產能智慧排程",
+    "esg_name": "ESG 碳盤查系統",
+    "esg_desc": "精準碳排放核算管理",
+    "aibox_name": "AI 一體機",
+    "aibox_desc": "企業級私有 AI 作業平台"
+  },
+  "hero": {
+    "badge": "工業 4.0 智慧製造解決方案",
+    "title_prefix": "賦能企業實現",
+    "title_g1": "智慧生產",
+    "title_between": "與",
+    "title_g2": "雙碳目標",
+    "subtitle": "快思科技整合 APS 生產排程、ESG 碳盤查與 AI 一體機，協助製造業突破效率瓶頸，精準達成永續目標。",
+    "cta_primary": "立即預約 Demo",
+    "cta_secondary": "了解解決方案",
+    "trust": "200+ 製造企業信賴 · 免費 30 分鐘顧問諮詢",
+    "scroll": "向下探索",
+    "stat_0_label": "生產效率提升",
+    "stat_1_label": "碳排放降低",
+    "stat_2_label": "企業夥伴"
+  },
+  "features_section": {
+    "tag": "核心產品",
+    "title": "全方位智慧製造解決方案",
+    "subtitle": "三大核心系統深度整合，從排程優化到碳管理，再到 AI 現場監控，一站式解決製造企業的數位轉型挑戰。",
+    "learn_more": "了解更多 →"
+  },
+  "features_data": [
+    {
+      "title": "APS 生產排程系統",
+      "subtitle": "有限產能智慧排程，決策加速生產",
+      "desc": "整合機台、人力、物料等多維度有限產能限制，自動生成最優排程計畫，大幅縮短規劃週期。",
+      "points": [
+        "有限產能精準排程，避免超載",
+        "多目標決策支持，降低庫存 40%",
+        "即時插單、急單快速重排",
+        "可視化甘特圖監控生產進度"
+      ]
+    },
+    {
+      "title": "ESG 碳盤查系統",
+      "subtitle": "多源數據採集，精準碳核算",
+      "desc": "符合 ISO 14064、GHG Protocol 等國際標準，自動化採集各類排放數據，生成合規碳排放報告。",
+      "points": [
+        "自動化多源數據採集整合",
+        "精準碳排放核算與追蹤",
+        "一鍵生成 ISO/GHG 合規報告",
+        "減碳路徑規劃與預測分析"
+      ]
+    },
+    {
+      "title": "AI 一體機",
+      "subtitle": "工業 AI 邊緣運算，即時現場監控",
+      "desc": "整合工業 AI 視覺與感測器融合技術，部署於生產現場，實現毫秒級異常偵測與品質控制。",
+      "points": [
+        "工業 AI 視覺缺陷即時偵測",
+        "邊緣運算，無需雲端依賴",
+        "感測器數據融合分析",
+        "預測性維護，降低停機時間"
+      ]
+    }
+  ],
+  "cases_section": {
+    "tag": "成功案例",
+    "title": "數位轉型，看得見的成效",
+    "subtitle": "來自不同產業的真實案例，展示快思科技如何協助客戶突破生產瓶頸，實現可量化的效率提升與永續目標。",
+    "challenge_label": "導入前挑戰",
+    "solution_label": "快思解決方案",
+    "result_label": "成效數據",
+    "cta": "查看更多案例，預約諮詢"
+  },
+  "cases_data": [
+    {
+      "industry": "金屬製造業",
+      "company": "某大型精密金屬加工廠",
+      "tag": "APS + AI 一體機",
+      "challenge": "訂單交期頻繁延誤，人工排程耗時 2 天，緊急插單衝突嚴重，設備利用率不足 60%。",
+      "solution": "導入 APS 生產排程系統與 AI 一體機進行即時品質監控，自動化排程取代人工，AI 視覺檢測缺陷率降至 0.1% 以下。",
+      "metric_0": "生產效率提升",
+      "metric_1": "排程規劃時間",
+      "metric_2": "在製品庫存降低"
+    },
+    {
+      "industry": "膠膜生產業",
+      "company": "某全球膠膜製造商",
+      "tag": "ESG + APS 整合",
+      "challenge": "面對歐盟 CBAM 碳邊境調整機制壓力，碳排數據分散在多系統，人工統計誤差超過 15%，合規報告需耗費 3 週。",
+      "solution": "部署 ESG 碳盤查系統整合 MES、ERP 數據，自動化計算各製程碳足跡，同步與 APS 系統連動優化低碳排程策略。",
+      "metric_0": "碳排放降低",
+      "metric_1": "合規報告生成",
+      "metric_2": "數據誤差率"
+    }
+  ],
+  "contact": {
+    "tag": "聯絡我們",
+    "title": "開始您的數位轉型之旅",
+    "subtitle": "填寫下方表單，我們的專業顧問將在 24 小時內與您聯繫，提供量身訂製的解決方案建議。",
+    "name": "姓名",
+    "name_placeholder": "王小明",
+    "company": "公司名稱",
+    "company_placeholder": "XX 製造有限公司",
+    "email": "Email",
+    "email_placeholder": "you@company.com",
+    "phone": "電話",
+    "phone_placeholder": "0912-345-678",
+    "message": "諮詢需求",
+    "message_placeholder": "請描述您目前面臨的生產挑戰或需求...",
+    "required": "必填",
+    "submit": "送出諮詢申請",
+    "privacy": "提交即表示您同意我們的隱私政策，我們絕不將您的資料分享給第三方。",
+    "success_title": "提交成功！",
+    "success_desc": "感謝您的諮詢，我們將在 24 小時內與您聯繫。",
+    "address_label": "地址",
+    "phone_label": "電話",
+    "email_label": "信箱"
+  },
+  "footer": {
+    "brand_desc": "專注於工業 4.0 智慧製造，以 APS 排程、ESG 碳管理與 AI 技術，賦能製造企業實現效率躍升與永續目標。",
+    "products_title": "產品",
+    "company_title": "公司",
+    "resources_title": "資源",
+    "about_link": "公司介紹",
+    "cases_link": "成功案例",
+    "news_link": "新聞中心",
+    "contact_link": "聯絡我們",
+    "docs_link": "技術文件",
+    "whitepaper_link": "白皮書下載",
+    "faq_link": "常見問題",
+    "copyright": "© 2026 快思科技股份有限公司 CRIS Technology. All rights reserved.",
+    "privacy": "隱私政策",
+    "terms": "服務條款"
+  },
+  "aps": {
+    "breadcrumb": "APS 生產排程系統",
+    "badge": "智慧排程解決方案",
+    "product_name": "IMPACTs",
+    "product_name_gradient": "APS",
+    "product_subtitle": "有限產能生產排程系統",
+    "product_desc": "以有限產能排程取代人工試算表，整合物料同步規劃與模具指派優化，讓每一條生產線都以最高效率運轉。",
+    "cta_primary": "預約 Demo",
+    "cta_secondary": "看排程演示",
+    "floating_badge": "AI 驅動 · 即時優化",
+    "tags": ["有限產能排程", "物料同步規劃", "模具指派", "換線優化", "多廠協同", "甘特圖視覺化"],
+    "pipeline_tag": "排程預覽",
+    "pipeline_title": "Pipeline Intelligence™",
+    "pipeline_subtitle": "即時掌握訂單進度、機台負荷與物料狀態。AI 自動對齊最優排程，讓生產看得見、管得住。",
+    "pipeline_live": "即時數據 · 每 5 秒更新",
+    "pipeline_orders_col": "訂單進度",
+    "pipeline_machine_col": "機台負荷",
+    "pipeline_material_col": "物料狀態",
+    "pipeline_avg_load": "平均稼動率",
+    "integration_tag": "無縫整合您現有的系統",
+    "integration_title": "與全球主流 ERP / MES / WMS 深度整合",
+    "integration_note": "標準 RESTful API 介面 · 支援客製化連接器 · 7 天完成整合評估",
+    "kpi_tag": "可量化成效",
+    "kpi_title": "數字說話的排程革命",
+    "kpi_subtitle": "來自製造業真實客戶的平均成效數據，導入後 3 個月內可量化回收。",
+    "pain_tag": "痛點對症",
+    "pain_title": "三大排程痛點，一次根治",
+    "pain_subtitle": "製造業排程主管最常面臨的三個核心挑戰，APS 從演算法層面提供系統性解法。",
+    "pain_before": "導入前痛點",
+    "pain_after": "APS 解決方案",
+    "feat_tag": "核心功能",
+    "feat_title": "六大功能模組",
+    "feat_hint": "點擊卡片展開詳細說明",
+    "cases_tag": "成功案例",
+    "cases_title": "真實客戶，真實成效",
+    "cta_title": "準備好讓排程升級了嗎？",
+    "cta_subtitle": "填寫表單，我們的顧問將在 24 小時內提供免費評估報告。",
+    "cta_btn": "立即預約 Demo",
+    "cta_back": "回首頁",
+    "quick_stats": [
+      { "label": "生產效率提升", "sub": "較人工排程" },
+      { "label": "手動調整時間降低", "sub": "節省人力成本" },
+      { "label": "交期達成率", "sub": "客戶滿意度提升" }
+    ],
+    "kpis": [
+      { "label": "排程效率提升", "sublabel": "從人工 2 天縮至 30 分鐘" },
+      { "label": "生產周期縮短", "sublabel": "有限產能精準配置" },
+      { "label": "在製品庫存降低", "sublabel": "物料同步計畫優化" },
+      { "label": "交期達成率", "sublabel": "客戶滿意度顯著提升" }
+    ],
+    "pain_points": [
+      {
+        "pain": "緊急插單衝突",
+        "pain_desc": "業務接緊急訂單後，人工修改排程需要數小時，且影響其他訂單交期，現場混亂。",
+        "solution": "APS 即時重排演算",
+        "solution_desc": "插單後 5 分鐘內自動重排全廠排程，顯示影響範圍，自動協商交期，主管一鍵核准。"
+      },
+      {
+        "pain": "物料不齊開工",
+        "pain_desc": "生產計畫未考量物料到貨時程，頻繁發生「機台空轉等料」，或「料到了沒機台」。",
+        "solution": "物料同步規劃引擎",
+        "solution_desc": "APS 整合 ERP/WMS 物料資訊，只排「料、機、人」三者均齊的工單，消除等待浪費。"
+      },
+      {
+        "pain": "換線時間黑洞",
+        "pain_desc": "機台換線沒有系統化管理，相似工件未整合排程，每日換線損失超過 2 小時稼動。",
+        "solution": "智慧換線優化",
+        "solution_desc": "依模具、顏色、材料相似度自動分群，最小化換線次數，換線時間平均降低 60%。"
+      }
+    ],
+    "features": [
+      {
+        "title": "有限產能排程引擎",
+        "short": "考量機台、人力、模具等多維度限制，生成可執行排程",
+        "detail": "傳統 ERP 的「無限產能」排程常導致排程無法落地。APS 有限產能引擎整合：\n\n• 機台可用時間與維護計畫\n• 操作人員班別與技能矩陣\n• 模具壽命與清洗週期\n• 物料到貨與庫存水位\n\n透過多目標優化演算（遺傳演算法 + 局部搜尋），在數分鐘內生成兼顧交期、稼動率、庫存的最優排程，並以甘特圖視覺化呈現。"
+      },
+      {
+        "title": "模具指派優化",
+        "short": "自動匹配模具與工單，延長模具壽命並降低換模成本",
+        "detail": "模具管理是精密製造的核心痛點。APS 模具指派模組：\n\n• 追蹤每套模具累計使用次數與剩餘壽命\n• 依產品規格自動篩選合格模具\n• 優先指派壽命接近維護點的模具，避免報廢\n• 計算跨工單模具借調路徑，最小化停機等待\n• 整合維修排程，確保模具維護不衝突正式生產"
+      },
+      {
+        "title": "換線順序優化",
+        "short": "依相似度分群排程，大幅壓縮換線損失時間",
+        "detail": "換線優化採用「相似矩陣」演算法：\n\n• 計算工件在材料、顏色、尺寸、模具四個維度的相似度分數\n• 利用旅行商問題（TSP）求解最短換線路徑\n• 支援「顏色由淺到深」等業界慣例規則\n• 圖形化呈現換線甘特圖，方便現場人員確認\n• 實績回饋機制：記錄實際換線時間，持續修正預測模型"
+      },
+      {
+        "title": "多廠多線協同",
+        "short": "跨廠區訂單分配，平衡各廠產能與庫存",
+        "detail": "集團型製造企業常面臨訂單在各廠之間分配不均的問題。APS 多廠協同模組：\n\n• 建立集團級產能視圖，一覽各廠稼動率\n• 訂單依製程能力、運輸成本、交期自動分配最優廠區\n• 廠間半製品移轉計畫與追蹤\n• 集中採購物料需求匯總，降低分散採購成本\n• 主計畫（MPS）與廠級排程（MES）雙向同步"
+      },
+      {
+        "title": "決策分析儀表板",
+        "short": "即時 KPI 監控，排程模擬比較，輔助快速決策",
+        "detail": "APS 儀表板不只顯示資料，更提供決策建議：\n\n• 交期風險預警：提前 3 天標示可能延遲的訂單\n• 產能熱力圖：直觀顯示各機台各時段負荷\n• 排程方案模擬器：比較「最短交期」vs「最高稼動」兩種策略\n• 排程穩定性分數：量化評估排程被插單衝擊的抵抗能力\n• 一鍵匯出客戶交期確認函與內部生產計畫"
+      },
+      {
+        "title": "物料同步規劃",
+        "short": "整合 ERP/WMS，確保排程只在三者皆備時開工",
+        "detail": "「有料沒機、有機沒料」是製造現場最大的浪費來源。APS 物料同步引擎：\n\n• 即時讀取 ERP 採購訂單到貨預計日\n• 計算每張工單所需物料的最早可用時間\n• 自動前推排程起始時間，確保開工時物料已到位\n• 安全庫存緩衝設定，應對供應商延遲風險\n• 物料短缺警報：提前通知採購人員加速催料"
+      }
+    ],
+    "cases": [
+      {
+        "company": "某精密機械製造商",
+        "tag": "插單衝突 + 交期達成",
+        "challenge": "業務頻繁接受緊急插單，人工重排排程耗時 4 小時以上，且常造成其他訂單延遲，客戶抱怨不斷。",
+        "result": "導入 APS 後，插單重排縮至 5 分鐘，交期達成率從 72% 提升至 97%，業務接單信心大幅提升。",
+        "m0_label": "交期達成率",
+        "m1_label": "插單重排時間",
+        "m2_label": "生產周期縮短"
+      },
+      {
+        "company": "某塑膠射出成型廠",
+        "tag": "換線優化 + 稼動提升",
+        "challenge": "模具換線無系統化管理，每日換線損失超過 2 小時稼動，在製品堆積造成資金積壓與場地不足。",
+        "result": "換線順序優化後平均換線時間降低 58%，稼動率從 61% 提升至 84%，在製品庫存減少 40%。",
+        "m0_label": "換線時間降低",
+        "m1_label": "機台稼動率",
+        "m2_label": "在製品庫存減少"
+      }
+    ]
+  },
+  "esg": {
+    "breadcrumb": "ESG 碳盤查系統",
+    "badge": "用友 ISV 生態認證產品",
+    "product_name": "IMPACTs",
+    "product_name_gradient": "CeO",
+    "product_subtitle": "雙碳數位化管理系統",
+    "product_desc": "精準盤碳、步步減碳，讓每一噸碳排放都有據可查。深度對接 ERP、APS、MES 等核心系統，協助企業從容應對 CBAM、CSRD 等國際合規要求。",
+    "cta_primary": "預約碳盤查諮詢",
+    "cta_secondary": "索取解決方案白皮書",
+    "floating_badge": "AI 驅動 · 即時核算",
+    "tags": ["碳係數中心", "碳盤查計畫", "CBAM 申報", "LCA 分析", "ISO 14064", "GHG Protocol"],
+    "roadmap_tag": "Compliance Roadmap",
+    "roadmap_title": "從採集到申報，全程自動化",
+    "roadmap_subtitle": "四個標準化階段取代人工盤查，確保每一步都符合 ISO 14064 與 CBAM 要求。",
+    "roadmap_toolbar": "Compliance Roadmap — 合規流程追蹤",
+    "integration_tag": "生態整合",
+    "integration_title": "無縫對接您的現有系統",
+    "integration_subtitle": "開箱即用的標準連接器，數據自動流入，無需手動維護",
+    "challenge_tag": "碳管理挑戰",
+    "challenge_title": "企業正面臨的剛性壓力",
+    "challenge_subtitle": "不只是道德責任，更是生存競爭力。全球監管與供應鏈碳要求正在重塑製造業格局。",
+    "feat_tag": "核心功能模組",
+    "feat_title": "四大模組，完整覆蓋碳管理需求",
+    "feat_hint": "點擊卡片展開詳細說明",
+    "kpi_tag": "預期效益",
+    "kpi_title": "可量化的碳管理 ROI",
+    "kpi_subtitle": "來自客戶的平均成效數據，導入後 6 個月可完整回收成本。",
+    "standards_tag": "合規認證支援",
+    "standards_title": "嚴格遵循國際標準",
+    "cases_tag": "成功案例",
+    "cases_title": "真實客戶，真實成效",
+    "cta_title": "讓每一噸碳排放都有據可查",
+    "cta_subtitle": "預約免費碳盤查評估，我們的顧問將在 24 小時內提供專屬建議。",
+    "cta_btn": "預約碳盤查諮詢",
+    "cta_back": "回首頁",
+    "challenge_label": "挑戰",
+    "result_label": "成效",
+    "quick_stats": [
+      { "label": "盤查效率提升", "sub": "周期從數月縮至 1-2 週" },
+      { "label": "國際合規保證", "sub": "ISO 14064 / CBAM / CSRD" },
+      { "label": "管理成本降低", "sub": "減少外部顧問依賴" }
+    ],
+    "kpis": [
+      { "label": "盤查效率提升", "sublabel": "周期從數月縮至 1-2 週" },
+      { "label": "管理成本降低", "sublabel": "減少外部顧問依賴" },
+      { "label": "合規性保障", "sublabel": "降低 90% 政策違規風險" },
+      { "label": "融資成本降低", "sublabel": "ESG 優異企業享受利率優惠" }
+    ]
+  },
+  "aibox": {
+    "breadcrumb": "AI 一體機",
+    "badge": "企業級私有 AI 作業平台",
+    "product_name": "IMPACTs",
+    "product_name_gradient": "AI 一體機",
+    "product_subtitle": "大腦決策 × 手腳執行的完整 AI 生態",
+    "product_desc_part1": "「大腦決策」",
+    "product_desc_part2": "「手腳執行」",
+    "product_desc": "賦能企業具備大腦決策與手腳執行的完整 AI 生態。從私有部署到數位員工調度，一機解決企業 AI 轉型的全部需求。",
+    "floating_badge": "私有部署 · 零 Token 費用",
+    "cta_primary": "預約 AI 一體機 Demo",
+    "cta_secondary": "探索功能",
+    "tags": ["私有部署", "RAG 知識庫", "AI Agent", "vLLM 推理", "多模態", "開箱即用"],
+    "feat_tag": "核心特色",
+    "feat_title": "四大核心價值主張",
+    "feat_subtitle": "從安全合規到成本管控，AI 一體機為企業提供完整、可控的 AI 轉型路徑。",
+    "modules_tag": "AI 軟體棧",
+    "modules_title": "四大 AI 模組，開箱即用",
+    "modules_subtitle": "預裝完整的企業 AI 軟體棧，從知識管理到自動化執行，一台機器全部搞定。",
+    "kpi_tag": "核心優勢",
+    "kpi_title": "可量化的 AI 轉型價值",
+    "kpi_subtitle": "以確定性的硬體成本，換取無上限的 AI 應用潛力。",
+    "cta_title": "準備好讓 AI 為您工作了嗎？",
+    "cta_subtitle": "填寫表單，我們將在 24 小時內提供免費 AI 一體機評估報告。",
+    "cta_btn": "預約 AI 一體機 Demo",
+    "cta_back": "回首頁",
+    "core_features": [
+      {
+        "badge": "安全第一",
+        "title": "私有部署 安全合規",
+        "desc": "模型與資料 100% 在企業內部運行，確保資安合規與完整資料主權，杜絕敏感資料外洩風險。",
+        "points": ["模型與資料不出企業防火牆", "符合 ISO 27001 與 GDPR 合規要求", "完整操作日誌與存取控制"]
+      },
+      {
+        "badge": "快速整合",
+        "title": "開機即用 隨插即用",
+        "desc": "預裝企業級 AI 軟體棧，開箱即可串接 ERP / MES / APS / ESG 系統，不需懂模型也能立即調用 AI 能力。",
+        "points": ["3 天內完成部署上線", "內建 API Gateway 標準介面", "深度整合快思 APS 與 ESG 系統"]
+      },
+      {
+        "badge": "AI 決策引擎",
+        "title": "大腦決策 手腳執行",
+        "desc": "整合 LLM 推演與 RPA 自動化執行，讓對話進化為真正的數位勞動力，AI Agent 負責思考、系統自動完成執行。",
+        "points": ["LLM 負責分析推演與決策建議", "RPA 自動化執行任務流程", "從「問答」進化為「完成任務」"]
+      },
+      {
+        "badge": "成本優化",
+        "title": "成本可控 長期效益",
+        "desc": "免 Token 計費、優化 GPU 資源調度，讓 AI 轉型從成本中心轉為效益引擎，滿足企業長期永續轉型需求。",
+        "points": ["零 Token 費用，固定硬體成本", "智慧 GPU 排程最大化資源利用", "3 年 ROI 平均超過 300%"]
+      }
+    ],
+    "modules": [
+      {
+        "title": "AI Agent 指揮中心",
+        "desc": "管理與調度數位員工，從「問答」進化為「執行任務」的完整工作流程自動化平台。",
+        "tags": ["Agent Orchestration", "RPA 整合", "Task Automation"]
+      },
+      {
+        "title": "RAG 知識庫 × 向量資料庫",
+        "desc": "基於企業內部 SOP 與技術手冊建立專屬知識庫，提供精準的企業內容問答與即時文件檢索。",
+        "tags": ["Vector Database", "SOP 自動化", "智慧文件問答"]
+      },
+      {
+        "title": "機器學習模型庫",
+        "desc": "專注於製造業的預測分析：設備故障預測、需求預測、品質異常偵測，提供理性決策依據。",
+        "tags": ["故障預測", "需求預測", "品質異常偵測"]
+      },
+      {
+        "title": "vLLM 多模態推理引擎",
+        "desc": "整合語言理解、RAG 增強生成、Whisper 語音辨識及影像分析，提供完整多模態 AI 推理能力。",
+        "tags": ["Language + Vision", "Whisper 語音", "RAG 推理加速"]
+      }
+    ],
+    "kpis": [
+      { "label": "資安合規", "desc": "資料主權完整保障" },
+      { "label": "Token 費用", "desc": "固定成本無計費上限" },
+      { "label": "服務穩定性", "desc": "不受外部網路影響" },
+      { "label": "應用擴充", "desc": "支援多元 AI 應用場景" }
+    ]
+  },
+  "contact_page": {
+    "breadcrumb": "聯絡我們",
+    "badge": "免費諮詢 · 24 小時回覆",
+    "title_prefix": "開始您的",
+    "title_gradient": "數位轉型之旅",
+    "subtitle": "填寫下方表單，我們的專業顧問將在 24 小時內與您聯繫，提供量身訂製的解決方案建議。",
+    "form_title": "填寫諮詢表單",
+    "required_note": "的為必填欄位",
+    "product_label": "感興趣的產品",
+    "product_placeholder": "請選擇...",
+    "product_aps": "APS 生產排程系統",
+    "product_esg": "ESG 碳盤查系統",
+    "product_aibox": "AI 一體機",
+    "product_all": "全套解決方案",
+    "promise_title": "我們的承諾",
+    "trust_0_title": "24 小時內回覆",
+    "trust_0_desc": "工作日收到諮詢後，顧問將在一個工作天內主動聯繫您。",
+    "trust_1_title": "專業顧問服務",
+    "trust_1_desc": "具備製造業領域知識的解決方案顧問，深入了解您的挑戰。",
+    "trust_2_title": "免費評估報告",
+    "trust_2_desc": "首次諮詢提供免費的數位轉型評估與建議方向，無任何費用。",
+    "company_name": "快思科技股份有限公司",
+    "company_desc": "專注於工業 4.0 智慧製造解決方案，協助製造業實現生產效率最大化與永續目標達成。",
+    "success_title": "提交成功！",
+    "success_desc": "感謝您的諮詢，我們將在 24 小時內與您聯繫，請保持電話與信箱暢通。",
+    "back_home": "回首頁"
+  },
+  "lang": {
+    "switcher_label": "語言"
+  }
+}

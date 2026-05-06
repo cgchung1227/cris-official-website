@@ -1,0 +1,424 @@
+{
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "consultation": "Free Consultation",
+    "aps_name": "APS Scheduling System",
+    "aps_desc": "Finite-capacity smart scheduling",
+    "esg_name": "ESG Carbon Tracking",
+    "esg_desc": "Precise carbon accounting & management",
+    "aibox_name": "AI Box",
+    "aibox_desc": "Enterprise private AI platform"
+  },
+  "hero": {
+    "badge": "Industry 4.0 Smart Manufacturing Solutions",
+    "title_prefix": "Empowering Enterprises to Achieve",
+    "title_g1": "Smart Production",
+    "title_between": "&",
+    "title_g2": "Carbon Goals",
+    "subtitle": "CRIS Technology integrates APS scheduling, ESG carbon tracking, and AI Box to help manufacturers break through efficiency bottlenecks and achieve sustainability targets.",
+    "cta_primary": "Schedule a Demo",
+    "cta_secondary": "Explore Solutions",
+    "trust": "Trusted by 200+ Manufacturers · Free 30-min Consultation",
+    "scroll": "Scroll to explore",
+    "stat_0_label": "Production Efficiency Gain",
+    "stat_1_label": "Carbon Emissions Reduced",
+    "stat_2_label": "Enterprise Partners"
+  },
+  "features_section": {
+    "tag": "Core Products",
+    "title": "End-to-End Smart Manufacturing Solutions",
+    "subtitle": "Three deeply integrated core systems — from scheduling optimization to carbon management to AI floor monitoring — solving manufacturers' digital transformation challenges in one platform.",
+    "learn_more": "Learn More →"
+  },
+  "features_data": [
+    {
+      "title": "APS Scheduling System",
+      "subtitle": "Finite-capacity smart scheduling to accelerate production",
+      "desc": "Integrates machine, labor, and material constraints to auto-generate optimal schedules, dramatically cutting planning cycles.",
+      "points": [
+        "Finite-capacity scheduling to prevent overloading",
+        "Multi-objective optimization, 40% inventory reduction",
+        "Real-time rush order re-scheduling",
+        "Visual Gantt chart for production monitoring"
+      ]
+    },
+    {
+      "title": "ESG Carbon Tracking",
+      "subtitle": "Multi-source data collection for precise carbon accounting",
+      "desc": "Compliant with ISO 14064, GHG Protocol, and other international standards. Automates emissions data collection and generates audit-ready reports.",
+      "points": [
+        "Automated multi-source data integration",
+        "Precise carbon emissions tracking",
+        "One-click ISO/GHG compliance reports",
+        "Carbon reduction pathway planning & forecasting"
+      ]
+    },
+    {
+      "title": "AI Box",
+      "subtitle": "Industrial AI edge computing for real-time floor monitoring",
+      "desc": "Combines industrial AI vision and sensor fusion technology deployed on-site, achieving millisecond-level anomaly detection and quality control.",
+      "points": [
+        "Real-time AI visual defect detection",
+        "Edge computing — no cloud dependency",
+        "Sensor data fusion analysis",
+        "Predictive maintenance to reduce downtime"
+      ]
+    }
+  ],
+  "cases_section": {
+    "tag": "Success Stories",
+    "title": "Digital Transformation with Measurable Results",
+    "subtitle": "Real-world cases across industries showing how CRIS Technology helps clients break through production bottlenecks and achieve quantifiable efficiency and sustainability gains.",
+    "challenge_label": "Challenge Before",
+    "solution_label": "CRIS Solution",
+    "result_label": "Results",
+    "cta": "See More Cases & Schedule a Consultation"
+  },
+  "cases_data": [
+    {
+      "industry": "Metal Manufacturing",
+      "company": "Large Precision Metal Machining Plant",
+      "tag": "APS + AI Box",
+      "challenge": "Frequent order delays, manual scheduling took 2 days, severe rush-order conflicts, equipment utilization below 60%.",
+      "solution": "Deployed APS scheduling with AI Box for real-time quality monitoring. Automated scheduling replaced manual planning; AI visual inspection reduced defect rate below 0.1%.",
+      "metric_0": "Production Efficiency Gain",
+      "metric_1": "Scheduling Planning Time",
+      "metric_2": "WIP Inventory Reduction"
+    },
+    {
+      "industry": "Film Manufacturing",
+      "company": "Global Film Manufacturer",
+      "tag": "ESG + APS Integration",
+      "challenge": "Under EU CBAM pressure, carbon data scattered across systems, manual calculation errors exceeded 15%, compliance reports took 3 weeks.",
+      "solution": "Deployed ESG carbon tracking integrated with MES and ERP data, auto-calculating carbon footprint per process, linked with APS to optimize low-carbon scheduling.",
+      "metric_0": "Carbon Emissions Reduced",
+      "metric_1": "Compliance Report Generated",
+      "metric_2": "Data Error Rate"
+    }
+  ],
+  "contact": {
+    "tag": "Contact Us",
+    "title": "Start Your Digital Transformation Journey",
+    "subtitle": "Fill out the form below and our expert consultants will contact you within 24 hours with tailored solution recommendations.",
+    "name": "Name",
+    "name_placeholder": "John Smith",
+    "company": "Company",
+    "company_placeholder": "ACME Manufacturing Inc.",
+    "email": "Email",
+    "email_placeholder": "you@company.com",
+    "phone": "Phone",
+    "phone_placeholder": "+1-555-000-0000",
+    "message": "Inquiry",
+    "message_placeholder": "Describe your current production challenges or needs...",
+    "required": "Required",
+    "submit": "Submit Inquiry",
+    "privacy": "By submitting you agree to our privacy policy. We never share your data with third parties.",
+    "success_title": "Submitted Successfully!",
+    "success_desc": "Thank you for your inquiry. We will contact you within 24 hours.",
+    "address_label": "Address",
+    "phone_label": "Phone",
+    "email_label": "Email"
+  },
+  "footer": {
+    "brand_desc": "Focused on Industry 4.0 smart manufacturing. With APS scheduling, ESG carbon management, and AI technology, we empower manufacturers to achieve efficiency gains and sustainability goals.",
+    "products_title": "Products",
+    "company_title": "Company",
+    "resources_title": "Resources",
+    "about_link": "About Us",
+    "cases_link": "Case Studies",
+    "news_link": "News",
+    "contact_link": "Contact",
+    "docs_link": "Documentation",
+    "whitepaper_link": "Whitepapers",
+    "faq_link": "FAQ",
+    "copyright": "© 2026 CRIS Technology Co., Ltd. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "aps": {
+    "breadcrumb": "APS Scheduling System",
+    "badge": "Smart Scheduling Solution",
+    "product_name": "IMPACTs",
+    "product_name_gradient": "APS",
+    "product_subtitle": "Finite-Capacity Production Scheduling System",
+    "product_desc": "Replace manual spreadsheets with finite-capacity scheduling. Integrate materials planning and tooling optimization so every production line runs at peak efficiency.",
+    "cta_primary": "Schedule a Demo",
+    "cta_secondary": "Watch Scheduling Demo",
+    "floating_badge": "AI-Powered · Real-time Optimization",
+    "tags": ["Finite Capacity Scheduling", "Materials Sync Planning", "Tooling Assignment", "Changeover Optimization", "Multi-Plant Coordination", "Gantt Visualization"],
+    "pipeline_tag": "Schedule Preview",
+    "pipeline_title": "Pipeline Intelligence™",
+    "pipeline_subtitle": "Track order progress, machine load, and material status in real time. AI auto-aligns optimal schedules — making production visible and manageable.",
+    "pipeline_live": "Live Data · Updates Every 5s",
+    "pipeline_orders_col": "Order Progress",
+    "pipeline_machine_col": "Machine Load",
+    "pipeline_material_col": "Material Status",
+    "pipeline_avg_load": "Avg. Utilization",
+    "integration_tag": "Seamlessly Integrates With Your Existing Systems",
+    "integration_title": "Deep Integration With Leading ERP / MES / WMS",
+    "integration_note": "Standard RESTful API · Custom Connectors Supported · Integration Assessment in 7 Days",
+    "kpi_tag": "Measurable Results",
+    "kpi_title": "The Scheduling Revolution in Numbers",
+    "kpi_subtitle": "Average performance data from real manufacturing clients. ROI measurable within 3 months of deployment.",
+    "pain_tag": "Pain Points Solved",
+    "pain_title": "Three Scheduling Pain Points, Solved at Once",
+    "pain_subtitle": "The three core challenges every production manager faces — APS solves them at the algorithm level.",
+    "pain_before": "Pain Before",
+    "pain_after": "APS Solution",
+    "feat_tag": "Core Features",
+    "feat_title": "Six Functional Modules",
+    "feat_hint": "Click a card to expand details",
+    "cases_tag": "Success Stories",
+    "cases_title": "Real Clients, Real Results",
+    "cta_title": "Ready to Upgrade Your Scheduling?",
+    "cta_subtitle": "Fill out the form and our consultant will provide a free assessment report within 24 hours.",
+    "cta_btn": "Schedule a Demo Now",
+    "cta_back": "Back to Home",
+    "quick_stats": [
+      { "label": "Production Efficiency Gain", "sub": "vs. manual scheduling" },
+      { "label": "Manual Adjustment Time Reduced", "sub": "labor cost savings" },
+      { "label": "On-Time Delivery Rate", "sub": "improved customer satisfaction" }
+    ],
+    "kpis": [
+      { "label": "Scheduling Efficiency Gain", "sublabel": "From 2 days to 30 minutes" },
+      { "label": "Production Cycle Shortened", "sublabel": "Precise finite-capacity allocation" },
+      { "label": "WIP Inventory Reduced", "sublabel": "Materials sync planning optimization" },
+      { "label": "On-Time Delivery Rate", "sublabel": "Significantly improved customer satisfaction" }
+    ],
+    "pain_points": [
+      {
+        "pain": "Rush Order Conflicts",
+        "pain_desc": "After accepting urgent orders, manual rescheduling takes hours and disrupts other orders, causing floor chaos.",
+        "solution": "APS Real-time Re-scheduling",
+        "solution_desc": "Full-plant reschedule within 5 minutes of rush order insertion. Displays impact scope, auto-negotiates delivery dates, manager approves with one click."
+      },
+      {
+        "pain": "Material Shortages at Start",
+        "pain_desc": "Production plans ignore material arrival timing, causing frequent 'machine waiting for material' or 'material arrived with no machine available' situations.",
+        "solution": "Materials Sync Planning Engine",
+        "solution_desc": "APS integrates ERP/WMS material data — only schedules work orders where material, machine, and labor are all available, eliminating waiting waste."
+      },
+      {
+        "pain": "Changeover Time Black Hole",
+        "pain_desc": "No systematic changeover management, similar parts not grouped in scheduling, losing over 2 hours of utilization per day to changeovers.",
+        "solution": "Smart Changeover Optimization",
+        "solution_desc": "Auto-groups by tooling, color, and material similarity to minimize changeovers. Average changeover time reduced by 60%."
+      }
+    ],
+    "features": [
+      {
+        "title": "Finite-Capacity Scheduling Engine",
+        "short": "Generates executable schedules considering machine, labor, and tooling constraints",
+        "detail": "Traditional ERP 'infinite capacity' scheduling often results in plans that can't be executed. APS finite-capacity engine integrates:\n\n• Machine availability windows and maintenance plans\n• Operator shift schedules and skill matrices\n• Tooling lifespan and cleaning cycles\n• Material arrival dates and inventory levels\n\nUsing multi-objective optimization (genetic algorithm + local search), it generates optimal schedules balancing due dates, utilization, and inventory within minutes — visualized as interactive Gantt charts."
+      },
+      {
+        "title": "Tooling Assignment Optimization",
+        "short": "Auto-matches tools to work orders to extend tool life and reduce changeover cost",
+        "detail": "Tooling management is a core pain point in precision manufacturing. APS tooling assignment module:\n\n• Tracks cumulative usage count and remaining lifespan for each tool\n• Auto-filters qualified tools by product specifications\n• Prioritizes tools approaching maintenance thresholds to avoid scrapping\n• Calculates cross-order tool transfer paths to minimize idle waiting\n• Integrates maintenance scheduling to ensure tooling maintenance doesn't conflict with production"
+      },
+      {
+        "title": "Changeover Sequence Optimization",
+        "short": "Similarity-based grouping to drastically compress changeover losses",
+        "detail": "Changeover optimization uses a 'similarity matrix' algorithm:\n\n• Calculates similarity scores across material, color, dimension, and tooling dimensions\n• Solves shortest changeover path using Traveling Salesman Problem (TSP)\n• Supports industry conventions like 'light to dark color ordering'\n• Graphical changeover Gantt for floor staff confirmation\n• Feedback loop: records actual changeover times to continuously refine prediction model"
+      },
+      {
+        "title": "Multi-Plant / Multi-Line Coordination",
+        "short": "Cross-plant order distribution to balance capacity and inventory across facilities",
+        "detail": "Group manufacturers often face uneven order distribution across plants. APS multi-plant coordination module:\n\n• Creates a group-level capacity view showing utilization across all plants\n• Auto-assigns orders to optimal facilities based on process capability, transport cost, and due dates\n• Inter-plant WIP transfer planning and tracking\n• Consolidated purchasing material demand aggregation to reduce fragmented procurement cost\n• Bi-directional sync between Master Production Schedule (MPS) and plant-level MES"
+      },
+      {
+        "title": "Decision Analytics Dashboard",
+        "short": "Real-time KPI monitoring, schedule simulation, and fast decision support",
+        "detail": "The APS dashboard doesn't just display data — it provides decision recommendations:\n\n• Due date risk alerts: flags orders likely to be late 3 days in advance\n• Capacity heat map: visually shows machine load by time slot\n• Schedule scenario simulator: compare 'shortest lead time' vs 'highest utilization' strategies\n• Schedule stability score: quantifies resistance to disruption by rush orders\n• One-click export of customer delivery confirmation letters and internal production plans"
+      },
+      {
+        "title": "Materials Sync Planning",
+        "short": "ERP/WMS integration to ensure scheduling only starts when all three resources are ready",
+        "detail": "'Material without machine, machine without material' is the biggest waste in manufacturing. APS materials sync engine:\n\n• Real-time read of expected arrival dates from ERP purchase orders\n• Calculates earliest available time for materials needed per work order\n• Auto-pushes schedule start time forward to ensure materials are ready at job start\n• Safety stock buffer configuration to handle supplier delay risk\n• Material shortage alerts: notifies procurement to expedite before shortages occur"
+      }
+    ],
+    "cases": [
+      {
+        "company": "Precision Machinery Manufacturer",
+        "tag": "Rush Order Conflicts + On-time Delivery",
+        "challenge": "Sales frequently accepted urgent orders. Manual rescheduling took over 4 hours and often caused delays on other orders, resulting in constant customer complaints.",
+        "result": "After APS deployment, rush order rescheduling dropped to 5 minutes. On-time delivery rate rose from 72% to 97%, greatly boosting sales confidence.",
+        "m0_label": "On-Time Delivery Rate",
+        "m1_label": "Rush Order Re-schedule Time",
+        "m2_label": "Production Cycle Shortened"
+      },
+      {
+        "company": "Plastic Injection Molding Plant",
+        "tag": "Changeover Optimization + Utilization Boost",
+        "challenge": "No systematic tooling changeover management. Daily changeover losses exceeded 2 hours of utilization. WIP buildup caused capital lock-up and space shortages.",
+        "result": "After changeover sequence optimization, average changeover time reduced by 58%. Utilization rose from 61% to 84%. WIP inventory reduced by 40%.",
+        "m0_label": "Changeover Time Reduced",
+        "m1_label": "Machine Utilization",
+        "m2_label": "WIP Inventory Reduced"
+      }
+    ]
+  },
+  "esg": {
+    "breadcrumb": "ESG Carbon Tracking",
+    "badge": "Yonyou ISV Ecosystem Certified",
+    "product_name": "IMPACTs",
+    "product_name_gradient": "CeO",
+    "product_subtitle": "Dual-Carbon Digital Management System",
+    "product_desc": "Precise carbon accounting, step-by-step emissions reduction — every ton of carbon traceable. Deep integration with ERP, APS, and MES to help enterprises navigate CBAM, CSRD, and other international compliance requirements.",
+    "cta_primary": "Schedule Carbon Audit Consultation",
+    "cta_secondary": "Download Solution Whitepaper",
+    "floating_badge": "AI-Powered · Real-time Accounting",
+    "tags": ["Carbon Factor Library", "Carbon Audit Plan", "CBAM Reporting", "LCA Analysis", "ISO 14064", "GHG Protocol"],
+    "roadmap_tag": "Compliance Roadmap",
+    "roadmap_title": "From Collection to Reporting — Fully Automated",
+    "roadmap_subtitle": "Four standardized stages replace manual auditing, ensuring every step complies with ISO 14064 and CBAM requirements.",
+    "roadmap_toolbar": "Compliance Roadmap — Process Tracking",
+    "integration_tag": "Ecosystem Integration",
+    "integration_title": "Seamlessly Connect With Your Existing Systems",
+    "integration_subtitle": "Out-of-the-box standard connectors — data flows in automatically, no manual maintenance needed",
+    "challenge_tag": "Carbon Management Challenges",
+    "challenge_title": "Mandatory Pressures Facing Enterprises",
+    "challenge_subtitle": "It's not just a moral responsibility — it's competitive survival. Global regulations and supply chain carbon requirements are reshaping manufacturing.",
+    "feat_tag": "Core Functional Modules",
+    "feat_title": "Four Modules for Complete Carbon Management",
+    "feat_hint": "Click a card to expand details",
+    "kpi_tag": "Expected Benefits",
+    "kpi_title": "Quantifiable Carbon Management ROI",
+    "kpi_subtitle": "Average performance data from clients. Full cost recovery within 6 months of deployment.",
+    "standards_tag": "Compliance & Certification Support",
+    "standards_title": "Strictly Compliant With International Standards",
+    "cases_tag": "Success Stories",
+    "cases_title": "Real Clients, Real Results",
+    "cta_title": "Make Every Ton of Carbon Accountable",
+    "cta_subtitle": "Schedule a free carbon audit assessment. Our consultants will provide tailored recommendations within 24 hours.",
+    "cta_btn": "Schedule Carbon Audit Consultation",
+    "cta_back": "Back to Home",
+    "challenge_label": "Challenge",
+    "result_label": "Results",
+    "quick_stats": [
+      { "label": "Audit Efficiency Gain", "sub": "Cycle reduced from months to 1–2 weeks" },
+      { "label": "International Compliance", "sub": "ISO 14064 / CBAM / CSRD" },
+      { "label": "Management Cost Reduction", "sub": "Reduced reliance on external consultants" }
+    ],
+    "kpis": [
+      { "label": "Audit Efficiency Gain", "sublabel": "Cycle reduced from months to 1–2 weeks" },
+      { "label": "Management Cost Reduction", "sublabel": "Reduced reliance on external consultants" },
+      { "label": "Compliance Assurance", "sublabel": "90% reduction in policy violation risk" },
+      { "label": "Financing Cost Reduction", "sublabel": "Excellent ESG rating earns preferential rates" }
+    ]
+  },
+  "aibox": {
+    "breadcrumb": "AI Box",
+    "badge": "Enterprise Private AI Platform",
+    "product_name": "IMPACTs",
+    "product_name_gradient": "AI Box",
+    "product_subtitle": "Complete AI Ecosystem — Brain to Execute",
+    "product_desc_part1": "\"Brain-level Decision\"",
+    "product_desc_part2": "\"Action-level Execution\"",
+    "product_desc": "Empower enterprises with a complete AI ecosystem from brain-level decisions to action-level execution. From private deployment to digital workforce orchestration — one device solves all your AI transformation needs.",
+    "floating_badge": "Private Deployment · Zero Token Cost",
+    "cta_primary": "Schedule AI Box Demo",
+    "cta_secondary": "Explore Features",
+    "tags": ["Private Deployment", "RAG Knowledge Base", "AI Agent", "vLLM Inference", "Multimodal", "Ready Out of Box"],
+    "feat_tag": "Core Highlights",
+    "feat_title": "Four Core Value Propositions",
+    "feat_subtitle": "From security compliance to cost control, AI Box provides a complete, controllable AI transformation path for enterprises.",
+    "modules_tag": "AI Software Stack",
+    "modules_title": "Four AI Modules, Ready Out of Box",
+    "modules_subtitle": "Pre-installed enterprise AI software stack covering knowledge management to automated execution — one device handles it all.",
+    "kpi_tag": "Core Advantages",
+    "kpi_title": "Quantifiable AI Transformation Value",
+    "kpi_subtitle": "Trade uncertain cloud costs for deterministic hardware investment — unlocking unlimited AI application potential.",
+    "cta_title": "Ready to Put AI to Work?",
+    "cta_subtitle": "Fill out the form and we'll provide a free AI Box assessment report within 24 hours.",
+    "cta_btn": "Schedule AI Box Demo",
+    "cta_back": "Back to Home",
+    "core_features": [
+      {
+        "badge": "Security First",
+        "title": "Private Deployment, Fully Compliant",
+        "desc": "Models and data run 100% within your enterprise perimeter. Ensures full data sovereignty and security compliance, eliminating sensitive data leakage risks.",
+        "points": ["Models and data never leave your firewall", "Compliant with ISO 27001 and GDPR", "Complete audit logs and access controls"]
+      },
+      {
+        "badge": "Fast Integration",
+        "title": "Plug In, Power On, Start Now",
+        "desc": "Pre-loaded enterprise AI software stack. Connect to ERP / MES / APS / ESG systems out of the box — no AI expertise required to start using AI capabilities immediately.",
+        "points": ["Deployed and live within 3 days", "Built-in API Gateway standard interface", "Deep integration with CRIS APS & ESG systems"]
+      },
+      {
+        "badge": "AI Decision Engine",
+        "title": "Brain Decides, Systems Execute",
+        "desc": "Combines LLM reasoning with RPA automation execution, evolving conversation into a true digital workforce — AI Agent thinks, systems automatically complete tasks.",
+        "points": ["LLM handles analysis, reasoning, and decision recommendations", "RPA automates task execution workflows", "Evolves from 'Q&A' to 'Task Completion'"]
+      },
+      {
+        "badge": "Cost Optimized",
+        "title": "Predictable Cost, Long-term Value",
+        "desc": "No token billing, optimized GPU resource scheduling — transforming AI from a cost center into a value engine for long-term sustainable transformation.",
+        "points": ["Zero token costs, fixed hardware investment", "Smart GPU scheduling maximizes resource utilization", "Average 300%+ ROI over 3 years"]
+      }
+    ],
+    "modules": [
+      {
+        "title": "AI Agent Command Center",
+        "desc": "Manage and orchestrate digital workers — a complete workflow automation platform evolving from 'Q&A' to 'task execution'.",
+        "tags": ["Agent Orchestration", "RPA Integration", "Task Automation"]
+      },
+      {
+        "title": "RAG Knowledge Base × Vector DB",
+        "desc": "Build a proprietary knowledge base from internal SOPs and technical manuals for precise enterprise Q&A and real-time document retrieval.",
+        "tags": ["Vector Database", "SOP Automation", "Smart Document Q&A"]
+      },
+      {
+        "title": "Machine Learning Model Library",
+        "desc": "Manufacturing-focused predictive analytics: equipment failure prediction, demand forecasting, quality anomaly detection — evidence-based decision support.",
+        "tags": ["Failure Prediction", "Demand Forecasting", "Quality Anomaly Detection"]
+      },
+      {
+        "title": "vLLM Multimodal Inference Engine",
+        "desc": "Integrates language understanding, RAG-enhanced generation, Whisper speech recognition, and image analysis for complete multimodal AI inference.",
+        "tags": ["Language + Vision", "Whisper Speech", "RAG Inference Acceleration"]
+      }
+    ],
+    "kpis": [
+      { "label": "Security Compliance", "desc": "Full data sovereignty guaranteed" },
+      { "label": "Token Costs", "desc": "Fixed cost, no billing cap" },
+      { "label": "Service Reliability", "desc": "Unaffected by external networks" },
+      { "label": "Application Scalability", "desc": "Supports diverse AI use cases" }
+    ]
+  },
+  "contact_page": {
+    "breadcrumb": "Contact Us",
+    "badge": "Free Consultation · 24-Hour Response",
+    "title_prefix": "Start Your",
+    "title_gradient": "Digital Transformation",
+    "subtitle": "Fill out the form below and our expert consultants will contact you within 24 hours with tailored solution recommendations.",
+    "form_title": "Consultation Form",
+    "required_note": "fields are required",
+    "product_label": "Product(s) of Interest",
+    "product_placeholder": "Please select...",
+    "product_aps": "APS Scheduling System",
+    "product_esg": "ESG Carbon Tracking",
+    "product_aibox": "AI Box",
+    "product_all": "Full Solution Suite",
+    "promise_title": "Our Commitment",
+    "trust_0_title": "24-Hour Response",
+    "trust_0_desc": "On business days, a consultant will proactively reach out within one working day of receiving your inquiry.",
+    "trust_1_title": "Expert Consultants",
+    "trust_1_desc": "Solution consultants with deep manufacturing domain expertise to fully understand your challenges.",
+    "trust_2_title": "Free Assessment",
+    "trust_2_desc": "First consultation includes a free digital transformation assessment and recommendations — no cost.",
+    "company_name": "CRIS Technology Co., Ltd.",
+    "company_desc": "Focused on Industry 4.0 smart manufacturing solutions, helping manufacturers maximize production efficiency and achieve sustainability goals.",
+    "success_title": "Submitted Successfully!",
+    "success_desc": "Thank you for your inquiry. We will contact you within 24 hours. Please keep your phone and email accessible.",
+    "back_home": "Back to Home"
+  },
+  "lang": {
+    "switcher_label": "Language"
+  }
+}
