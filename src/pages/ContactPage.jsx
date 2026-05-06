@@ -163,7 +163,7 @@ export default function ContactPage() {
             >
               <div>
                 <img
-                  src="/Logo_CRIS.png"
+                  src={import.meta.env.BASE_URL + 'Logo_CRIS.png'}
                   alt="CRIS Logo"
                   className="h-10 w-auto object-contain mb-5 mix-blend-multiply dark:mix-blend-normal dark:brightness-0 dark:invert"
                 />

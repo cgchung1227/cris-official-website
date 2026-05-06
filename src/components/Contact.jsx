@@ -52,7 +52,7 @@ export default function Contact() {
             className="lg:col-span-2 flex flex-col justify-between"
           >
             <div>
-              <img src="/Logo_CRIS.png" alt="CRIS Logo" className="h-10 w-auto object-contain mb-6 mix-blend-multiply dark:mix-blend-normal dark:brightness-0 dark:invert" />
+              <img src={import.meta.env.BASE_URL + 'Logo_CRIS.png'} alt="CRIS Logo" className="h-10 w-auto object-contain mb-6 mix-blend-multiply dark:mix-blend-normal dark:brightness-0 dark:invert" />
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">快思股份有限公司</h3>
               <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
                 專注於工業 4.0 智慧製造解決方案，協助製造業實現生產效率最大化與永續目標達成。

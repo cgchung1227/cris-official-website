@@ -98,7 +98,7 @@ function AIBoxVisual() {
         <div className="relative w-52 rounded-2xl border border-violet-500/50 bg-gradient-to-b from-slate-800 to-slate-950 shadow-2xl shadow-violet-600/30 overflow-hidden">
           {/* Header bar */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.07]">
-            <img src="/Logo_CRIS.png" alt="" className="h-4 brightness-0 invert opacity-60" />
+            <img src={import.meta.env.BASE_URL + 'Logo_CRIS.png'} alt="" className="h-4 brightness-0 invert opacity-60" />
             <span className="flex items-center gap-1.5">
               <motion.span
                 className="w-1.5 h-1.5 rounded-full bg-emerald-400"

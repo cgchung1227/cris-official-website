@@ -75,7 +75,7 @@ export default function Navbar({ dark, setDark }) {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-          <img src="/Logo_CRIS.png" alt="CRIS Logo" className="h-10 w-auto object-contain" />
+          <img src={import.meta.env.BASE_URL + 'Logo_CRIS.png'} alt="CRIS Logo" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop Menu */}

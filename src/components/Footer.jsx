@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img src="/Logo_CRIS.png" alt="CRIS Logo" className="h-9 w-auto object-contain brightness-0 invert" />
+              <img src={import.meta.env.BASE_URL + 'Logo_CRIS.png'} alt="CRIS Logo" className="h-9 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
               {t('footer.brand_desc')}
