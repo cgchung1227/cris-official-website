@@ -46,7 +46,7 @@ export default function App() {
   }, [dark])
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         {/* Admin — no Navbar/Footer */}
         <Route path="/admin" element={<Admin />} />
