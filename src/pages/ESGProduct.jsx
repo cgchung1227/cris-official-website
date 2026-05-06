@@ -486,9 +486,7 @@ export default function ESGProduct() {
               </p>
 
               <p className="mt-7 text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
-                精準盤碳、步步減碳，讓每一噸碳排放都有據可查。深度對接
-                <span className="text-slate-800 dark:text-slate-200 font-medium"> ERP、APS、MES </span>
-                等核心系統，協助企業從容應對 CBAM、CSRD 等國際合規要求。
+                {t('esg.product_desc')}
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Features from './components/Features'
+import News from './components/News'
 import Cases from './components/Cases'
 import Contact from './components/Contact'
 import APSProduct from './pages/APSProduct'
@@ -18,6 +19,7 @@ function HomePage() {
     <>
       <Hero />
       <Features />
+      <News />
       <Cases />
       <Contact />
     </>

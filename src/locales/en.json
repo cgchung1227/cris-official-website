@@ -420,5 +420,15 @@
   },
   "lang": {
     "switcher_label": "Language"
+  },
+  "news_section": {
+    "tag": "Latest News",
+    "title": "Industry Insights & CRIS Updates",
+    "subtitle": "Stay up to date on smart manufacturing trends and the latest news from CRIS Technology.",
+    "read_more": "Read More",
+    "view_all": "View All News",
+    "loading": "Loading...",
+    "empty": "No articles yet. Check back soon.",
+    "error": "Failed to load news. Please refresh the page."
   }
 }
