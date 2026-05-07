@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowRight, Newspaper, Clock } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useTranslation } from 'react-i18next'
 
@@ -57,6 +58,7 @@ function NewsCard({ article, index }) {
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
       className="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
     >
+      <Link to={`/news/${slug}`} className="block h-full">
       {/* Cover image */}
       {imageUrl ? (
         <div className="h-44 overflow-hidden bg-slate-100 dark:bg-slate-700">
@@ -107,6 +109,7 @@ function NewsCard({ article, index }) {
           <ArrowRight size={14} />
         </div>
       </div>
+      </Link>
     </motion.article>
   )
 }

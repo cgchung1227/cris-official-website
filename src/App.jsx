@@ -14,6 +14,7 @@ import ESGProduct from './pages/ESGProduct'
 import AIBoxProduct from './pages/AIBoxProduct'
 import ContactPage from './pages/ContactPage'
 import Admin from './pages/Admin'
+import NewsPost from './pages/NewsPost'
 
 function HomePage() {
   return (
@@ -62,6 +63,7 @@ export default function App() {
               <Route path="/products/esg" element={<ESGProduct />} />
               <Route path="/products/ai-box" element={<AIBoxProduct />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/news/:id" element={<NewsPost />} />
             </Routes>
             <Footer />
           </div>
