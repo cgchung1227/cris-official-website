@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Send, MapPin, Phone, Mail, CheckCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { supabase } from '../lib/supabase'
 
 const contactInfoIcons = [MapPin, Phone, Mail]
 const contactInfoValues = [
@@ -14,6 +15,8 @@ export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', message: '' })
   const { t } = useTranslation()
 
@@ -21,9 +24,23 @@ export default function Contact() {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setSubmitError('')
+    const { error } = await supabase.from('contacts').insert([{
+      name:    form.name,
+      company: form.company,
+      email:   form.email,
+      phone:   form.phone   || null,
+      message: form.message || null,
+    }])
+    setSubmitting(false)
+    if (error) {
+      setSubmitError('送出失敗，請稍後再試。')
+    } else {
+      setSubmitted(true)
+    }
   }
 
   return (
@@ -164,8 +181,12 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full justify-center text-base py-3.5">
-                  <Send size={18} /> {t('contact.submit')}
+                {submitError && (
+                  <p className="text-sm text-red-500 text-center">{submitError}</p>
+                )}
+
+                <button type="submit" disabled={submitting} className="btn-primary w-full justify-center text-base py-3.5 disabled:opacity-60">
+                  <Send size={18} /> {submitting ? '送出中...' : t('contact.submit')}
                 </button>
 
                 <p className="text-xs text-slate-400 dark:text-slate-500 text-center">

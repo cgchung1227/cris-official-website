@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   LogOut, Plus, Edit2, Trash2, ArrowLeft, Save,
   Eye, EyeOff, ImageIcon, AlertCircle, CheckCircle2, ChevronRight,
+  Mail, Newspaper,
 } from 'lucide-react'
 import { supabase } from '../lib/supabase'
 
@@ -102,34 +103,61 @@ function Toast({ toast }) {
 }
 
 // ─── Admin Header ─────────────────────────────────────────────────────────────
-function AdminHeader({ session, crumb }) {
+function AdminHeader({ session, crumb, section, onSection }) {
   async function handleLogout() {
     await supabase.auth.signOut()
   }
 
   return (
     <header className="bg-white border-b border-slate-100 sticky top-0 z-40">
-      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src={import.meta.env.BASE_URL + 'Logo_CRIS.png'} alt="CRIS" className="h-7 w-auto" />
-          <ChevronRight size={14} className="text-slate-300" />
-          <span className="text-sm font-semibold text-slate-700">{crumb}</span>
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="h-14 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <img src={import.meta.env.BASE_URL + 'Logo_CRIS.png'} alt="CRIS" className="h-7 w-auto" />
+            <ChevronRight size={14} className="text-slate-300" />
+            <span className="text-sm font-semibold text-slate-700">{crumb || '後台管理'}</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="hidden sm:block text-xs text-slate-400 max-w-[140px] truncate">{session?.user?.email}</span>
+            <Link to="/" className="text-xs text-slate-500 hover:text-cris-blue transition-colors">官網</Link>
+            <button onClick={handleLogout}
+              className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-red-500 transition-colors">
+              <LogOut size={13} /> 登出
+            </button>
+          </div>
         </div>
-        <div className="flex items-center gap-4">
-          <span className="hidden sm:block text-xs text-slate-400 max-w-[140px] truncate">{session?.user?.email}</span>
-          <Link to="/" className="text-xs text-slate-500 hover:text-cris-blue transition-colors">官網</Link>
-          <button onClick={handleLogout}
-            className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-red-500 transition-colors">
-            <LogOut size={13} /> 登出
-          </button>
-        </div>
+
+        {section && onSection && (
+          <div className="flex gap-1 -mx-6 px-6 border-t border-slate-100">
+            <button
+              onClick={() => onSection('posts')}
+              className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                section === 'posts'
+                  ? 'border-cris-blue text-cris-blue'
+                  : 'border-transparent text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              <Newspaper size={14} /> 消息管理
+            </button>
+            <button
+              onClick={() => onSection('contacts')}
+              className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                section === 'contacts'
+                  ? 'border-cris-blue text-cris-blue'
+                  : 'border-transparent text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              <Mail size={14} /> 聯絡紀錄
+            </button>
+          </div>
+        )}
       </div>
     </header>
   )
 }
 
 // ─── Posts list ───────────────────────────────────────────────────────────────
-function PostsView({ session, onNew, onEdit }) {
+function PostsView({ session, onNew, onEdit, onSection }) {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [deleteId, setDeleteId] = useState(null)
@@ -164,7 +192,7 @@ function PostsView({ session, onNew, onEdit }) {
   return (
     <div className="min-h-screen bg-slate-50">
       <Toast toast={toast} />
-      <AdminHeader session={session} crumb="消息管理" />
+      <AdminHeader session={session} section="posts" onSection={onSection} />
 
       <div className="max-w-5xl mx-auto px-6 py-8">
         {/* Toolbar */}
@@ -228,6 +256,152 @@ function PostsView({ session, onNew, onEdit }) {
                       </div>
                     </td>
                   </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      {/* Delete confirm */}
+      <AnimatePresence>
+        {deleteId && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setDeleteId(null)}>
+            <motion.div initial={{ scale: 0.92, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.92, opacity: 0 }}
+              className="bg-white rounded-2xl shadow-2xl p-6 max-w-sm w-full"
+              onClick={e => e.stopPropagation()}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <Trash2 size={18} className="text-red-500" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-slate-900">確認刪除</h3>
+                  <p className="text-sm text-slate-500">此操作無法復原。</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <button onClick={() => setDeleteId(null)}
+                  className="flex-1 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                  取消
+                </button>
+                <button onClick={confirmDelete}
+                  className="flex-1 py-2.5 rounded-xl bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition-colors">
+                  確認刪除
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+// ─── Contacts list ───────────────────────────────────────────────────────────
+function ContactsView({ session, onSection }) {
+  const [contacts, setContacts] = useState([])
+  const [loading, setLoading]   = useState(true)
+  const [deleteId, setDeleteId] = useState(null)
+  const [expanded, setExpanded] = useState(null)
+  const [toast, setToast]       = useState(null)
+
+  function showToast(msg, type = 'success') {
+    setToast({ msg, type })
+    setTimeout(() => setToast(null), 3000)
+  }
+
+  async function load() {
+    setLoading(true)
+    const { data, error } = await supabase
+      .from('contacts')
+      .select('*')
+      .order('created_at', { ascending: false })
+    if (error) showToast('載入失敗：' + error.message, 'error')
+    setContacts(data || [])
+    setLoading(false)
+  }
+
+  useEffect(() => { load() }, [])
+
+  async function confirmDelete() {
+    const { error } = await supabase.from('contacts').delete().eq('id', deleteId)
+    if (error) {
+      showToast('刪除失敗：' + error.message, 'error')
+    } else {
+      showToast('已刪除')
+      setContacts(prev => prev.filter(c => c.id !== deleteId))
+    }
+    setDeleteId(null)
+  }
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <Toast toast={toast} />
+      <AdminHeader session={session} section="contacts" onSection={onSection} />
+
+      <div className="max-w-5xl mx-auto px-6 py-8">
+        <div className="mb-6">
+          <h1 className="text-xl font-bold text-slate-900">聯絡紀錄</h1>
+          <p className="text-sm text-slate-500 mt-0.5">共 {contacts.length} 筆</p>
+        </div>
+
+        {loading ? (
+          <div className="space-y-2">
+            {[1,2,3,4].map(i => <div key={i} className="h-16 bg-white rounded-xl border border-slate-100 animate-pulse" />)}
+          </div>
+        ) : contacts.length === 0 ? (
+          <div className="text-center py-24 bg-white rounded-2xl border border-dashed border-slate-200">
+            <p className="text-slate-400 text-sm">目前還沒有聯絡表單填寫紀錄。</p>
+          </div>
+        ) : (
+          <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+            <table className="w-full text-sm">
+              <thead className="border-b border-slate-100">
+                <tr>
+                  <th className="text-left px-6 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">姓名 / 公司</th>
+                  <th className="hidden sm:table-cell text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">聯絡方式</th>
+                  <th className="hidden md:table-cell text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">送出時間</th>
+                  <th className="w-20 px-4 py-3" />
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-50">
+                {contacts.map(c => (
+                  <>
+                    <motion.tr key={c.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                      className="hover:bg-slate-50/60 transition-colors cursor-pointer"
+                      onClick={() => setExpanded(expanded === c.id ? null : c.id)}>
+                      <td className="px-6 py-4">
+                        <div className="font-medium text-slate-900">{c.name}</div>
+                        <div className="text-xs text-slate-400 mt-0.5">{c.company}</div>
+                      </td>
+                      <td className="hidden sm:table-cell px-4 py-4">
+                        <div className="text-slate-700 text-xs">{c.email}</div>
+                        {c.phone && <div className="text-slate-400 text-xs mt-0.5">{c.phone}</div>}
+                      </td>
+                      <td className="hidden md:table-cell px-4 py-4 text-slate-400 text-xs whitespace-nowrap">
+                        {new Date(c.created_at).toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}
+                      </td>
+                      <td className="px-4 py-4">
+                        <div className="flex items-center justify-end">
+                          <button onClick={e => { e.stopPropagation(); setDeleteId(c.id) }}
+                            className="p-1.5 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors">
+                            <Trash2 size={14} />
+                          </button>
+                        </div>
+                      </td>
+                    </motion.tr>
+                    {expanded === c.id && (
+                      <tr key={c.id + '-msg'}>
+                        <td colSpan={4} className="px-6 pb-4 pt-0">
+                          <div className="bg-slate-50 rounded-xl px-4 py-3 text-sm text-slate-600 leading-relaxed">
+                            {c.message ? c.message : <span className="text-slate-400 italic">（未填寫訊息）</span>}
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </>
                 ))}
               </tbody>
             </table>
@@ -426,6 +600,7 @@ function PostForm({ post, session, onBack, onSaved }) {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 export default function Admin() {
   const [session, setSession] = useState(undefined)
+  const [section, setSection] = useState('posts')
   const [view, setView]       = useState('list')
   const [editing, setEditing] = useState(null)
 
@@ -445,17 +620,22 @@ export default function Admin() {
   // Not logged in
   if (!session) return <LoginView />
 
-  // Logged in views
+  // Post form views
   if (view === 'new')
     return <PostForm post={null} session={session} onBack={() => setView('list')} onSaved={() => setView('list')} />
   if (view === 'edit')
     return <PostForm post={editing} session={session} onBack={() => setView('list')} onSaved={() => setView('list')} />
+
+  // Contacts section
+  if (section === 'contacts')
+    return <ContactsView session={session} onSection={s => { setSection(s); setView('list') }} />
 
   return (
     <PostsView
       session={session}
       onNew={() => setView('new')}
       onEdit={post => { setEditing(post); setView('edit') }}
+      onSection={s => { setSection(s); setView('list') }}
     />
   )
 }
