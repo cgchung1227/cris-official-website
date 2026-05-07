@@ -2,69 +2,70 @@
   "navbar": {
     "home": "首頁",
     "products": "產品",
+    "solutions": "解決方案",
     "about": "公司介紹",
     "contact": "聯絡我們",
-    "consultation": "免費諮詢",
-    "aps_name": "APS 生產排程系統",
-    "aps_desc": "有限產能智慧排程",
-    "esg_name": "ESG 碳盤查系統",
-    "esg_desc": "精準碳排放核算管理",
-    "aibox_name": "AI 一體機",
-    "aibox_desc": "企業級私有 AI 作業平台"
+    "consultation": "預約 AI 體驗",
+    "aps_name": "AI 智能調度",
+    "aps_desc": "AI 驅動有限產能排程",
+    "esg_name": "AI 綠色管理",
+    "esg_desc": "AI 精準碳排放分析",
+    "aibox_name": "CRIS AI 一體機",
+    "aibox_desc": "私有化部署 · 數據主權掌控"
   },
   "hero": {
-    "badge": "工業 4.0 智慧製造解決方案",
-    "title_prefix": "賦能企業實現",
-    "title_g1": "智慧生產",
-    "title_between": "與",
-    "title_g2": "雙碳目標",
-    "subtitle": "快思科技整合 APS 生產排程、ESG 碳盤查與 AI 一體機，協助製造業突破效率瓶頸，精準達成永續目標。",
-    "cta_primary": "立即預約 Demo",
-    "cta_secondary": "了解解決方案",
-    "trust": "200+ 製造企業信賴 · 免費 30 分鐘顧問諮詢",
+    "badge": "企業 AI Agent 解決方案",
+    "title_prefix": "引領企業進入",
+    "title_g1": "AI 代理人",
+    "title_between": "時代",
+    "title_g2": "",
+    "subtitle": "私有化部署、即插即用、智慧決策——快思科技整合 AI 一體機、智能調度與綠色管理，讓企業 AI 真正落地，數據永不離境。",
+    "cta_primary": "預約 AI 體驗",
+    "cta_secondary": "探索解決方案",
+    "trust": "200+ 企業夥伴信賴 · 數據主權完全掌控",
     "scroll": "向下探索",
     "stat_0_label": "生產效率提升",
     "stat_1_label": "碳排放降低",
     "stat_2_label": "企業夥伴"
   },
   "features_section": {
-    "tag": "核心產品",
-    "title": "全方位智慧製造解決方案",
-    "subtitle": "三大核心系統深度整合，從排程優化到碳管理，再到 AI 現場監控，一站式解決製造企業的數位轉型挑戰。",
-    "learn_more": "了解更多 →"
+    "tag": "AI 驅動核心產品",
+    "title": "企業 AI 落地解決方案",
+    "subtitle": "三大 AI 驅動系統深度整合，搭載私有化 AI 一體機，從智能調度到綠色管理，數據永不離境。",
+    "learn_more": "深入了解 →"
   },
   "features_data": [
     {
-      "title": "APS 生產排程系統",
-      "subtitle": "有限產能智慧排程，決策加速生產",
-      "desc": "整合機台、人力、物料等多維度有限產能限制，自動生成最優排程計畫，大幅縮短規劃週期。",
+      "title": "AI 智能調度",
+      "subtitle": "AI 自動化排程決策，效率提升 35%",
+      "desc": "整合多維度有限產能限制，AI 自動生成最優排程計畫，即時應對插單急單，大幅縮短規劃週期。",
       "points": [
-        "有限產能精準排程，避免超載",
-        "多目標決策支持，降低庫存 40%",
-        "即時插單、急單快速重排",
-        "可視化甘特圖監控生產進度"
+        "AI 有限產能精準排程引擎",
+        "多目標決策優化，庫存降低 40%",
+        "即時插單 AI 快速重排，5 分鐘完成",
+        "可視化甘特圖智能監控"
       ]
     },
     {
-      "title": "ESG 碳盤查系統",
-      "subtitle": "多源數據採集，精準碳核算",
-      "desc": "符合 ISO 14064、GHG Protocol 等國際標準，自動化採集各類排放數據，生成合規碳排放報告。",
+      "title": "AI 綠色管理",
+      "subtitle": "AI 驅動碳排分析，精準達成永續目標",
+      "desc": "符合 ISO 14064、GHG Protocol 國際標準，AI 自動化採集分析排放數據，智能生成合規碳報告。",
       "points": [
-        "自動化多源數據採集整合",
-        "精準碳排放核算與追蹤",
+        "AI 多源數據自動採集整合",
+        "智能碳排放核算與趨勢預測",
         "一鍵生成 ISO/GHG 合規報告",
-        "減碳路徑規劃與預測分析"
+        "AI 減碳路徑規劃與情境模擬"
       ]
     },
     {
-      "title": "AI 一體機",
-      "subtitle": "工業 AI 邊緣運算，即時現場監控",
-      "desc": "整合工業 AI 視覺與感測器融合技術，部署於生產現場，實現毫秒級異常偵測與品質控制。",
+      "title": "CRIS AI 一體機",
+      "subtitle": "私有化部署，數據主權完全掌控",
+      "desc": "搭載 Argox AI 引擎，即插即用部署於企業內網，所有 AI 運算在本地完成，零數據外洩風險。",
       "points": [
-        "工業 AI 視覺缺陷即時偵測",
-        "邊緣運算，無需雲端依賴",
-        "感測器數據融合分析",
-        "預測性維護，降低停機時間"
+        "On-Premise 私有化部署，不上雲",
+        "Argox AI 引擎，邊緣智能運算",
+        "零雲端依賴，數據主權完整保障",
+        "即插即用，7 天完成完整部署"
       ]
     }
   ],
@@ -424,11 +425,57 @@
   "news_section": {
     "tag": "最新消息",
     "title": "產業動態 · 快思觀點",
-    "subtitle": "掌握智慧製造最新趨勢，了解快思科技的最新動態與產業洞察。",
+    "subtitle": "掌握 AI 落地最新趨勢，了解快思科技的最新動態與產業洞察。",
     "read_more": "閱讀全文",
     "view_all": "查看所有消息",
     "loading": "載入中...",
     "empty": "暫無消息，請稍後再來。",
     "error": "無法載入消息，請重新整理頁面。"
+  },
+  "ai_appliance": {
+    "tag": "硬體規格",
+    "title": "CRIS AI 一體機",
+    "subtitle": "企業級私有 AI 運算平台",
+    "desc": "搭載 NVIDIA 工業級 AI 晶片與 Argox AI 引擎，專為企業內網私有化部署設計。所有 AI 推理運算在本地完成，實現真正的數據主權，零雲端依賴。",
+    "badge_onprem": "On-Premise 私有部署",
+    "badge_security": "數據主權保障",
+    "badge_plug": "即插即用",
+    "spec_cpu_label": "AI 運算核心",
+    "spec_cpu_value": "NVIDIA Jetson AGX Orin",
+    "spec_ram_label": "系統記憶體",
+    "spec_ram_value": "64 GB DDR5 ECC",
+    "spec_storage_label": "高速儲存",
+    "spec_storage_value": "2 TB NVMe SSD",
+    "spec_engine_label": "AI 引擎",
+    "spec_engine_value": "Argox AI Engine v2.0",
+    "spec_network_label": "網路介面",
+    "spec_network_value": "10GbE × 2 埠",
+    "spec_os_label": "作業系統",
+    "spec_os_value": "CRIS OS (Ubuntu 22.04 LTS)",
+    "arch_label": "AI 落地架構",
+    "cta": "申請硬體規格書"
+  },
+  "solutions": {
+    "tag": "解決方案",
+    "title": "AI Agent 三大應用模組",
+    "subtitle": "基於 Argox AI 引擎，快思科技提供開箱即用的 AI Agent 解決方案，覆蓋財務、售服與製造三大核心場景。",
+    "module_1_title": "智能財務",
+    "module_1_subtitle": "ERP 財務報表自動模擬系統",
+    "module_1_tag": "Financial AI Agent",
+    "module_1_desc": "串接企業 ERP 系統，AI 自動分析財務數據，一鍵產出損益表、資產負債表、現金流量表、權益變動表與財務比率五大報表，取代人工試算。",
+    "module_1_features": ["串接主流 ERP 系統（SAP / 用友 / 鼎新）", "自動產出五大財務報表", "AI 財務異常預警偵測", "自然語言查詢財務數據"],
+    "module_2_title": "智能售服",
+    "module_2_subtitle": "RAG 企業知識庫 · 24/7 技術支援",
+    "module_2_tag": "Service AI Agent",
+    "module_2_desc": "基於 RAG（檢索增強生成）技術，將企業產品手冊、故障排除文件建成私有知識庫，AI 代理人提供即時、精準的技術問答與售後支援。",
+    "module_2_features": ["私有知識庫建構（PDF/Word/URL）", "RAG 精準語意檢索", "24/7 AI 技術問答服務", "多輪對話上下文理解"],
+    "module_3_title": "預測性維護",
+    "module_3_subtitle": "AIoT 設備健康診斷與異常預警",
+    "module_3_tag": "Maintenance AI Agent",
+    "module_3_desc": "整合 AIoT 感測器數據流，AI 持續監測設備振動、溫度、電流等關鍵指標，提前預判故障風險，在設備停機前自動觸發維護工單。",
+    "module_3_features": ["AIoT 多源感測器數據整合", "AI 設備健康評分與趨勢分析", "異常預警自動推播通知", "預測性維護工單自動派發"],
+    "feature_label": "核心能力",
+    "cta_demo": "預約 AI 體驗",
+    "cta_learn": "了解技術架構"
   }
 }

@@ -21,12 +21,15 @@ import AIBoxProduct from './pages/AIBoxProduct'
 import ContactPage from './pages/ContactPage'
 import Admin from './pages/Admin'
 import NewsPost from './pages/NewsPost'
+import Solutions from './pages/Solutions'
+import AIAppliance from './components/AIAppliance'
 
 function HomePage() {
   return (
     <>
       <Hero />
       <Features />
+      <AIAppliance />
       <News />
       <Cases />
       <Contact />
@@ -71,6 +74,7 @@ export default function App() {
               <Route path="/products/ai-box" element={<AIBoxProduct />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/news/:id" element={<NewsPost />} />
+              <Route path="/solutions" element={<Solutions />} />
             </Routes>
             <Footer />
           </div>

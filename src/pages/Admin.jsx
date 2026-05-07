@@ -12,6 +12,7 @@ const TABLE = 'posts'
 const BUCKET = 'media'
 
 const CATEGORIES = ['公司動態', '產品更新', '產業觀察', '客戶案例', '技術分享', '活動資訊']
+const AI_TAGS = ['AI Agent', 'RAG', 'On-Premise', '預測性維護', '智能財務', '智能售服', 'AIoT', 'Argox AI', 'AI 一體機', '數據主權']
 
 // ─── Shared input style ───────────────────────────────────────────────────────
 const inp = 'w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cris-blue/40 focus:border-cris-blue text-sm transition-colors'
@@ -446,7 +447,7 @@ function ContactsView({ session, onSection }) {
 }
 
 // ─── Post form (create / edit) ────────────────────────────────────────────────
-const EMPTY = { title: '', category: '', excerpt: '', content: '', image_url: '', published_at: '' }
+const EMPTY = { title: '', category: '', excerpt: '', content: '', image_url: '', published_at: '', ai_tags: [] }
 
 function PostForm({ post, session, onBack, onSaved }) {
   const isEdit = !!post
@@ -457,6 +458,7 @@ function PostForm({ post, session, onBack, onSaved }) {
     content:      post.content      || '',
     image_url:    post.image_url    || '',
     published_at: post.published_at ? post.published_at.slice(0, 16) : '',
+    ai_tags:      post.ai_tags      || [],
   } : { ...EMPTY })
   const [saving, setSaving]     = useState(false)
   const [uploading, setUploading] = useState(false)
@@ -534,6 +536,28 @@ function PostForm({ post, session, onBack, onSaved }) {
             </div>
             <input name="category" value={form.category} onChange={set}
               placeholder="或自行輸入分類名稱..." className={inp} />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">AI 技術標籤</label>
+            <div className="flex flex-wrap gap-2">
+              {AI_TAGS.map(tag => {
+                const active = form.ai_tags.includes(tag)
+                return (
+                  <button key={tag} type="button"
+                    onClick={() => setForm(f => ({
+                      ...f,
+                      ai_tags: active ? f.ai_tags.filter(t => t !== tag) : [...f.ai_tags, tag]
+                    }))}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      active
+                        ? 'bg-violet-600 text-white shadow-sm shadow-violet-600/30'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }`}>{tag}</button>
+                )
+              })}
+            </div>
+            <p className="text-xs text-slate-400 mt-1.5">可複選多個 AI 技術標籤</p>
           </div>
 
           <div>

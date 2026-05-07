@@ -114,6 +114,9 @@ export default function Navbar({ dark, setDark }) {
             </AnimatePresence>
           </div>
 
+          <Link to="/solutions" className="text-slate-600 dark:text-slate-300 hover:text-cris-blue dark:hover:text-cris-blue-light font-medium transition-colors">
+            {t('navbar.solutions')}
+          </Link>
           <Link to="/about" className="text-slate-600 dark:text-slate-300 hover:text-cris-blue dark:hover:text-cris-blue-light font-medium transition-colors">
             {t('navbar.about')}
           </Link>
@@ -167,6 +170,7 @@ export default function Navbar({ dark, setDark }) {
                   </Link>
                 ))}
               </div>
+              <Link to="/solutions" className="font-medium text-slate-700 dark:text-slate-300" onClick={() => setMenuOpen(false)}>{t('navbar.solutions')}</Link>
               <Link to="/about" className="font-medium text-slate-700 dark:text-slate-300" onClick={() => setMenuOpen(false)}>{t('navbar.about')}</Link>
               <Link to="/contact" className="font-medium text-slate-700 dark:text-slate-300" onClick={() => setMenuOpen(false)}>{t('navbar.contact')}</Link>
               <div className="pt-1">

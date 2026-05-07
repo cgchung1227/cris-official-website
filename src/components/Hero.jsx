@@ -14,32 +14,43 @@ const geoShapes = [
 ]
 
 const microIcons = [
-  { id: 'g1', kind: 'gear', left: '18%', top: '12%', size: 20, delay: 0.4, dur: 11, rotDir: 1 },
-  { id: 'g2', kind: 'gear', left: '82%', top: '42%', size: 16, delay: 1.6, dur: 14, rotDir: -1 },
-  { id: 'l1', kind: 'leaf', left: '12%', top: '55%', size: 18, delay: 0.9, dur: 9,  rotDir: 1 },
-  { id: 'l2', kind: 'leaf', left: '72%', top: '20%', size: 22, delay: 2.2, dur: 12, rotDir: -1 },
-  { id: 'g3', kind: 'gear', left: '60%', top: '88%', size: 14, delay: 1.1, dur: 10, rotDir: 1 },
-  { id: 'l3', kind: 'leaf', left: '87%', top: '76%', size: 16, delay: 0.2, dur: 13, rotDir: 1 },
+  { id: 'n1', kind: 'node',    left: '18%', top: '12%', size: 20, delay: 0.4, dur: 11, rotDir: 1 },
+  { id: 'n2', kind: 'circuit', left: '82%', top: '42%', size: 16, delay: 1.6, dur: 14, rotDir: -1 },
+  { id: 'n3', kind: 'node',    left: '12%', top: '55%', size: 18, delay: 0.9, dur: 9,  rotDir: 1 },
+  { id: 'n4', kind: 'circuit', left: '72%', top: '20%', size: 22, delay: 2.2, dur: 12, rotDir: -1 },
+  { id: 'n5', kind: 'node',    left: '60%', top: '88%', size: 14, delay: 1.1, dur: 10, rotDir: 1 },
+  { id: 'n6', kind: 'circuit', left: '87%', top: '76%', size: 16, delay: 0.2, dur: 13, rotDir: 1 },
 ]
 
 const statValues = ['80%', '60%', '200+']
 
 // ─── SVG micro icons ──────────────────────────────────────────────────────────
 
-function GearSVG({ size }) {
+function NodeSVG({ size }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#0052D9" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="3" />
-      <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+      <circle cx="12" cy="12" r="6" strokeDasharray="2 3" />
+      <line x1="12" y1="2" x2="12" y2="6" />
+      <line x1="12" y1="18" x2="12" y2="22" />
+      <line x1="2" y1="12" x2="6" y2="12" />
+      <line x1="18" y1="12" x2="22" y2="12" />
     </svg>
   )
 }
 
-function LeafSVG({ size }) {
+function CircuitSVG({ size }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#0052D9" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+      <rect x="8" y="8" width="8" height="8" rx="1" />
+      <line x1="12" y1="2" x2="12" y2="8" />
+      <line x1="12" y1="16" x2="12" y2="22" />
+      <line x1="2" y1="12" x2="8" y2="12" />
+      <line x1="16" y1="12" x2="22" y2="12" />
+      <circle cx="12" cy="2" r="1.2" fill="#0052D9" />
+      <circle cx="12" cy="22" r="1.2" fill="#0052D9" />
+      <circle cx="2" cy="12" r="1.2" fill="#0052D9" />
+      <circle cx="22" cy="12" r="1.2" fill="#0052D9" />
     </svg>
   )
 }
@@ -207,7 +218,7 @@ export default function Hero() {
             }}
             transition={{ duration: ic.dur, delay: ic.delay, repeat: Infinity, ease: 'easeInOut' }}
           >
-            {ic.kind === 'gear' ? <GearSVG size={ic.size} /> : <LeafSVG size={ic.size} />}
+            {ic.kind === 'node' ? <NodeSVG size={ic.size} /> : <CircuitSVG size={ic.size} />}
           </motion.div>
         ))}
       </motion.div>
@@ -238,8 +249,8 @@ export default function Hero() {
           {t('hero.title_prefix')}
           <br />
           <span className="text-gradient-anim">{t('hero.title_g1')}</span>
-          {' '}{t('hero.title_between')}{' '}
-          <span className="text-gradient-anim">{t('hero.title_g2')}</span>
+          {' '}{t('hero.title_between')}
+          {t('hero.title_g2') && <> <span className="text-gradient-anim">{t('hero.title_g2')}</span></>}
         </motion.h1>
 
         {/* Subtitle */}
