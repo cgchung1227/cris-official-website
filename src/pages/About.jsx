@@ -2,73 +2,25 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { MapPin, Award, Star, ArrowRight, Target, Heart, Zap, Leaf } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
-// ─── Timeline Data ─────────────────────────────────────────────────────────
-
-const milestones = [
-  {
-    year: '2016',
-    title: '快思科技成立',
-    desc: '成立快思股份有限公司，總部設立於台灣台中，以 AI 與數位化工具協助製造業轉型為核心使命出發。',
-    geo: { label: '台中總部', icon: MapPin },
-    award: null,
-    featured: false,
-  },
-  {
-    year: '2017',
-    title: '推出 IMPACTs APS',
-    desc: '正式推出旗艦產品 IMPACTs APS 有限產能生產排程系統，同年榮獲海峽兩岸暨港澳青年創業訓練南京開營第一名。',
-    geo: null,
-    award: { label: '南京開營第一名', tier: 'gold' },
-    featured: false,
-  },
-  {
-    year: '2018',
-    title: '拓展兩岸版圖',
-    desc: '正式成立廣州辦公室，拓展大中華區市場，深化兩岸製造業數位轉型合作。',
-    geo: { label: '廣州辦公室', icon: MapPin },
-    award: null,
-    featured: false,
-  },
-  {
-    year: '2019',
-    title: '榮獲中國創新創業大賽冠軍',
-    desc: '榮獲第八屆中國創新創業大賽（先進製程與人工智慧組）全國第一名，確立 IMPACTs APS 在工業 AI 領域的領先地位。',
-    geo: null,
-    award: { label: '中國創新創業大賽全國第一名', tier: 'gold' },
-    featured: false,
-  },
-  {
-    year: '2020',
-    title: 'AWS 最佳 IoT 潛力獎',
-    desc: '獲選新北市亞馬遜 AWS 聯合創新中心最佳 IoT 潛力獎，肯定快思在工業物聯網領域的技術深度與商業潛力。',
-    geo: null,
-    award: { label: 'AWS 最佳 IoT 潛力獎', tier: 'silver' },
-    featured: false,
-  },
-  {
-    year: '2022',
-    title: '推出碳排監控系統',
-    desc: '領先業界推出碳排監控系統，啟動綠色數位轉型策略，協助製造業客戶精準量測與管理碳排放數據，回應全球淨零趨勢。',
-    geo: null,
-    award: null,
-    featured: false,
-  },
-  {
-    year: '2024',
-    title: 'IMPACTs CeO 全面上市',
-    desc: '推出 IMPACTs CeO 解決方案，全面涵蓋碳係數中心、碳盤查計畫及 CBAM 產品碳足跡管理，成為製造業最完整的 ESG 數位化平台。',
-    geo: null,
-    award: null,
-    featured: true,
-    ceoFeatures: ['碳係數中心', '碳盤查計畫', 'CBAM 產品碳足跡'],
-  },
+// Non-translatable metadata (icons, tiers, layout flags)
+const milestonesMeta = [
+  { year: '2016', featured: false, geoIcon: MapPin, awardTier: null },
+  { year: '2017', featured: false, geoIcon: null,   awardTier: 'gold' },
+  { year: '2018', featured: false, geoIcon: MapPin, awardTier: null },
+  { year: '2019', featured: false, geoIcon: null,   awardTier: 'gold' },
+  { year: '2020', featured: false, geoIcon: null,   awardTier: 'silver' },
+  { year: '2022', featured: false, geoIcon: null,   awardTier: null },
+  { year: '2024', featured: true,  geoIcon: null,   awardTier: null },
 ]
+
+const valuesMeta = [Target, Heart, Leaf]
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function AwardBadge({ award }) {
-  const isGold = award.tier === 'gold'
+function AwardBadge({ label, tier }) {
+  const isGold = tier === 'gold'
   return (
     <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${
       isGold
@@ -76,20 +28,19 @@ function AwardBadge({ award }) {
         : 'bg-slate-100 text-slate-600 border-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600'
     }`}>
       {isGold ? <Star size={12} className="fill-amber-500 text-amber-500" /> : <Award size={12} />}
-      {award.label}
+      {label}
     </span>
   )
 }
 
-function TimelineItem({ item, index }) {
+function TimelineItem({ meta, data, index }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
   const isLeft = index % 2 === 0
 
-  if (item.featured) {
+  if (meta.featured) {
     return (
       <div ref={ref} className="relative flex justify-center mb-8">
-        {/* Center dot */}
         <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-cris-blue border-4 border-white dark:border-slate-950 shadow-lg z-10 top-8" />
 
         <motion.div
@@ -99,23 +50,22 @@ function TimelineItem({ item, index }) {
           className="w-full max-w-2xl mx-auto mt-2 px-8"
         >
           <div className="relative bg-gradient-to-br from-cris-blue to-cris-blue-dark dark:from-cris-blue-dark dark:to-slate-800 rounded-2xl p-8 shadow-xl shadow-cris-blue/20 border border-cris-blue/30 text-white overflow-hidden">
-            {/* Glow */}
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-white/5 rounded-full" />
             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full" />
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-4xl font-extrabold text-white/90">2024</span>
+                <span className="text-4xl font-extrabold text-white/90">{meta.year}</span>
                 <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold">
-                  <Leaf size={12} /> 綠色數位轉型里程碑
+                  <Leaf size={12} /> {data.featured_badge}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">IMPACTs CeO 全面上市</h3>
-              <p className="text-blue-100 leading-relaxed mb-6">{item.desc}</p>
+              <h3 className="text-2xl font-bold text-white mb-3">{data.title}</h3>
+              <p className="text-blue-100 leading-relaxed mb-6">{data.desc}</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {item.ceoFeatures.map((f) => (
+                {Array.isArray(data.ceo_features) && data.ceo_features.map((f) => (
                   <div key={f} className="flex items-center gap-2 bg-white/10 rounded-xl px-4 py-3 text-sm font-semibold text-white">
                     <Zap size={14} className="text-blue-200 flex-shrink-0" />
                     {f}
@@ -129,9 +79,10 @@ function TimelineItem({ item, index }) {
     )
   }
 
+  const GeoIcon = meta.geoIcon
+
   return (
     <div ref={ref} className="relative flex items-start gap-0 mb-6">
-      {/* Center line dot */}
       <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-[3px] border-cris-blue z-10 top-6" />
 
       {/* Left column */}
@@ -143,15 +94,15 @@ function TimelineItem({ item, index }) {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 text-right"
           >
-            <span className="text-3xl font-extrabold text-cris-blue dark:text-cris-blue-light">{item.year}</span>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white mt-1 mb-2">{item.title}</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+            <span className="text-3xl font-extrabold text-cris-blue dark:text-cris-blue-light">{meta.year}</span>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white mt-1 mb-2">{data.title}</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{data.desc}</p>
             <div className="mt-3 flex flex-col items-end gap-2">
-              {item.award && <AwardBadge award={item.award} />}
-              {item.geo && (
+              {data.award_label && <AwardBadge label={data.award_label} tier={meta.awardTier} />}
+              {data.geo_label && GeoIcon && (
                 <span className="inline-flex items-center gap-1 text-xs text-slate-400 dark:text-slate-500">
-                  <item.geo.icon size={12} />
-                  {item.geo.label}
+                  <GeoIcon size={12} />
+                  {data.geo_label}
                 </span>
               )}
             </div>
@@ -168,15 +119,15 @@ function TimelineItem({ item, index }) {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700"
           >
-            <span className="text-3xl font-extrabold text-cris-blue dark:text-cris-blue-light">{item.year}</span>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white mt-1 mb-2">{item.title}</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+            <span className="text-3xl font-extrabold text-cris-blue dark:text-cris-blue-light">{meta.year}</span>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white mt-1 mb-2">{data.title}</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{data.desc}</p>
             <div className="mt-3 flex flex-col items-start gap-2">
-              {item.award && <AwardBadge award={item.award} />}
-              {item.geo && (
+              {data.award_label && <AwardBadge label={data.award_label} tier={meta.awardTier} />}
+              {data.geo_label && GeoIcon && (
                 <span className="inline-flex items-center gap-1 text-xs text-slate-400 dark:text-slate-500">
-                  <item.geo.icon size={12} />
-                  {item.geo.label}
+                  <GeoIcon size={12} />
+                  {data.geo_label}
                 </span>
               )}
             </div>
@@ -189,17 +140,15 @@ function TimelineItem({ item, index }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-const values = [
-  { icon: Target, title: '精準驅動', desc: '以數據與 AI 演算法取代經驗法則，讓每一個生產決策都有科學依據。' },
-  { icon: Heart, title: '客戶成功', desc: '我們的成功來自客戶的成果，每個導入案例都以可量化的 ROI 為目標。' },
-  { icon: Leaf, title: '永續承諾', desc: '幫助製造業達成碳中和目標，讓智慧生產與地球永續共存。' },
-]
-
 export default function About() {
+  const { t } = useTranslation()
   const visionRef = useRef(null)
   const visionInView = useInView(visionRef, { once: true, margin: '-80px' })
   const valuesRef = useRef(null)
   const valuesInView = useInView(valuesRef, { once: true, margin: '-80px' })
+
+  const values = t('about.values', { returnObjects: true })
+  const milestones = t('about.milestones', { returnObjects: true })
 
   return (
     <div className="min-h-screen">
@@ -223,15 +172,15 @@ export default function About() {
         {/* Tech accent lines */}
         <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none overflow-hidden opacity-[0.15]">
           <svg viewBox="0 0 288 288" fill="none" className="w-full h-full">
-            <line x1="288" y1="0"  x2="0"   y2="288" stroke="#4C86E3" strokeWidth="0.8" />
-            <line x1="288" y1="56" x2="56"  y2="288" stroke="#4C86E3" strokeWidth="0.5" />
+            <line x1="288" y1="0"   x2="0"   y2="288" stroke="#4C86E3" strokeWidth="0.8" />
+            <line x1="288" y1="56"  x2="56"  y2="288" stroke="#4C86E3" strokeWidth="0.5" />
             <line x1="288" y1="112" x2="112" y2="288" stroke="#4C86E3" strokeWidth="0.5" />
             <circle cx="248" cy="40" r="2.5" fill="#4C86E3" opacity="0.8" />
             <circle cx="200" cy="88" r="1.8" fill="#4C86E3" opacity="0.55" />
           </svg>
         </div>
 
-        {/* Gear + leaf micro-icons */}
+        {/* Micro-icons */}
         {[
           { kind: 'gear', left: '5%',  top: '20%', size: 20, delay: 0,   dur: 13, rot: 1  },
           { kind: 'leaf', left: '90%', top: '25%', size: 17, delay: 1.3, dur: 10, rot: -1 },
@@ -267,17 +216,17 @@ export default function About() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cris-blue/20 border border-cris-blue/30 text-cris-blue-light text-sm font-medium mb-6">
               <span className="w-2 h-2 rounded-full bg-cris-blue-light animate-pulse" />
-              關於快思科技
+              {t('about.hero_badge')}
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              關於快思科技 <span className="text-cris-blue-light">CRIS</span>
+              {t('about.hero_title')} <span className="text-cris-blue-light">CRIS</span>
             </h1>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
             className="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto"
           >
-            我們致力於透過 AI 與數位化工具，協助製造業轉型，實現智慧生產與碳中和目標。
+            {t('about.hero_subtitle')}
           </motion.p>
         </div>
       </section>
@@ -292,20 +241,21 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">核心願景</span>
+            <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">{t('about.vision_tag')}</span>
             <h2 className="section-title mt-3">Vision & Mission</h2>
             <p className="section-subtitle">
-              快思科技相信，製造業的未來在於讓機器更聰明、讓地球更永續。
-              <br />從台中出發，我們的解決方案已服務超過 200 家製造業夥伴。
+              {t('about.vision_sub1')}
+              <br />
+              {t('about.vision_sub2')}
             </p>
           </motion.div>
 
           <div ref={valuesRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((v, i) => {
-              const Icon = v.icon
+            {Array.isArray(values) && values.map((v, i) => {
+              const Icon = valuesMeta[i]
               return (
                 <motion.div
-                  key={v.title}
+                  key={i}
                   initial={{ opacity: 0, y: 30 }}
                   animate={valuesInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -333,18 +283,15 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">品牌里程碑</span>
+            <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">{t('about.timeline_tag')}</span>
             <h2 className="section-title mt-3">Our Journey</h2>
-            <p className="section-subtitle">從台中出發，走向兩岸、走向全球製造業的數位轉型舞台。</p>
+            <p className="section-subtitle">{t('about.timeline_sub')}</p>
           </motion.div>
 
-          {/* Timeline container */}
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cris-blue/30 via-cris-blue/60 to-cris-blue/10" />
-
-            {milestones.map((item, i) => (
-              <TimelineItem key={item.year} item={item} index={i} />
+            {Array.isArray(milestones) && milestones.map((data, i) => (
+              <TimelineItem key={milestonesMeta[i].year} meta={milestonesMeta[i]} data={data} index={i} />
             ))}
           </div>
         </div>
@@ -354,7 +301,6 @@ export default function About() {
       <section className="py-24 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -363,15 +309,12 @@ export default function About() {
             className="text-center mb-16"
           >
             <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">
-              Team & Culture
+              {t('about.team_tag')}
             </span>
-            <h2 className="section-title mt-3">我們的團隊與文化</h2>
-            <p className="section-subtitle">
-              我們擁有一支深耕製造業、結合 AI 技術與顧問經驗的專業團隊。
-            </p>
+            <h2 className="section-title mt-3">{t('about.team_title')}</h2>
+            <p className="section-subtitle">{t('about.team_sub')}</p>
           </motion.div>
 
-          {/* company-01：橫幅大圖 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -381,12 +324,11 @@ export default function About() {
           >
             <img
               src={import.meta.env.BASE_URL + 'company-01.png'}
-              alt="快思科技專業團隊"
+              alt={t('about.team_img1')}
               className="w-full h-72 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </motion.div>
 
-          {/* company-02 & 03：雙欄網格 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[import.meta.env.BASE_URL + 'company-02.png', import.meta.env.BASE_URL + 'company-03.png'].map((src, i) => (
               <motion.div
@@ -399,7 +341,7 @@ export default function About() {
               >
                 <img
                   src={src}
-                  alt={`快思科技夥伴生活 ${i + 2}`}
+                  alt={`${t('about.team_img2')} ${i + 2}`}
                   className="w-full h-60 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </motion.div>
@@ -418,16 +360,14 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="section-title">了解更多我們的解決方案</h2>
-            <p className="section-subtitle mt-4">
-              從 APS 生產排程到 ESG 碳管理，快思科技提供製造業最完整的數位轉型工具。
-            </p>
+            <h2 className="section-title">{t('about.cta_title')}</h2>
+            <p className="section-subtitle mt-4">{t('about.cta_sub')}</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/products/aps" className="btn-primary px-8 py-4 text-base">
-                探索 APS 生產排程 <ArrowRight size={18} />
+                {t('about.cta_aps')} <ArrowRight size={18} />
               </Link>
               <Link to="/#contact" className="btn-outline px-8 py-4 text-base">
-                預約顧問諮詢
+                {t('about.cta_contact')}
               </Link>
             </div>
           </motion.div>

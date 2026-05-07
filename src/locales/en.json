@@ -477,5 +477,38 @@
     "feature_label": "Core Capabilities",
     "cta_demo": "Book AI Demo",
     "cta_learn": "Explore Architecture"
+  },
+  "about": {
+    "hero_badge": "About CRIS",
+    "hero_title": "About CRIS Technology",
+    "hero_subtitle": "We help manufacturers transform through AI and digital tools, achieving smart production and carbon neutrality.",
+    "vision_tag": "Core Vision",
+    "vision_sub1": "CRIS believes the future of manufacturing lies in making machines smarter and the planet more sustainable.",
+    "vision_sub2": "Starting from Taichung, our solutions have served over 200 manufacturing partners.",
+    "values": [
+      { "title": "Data-Driven Precision", "desc": "Replace rule-of-thumb with data and AI algorithms so every production decision is scientifically grounded." },
+      { "title": "Customer Success", "desc": "Our success comes from our customers' outcomes — every implementation targets measurable ROI." },
+      { "title": "Sustainability Commitment", "desc": "We help manufacturers reach carbon-neutral goals, letting smart production coexist with a sustainable planet." }
+    ],
+    "timeline_tag": "Brand Milestones",
+    "timeline_sub": "From Taichung to cross-strait markets and the global manufacturing digital transformation stage.",
+    "milestones": [
+      { "title": "CRIS Founded", "desc": "Established CRIS Inc. in Taichung, Taiwan, with the core mission of using AI and digital tools to help manufacturers transform.", "geo_label": "Taichung HQ" },
+      { "title": "IMPACTs APS Launched", "desc": "Officially launched the flagship IMPACTs APS finite-capacity scheduling system. Won 1st place at the Cross-Strait & HK/Macau Youth Entrepreneurship Training in Nanjing.", "award_label": "Nanjing Opening 1st Place" },
+      { "title": "Cross-Strait Expansion", "desc": "Established Guangzhou office to expand the Greater China market and deepen cross-strait manufacturing digitalization collaboration.", "geo_label": "Guangzhou Office" },
+      { "title": "China I&E Contest Champion", "desc": "Won 1st place nationally at the 8th China Innovation & Entrepreneurship Contest (Advanced Manufacturing & AI Group), establishing IMPACTs APS as a leader in industrial AI.", "award_label": "China I&E Contest National 1st" },
+      { "title": "AWS Best IoT Potential Award", "desc": "Selected for the AWS Joint Innovation Center Best IoT Potential Award in New Taipei City, recognizing CRIS's technical depth and commercial potential in industrial IoT.", "award_label": "AWS Best IoT Potential Award" },
+      { "title": "Carbon Monitoring System Launched", "desc": "Industry-first carbon monitoring system launch, enabling manufacturers to precisely measure and manage carbon emissions data in response to the global net-zero trend." },
+      { "title": "IMPACTs CeO Full Launch", "desc": "Launched the IMPACTs CeO solution covering Carbon Factor Center, Carbon Inventory Programs, and CBAM product carbon footprint management — the most comprehensive ESG digitalization platform for manufacturers.", "featured_badge": "Green Digital Transformation Milestone", "ceo_features": ["Carbon Factor Center", "Carbon Inventory Program", "CBAM Carbon Footprint"] }
+    ],
+    "team_tag": "Team & Culture",
+    "team_title": "Our Team & Culture",
+    "team_sub": "We have a professional team deeply rooted in manufacturing, combining AI technology with consulting expertise.",
+    "team_img1": "CRIS Professional Team",
+    "team_img2": "CRIS Team Life",
+    "cta_title": "Explore Our Solutions",
+    "cta_sub": "From APS production scheduling to ESG carbon management, CRIS offers the most comprehensive digital transformation tools for manufacturers.",
+    "cta_aps": "Explore APS Scheduling",
+    "cta_contact": "Book a Consultation"
   }
 }
