@@ -380,7 +380,7 @@ export default function About() {
             className="overflow-hidden rounded-2xl shadow-xl mb-10 group"
           >
             <img
-              src="/company-01.png"
+              src={import.meta.env.BASE_URL + 'company-01.png'}
               alt="快思科技專業團隊"
               className="w-full h-72 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
             />
@@ -388,7 +388,7 @@ export default function About() {
 
           {/* company-02 & 03：雙欄網格 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {['/company-02.png', '/company-03.png'].map((src, i) => (
+            {[import.meta.env.BASE_URL + 'company-02.png', import.meta.env.BASE_URL + 'company-03.png'].map((src, i) => (
               <motion.div
                 key={src}
                 initial={{ opacity: 0, y: 30 }}

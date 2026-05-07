@@ -512,7 +512,7 @@ export default function APSProduct() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <img
-                  src="/APS.png"
+                  src={import.meta.env.BASE_URL + 'APS.png'}
                   alt="IMPACTs APS 排程系統截圖"
                   className="w-full rounded-xl"
                   style={{ boxShadow: '0 0 50px -12px rgba(0,82,217,0.4)' }}

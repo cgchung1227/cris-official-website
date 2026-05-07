@@ -535,7 +535,7 @@ export default function ESGProduct() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <img
-                  src="/ESG.png"
+                  src={import.meta.env.BASE_URL + 'ESG.png'}
                   alt="IMPACTs CeO 產品截圖"
                   className="w-full rounded-xl"
                   style={{ boxShadow: '0 0 50px -12px rgba(34,197,94,0.4)' }}
