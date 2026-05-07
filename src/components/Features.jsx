@@ -18,36 +18,38 @@ function FeatureCard({ meta, data, index }) {
   const { t } = useTranslation()
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="card group"
-    >
-      <div className={`inline-flex p-3 rounded-xl ${meta.lightBg} mb-6`}>
-        <Icon size={28} className={`text-${meta.color.replace('bg-', '')}`} strokeWidth={1.5} />
-      </div>
+    <Link to={meta.href} className="block">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="card group cursor-pointer h-full"
+      >
+        <div className={`inline-flex p-3 rounded-xl ${meta.lightBg} mb-6`}>
+          <Icon size={28} className={`text-${meta.color.replace('bg-', '')}`} strokeWidth={1.5} />
+        </div>
 
-      <h3 className="text-xl font-bold text-slate-900 dark:text-white">{data.title}</h3>
-      <p className="text-sm font-medium text-cris-blue dark:text-cris-blue-light mt-1">{data.subtitle}</p>
-      <p className="text-slate-500 dark:text-slate-400 mt-3 text-sm leading-relaxed">{data.desc}</p>
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{data.title}</h3>
+        <p className="text-sm font-medium text-cris-blue dark:text-cris-blue-light mt-1">{data.subtitle}</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-3 text-sm leading-relaxed">{data.desc}</p>
 
-      <ul className="mt-6 space-y-3">
-        {data.points.map((point, pi) => (
-          <li key={pi} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
-            <CheckCircle2 size={16} className="text-cris-blue dark:text-cris-blue-light mt-0.5 flex-shrink-0" />
-            {point}
-          </li>
-        ))}
-      </ul>
+        <ul className="mt-6 space-y-3">
+          {data.points.map((point, pi) => (
+            <li key={pi} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
+              <CheckCircle2 size={16} className="text-cris-blue dark:text-cris-blue-light mt-0.5 flex-shrink-0" />
+              {point}
+            </li>
+          ))}
+        </ul>
 
-      <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700">
-        <Link to={meta.href} className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-          {t('features_section.learn_more')}
-        </Link>
-      </div>
-    </motion.div>
+        <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700">
+          <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            {t('features_section.learn_more')}
+          </span>
+        </div>
+      </motion.div>
+    </Link>
   )
 }
 

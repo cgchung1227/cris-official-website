@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -48,6 +54,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
       <Routes>
         {/* Admin — no Navbar/Footer */}
         <Route path="/admin" element={<Admin />} />
