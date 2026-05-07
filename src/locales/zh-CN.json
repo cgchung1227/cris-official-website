@@ -6,9 +6,9 @@
     "about": "公司介绍",
     "contact": "联系我们",
     "consultation": "预约 AI 体验",
-    "aps_name": "AI 智能调度",
+    "aps_name": "IMPACTs APS",
     "aps_desc": "AI 驱动有限产能排程",
-    "esg_name": "AI 绿色管理",
+    "esg_name": "IMPACTs CeO",
     "esg_desc": "AI 精准碳排放分析",
     "aibox_name": "CRIS AI 一体机",
     "aibox_desc": "私有化部署 · 数据主权掌控"
@@ -36,7 +36,7 @@
   },
   "features_data": [
     {
-      "title": "APS 生产排程系统",
+      "title": "IMPACTs APS",
       "subtitle": "有限产能智慧排程，决策加速生产",
       "desc": "整合机台、人力、物料等多维度有限产能限制，自动生成最优排程计划，大幅缩短规划周期。",
       "points": [
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "title": "ESG 碳盘查系统",
+      "title": "IMPACTs CeO",
       "subtitle": "多源数据采集，精准碳核算",
       "desc": "符合 ISO 14064、GHG Protocol 等国际标准，自动化采集各类排放数据，生成合规碳排放报告。",
       "points": [

@@ -6,9 +6,9 @@
     "about": "公司介紹",
     "contact": "聯絡我們",
     "consultation": "預約 AI 體驗",
-    "aps_name": "AI 智能調度",
+    "aps_name": "IMPACTs APS",
     "aps_desc": "AI 驅動有限產能排程",
-    "esg_name": "AI 綠色管理",
+    "esg_name": "IMPACTs CeO",
     "esg_desc": "AI 精準碳排放分析",
     "aibox_name": "CRIS AI 一體機",
     "aibox_desc": "私有化部署 · 數據主權掌控"
@@ -36,7 +36,7 @@
   },
   "features_data": [
     {
-      "title": "AI 智能調度",
+      "title": "IMPACTs APS",
       "subtitle": "AI 自動化排程決策，效率提升 35%",
       "desc": "整合多維度有限產能限制，AI 自動生成最優排程計畫，即時應對插單急單，大幅縮短規劃週期。",
       "points": [
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "title": "AI 綠色管理",
+      "title": "IMPACTs CeO",
       "subtitle": "AI 驅動碳排分析，精準達成永續目標",
       "desc": "符合 ISO 14064、GHG Protocol 國際標準，AI 自動化採集分析排放數據，智能生成合規碳報告。",
       "points": [

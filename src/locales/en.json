@@ -6,9 +6,9 @@
     "about": "About",
     "contact": "Contact",
     "consultation": "Book AI Demo",
-    "aps_name": "AI Smart Scheduling",
+    "aps_name": "IMPACTs APS",
     "aps_desc": "AI-driven finite-capacity scheduling",
-    "esg_name": "AI Green Management",
+    "esg_name": "IMPACTs CeO",
     "esg_desc": "AI-powered carbon analytics",
     "aibox_name": "CRIS AI Appliance",
     "aibox_desc": "On-premise deployment · Data sovereignty"
@@ -36,7 +36,7 @@
   },
   "features_data": [
     {
-      "title": "APS Scheduling System",
+      "title": "IMPACTs APS",
       "subtitle": "Finite-capacity smart scheduling to accelerate production",
       "desc": "Integrates machine, labor, and material constraints to auto-generate optimal schedules, dramatically cutting planning cycles.",
       "points": [
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "title": "ESG Carbon Tracking",
+      "title": "IMPACTs CeO",
       "subtitle": "Multi-source data collection for precise carbon accounting",
       "desc": "Compliant with ISO 14064, GHG Protocol, and other international standards. Automates emissions data collection and generates audit-ready reports.",
       "points": [
