@@ -22,14 +22,14 @@ import ContactPage from './pages/ContactPage'
 import Admin from './pages/Admin'
 import NewsPost from './pages/NewsPost'
 import Solutions from './pages/Solutions'
-import AIAppliance from './components/AIAppliance'
+import AISolutions from './components/AISolutions'
 
 function HomePage() {
   return (
     <>
       <Hero />
       <Features />
-      <AIAppliance />
+      <AISolutions />
       <News />
       <Cases />
       <Contact />
