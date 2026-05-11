@@ -35,17 +35,6 @@ export default function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed">
               {t('footer.brand_desc')}
             </p>
-            <div className="mt-6 flex gap-3">
-              {['LinkedIn', 'GitHub'].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-cris-blue flex items-center justify-center text-xs font-medium text-slate-400 hover:text-white transition-colors"
-                >
-                  {s[0]}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Products */}
