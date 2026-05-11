@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useCmsContent } from '../hooks/useCmsContent'
 import {
   Leaf, Database, FileCheck, BarChart3, Globe, ShieldCheck,
   ChevronDown, ChevronUp, ArrowRight, CheckCircle, AlertCircle,
@@ -524,6 +525,7 @@ function SGSCertSection() {
 
 export default function ESGProduct() {
   const { t } = useTranslation()
+  const cmsHeroDesc = useCmsContent('esg', 'hero_desc')
   const roadmapRef = useRef(null)
   const roadmapInView = useInView(roadmapRef, { once: true, margin: '-80px' })
   const challengeRef = useRef(null)
@@ -631,9 +633,11 @@ export default function ESGProduct() {
                 {t('esg.product_subtitle')}
               </p>
 
-              <p className="mt-7 text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
-                {t('esg.product_desc')}
-              </p>
+              <div className="mt-7 text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
+                {cmsHeroDesc
+                  ? <span dangerouslySetInnerHTML={{ __html: cmsHeroDesc }} />
+                  : t('esg.product_desc')}
+              </div>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link

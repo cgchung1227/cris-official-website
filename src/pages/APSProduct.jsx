@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useCmsContent } from '../hooks/useCmsContent'
 
 // ─── Pipeline Intelligence data ───────────────────────────────────────────────
 
@@ -323,6 +324,7 @@ function FeatureCard({ feature, index }) {
 
 export default function APSProduct() {
   const { t } = useTranslation()
+  const cmsHeroDesc = useCmsContent('aps', 'hero_desc')
 
   const tags       = t('aps.tags',        { returnObjects: true })
   const quickStats = t('aps.quick_stats', { returnObjects: true })
@@ -462,9 +464,11 @@ export default function APSProduct() {
                 {t('aps.product_subtitle')}
               </p>
 
-              <p className="mt-7 text-base text-slate-600 dark:text-slate-400 leading-[1.8] max-w-lg">
-                {t('aps.product_desc')}
-              </p>
+              <div className="mt-7 text-base text-slate-600 dark:text-slate-400 leading-[1.8] max-w-lg">
+                {cmsHeroDesc
+                  ? <span dangerouslySetInnerHTML={{ __html: cmsHeroDesc }} />
+                  : t('aps.product_desc')}
+              </div>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link

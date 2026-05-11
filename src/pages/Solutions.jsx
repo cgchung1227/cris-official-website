@@ -6,6 +6,7 @@ import {
   CheckCircle2, ArrowRight, Zap, Brain, Activity,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { useCmsPageContent } from '../hooks/useCmsContent'
 import CaseStudies from '../components/CaseStudies'
 
 // ─── Neural network nodes ─────────────────────────────────────────────────────
@@ -170,7 +171,7 @@ const modulesMeta = [
   },
 ]
 
-function ModuleCard({ meta, index, isInView }) {
+function ModuleCard({ meta, index, isInView, cms = {} }) {
   const [expanded, setExpanded] = useState(false)
   const { t } = useTranslation()
   const Icon = meta.icon
@@ -212,7 +213,9 @@ function ModuleCard({ meta, index, isInView }) {
 
         {/* Description */}
         <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-          {t(`solutions.${meta.key}_desc`)}
+          {cms[`${meta.key}_desc`]
+            ? <span dangerouslySetInnerHTML={{ __html: cms[`${meta.key}_desc`] }} />
+            : t(`solutions.${meta.key}_desc`)}
         </p>
 
         {/* Expandable features */}
@@ -263,6 +266,7 @@ export default function Solutions() {
   const gridInView   = useInView(gridRef,   { once: true, margin: '-60px' })
   const ctaInView    = useInView(ctaRef,    { once: true, margin: '-60px' })
   const { t } = useTranslation()
+  const cms = useCmsPageContent('solutions')
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pt-16">
@@ -281,7 +285,11 @@ export default function Solutions() {
               {t('solutions.tag')}
             </span>
             <h1 className="section-title mt-3">{t('solutions.title')}</h1>
-            <p className="section-subtitle">{t('solutions.subtitle')}</p>
+            <p className="section-subtitle">
+              {cms.hero_subtitle
+                ? <span dangerouslySetInnerHTML={{ __html: cms.hero_subtitle }} />
+                : t('solutions.subtitle')}
+            </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link to="/contact" className="btn-primary text-sm px-6 py-3">
                 {t('solutions.cta_demo')} <ArrowRight size={16} />
@@ -299,7 +307,7 @@ export default function Solutions() {
         <div ref={gridRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {modulesMeta.map((meta, i) => (
-              <ModuleCard key={meta.key} meta={meta} index={i} isInView={gridInView} />
+              <ModuleCard key={meta.key} meta={meta} index={i} isInView={gridInView} cms={cms} />
             ))}
           </div>
         </div>

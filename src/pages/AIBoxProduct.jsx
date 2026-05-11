@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useCmsContent } from '../hooks/useCmsContent'
 import {
   ShieldCheck, Zap, Cpu, TrendingDown,
   Bot, Database, BarChart2, Layers,
@@ -198,6 +199,7 @@ function FadeUp({ children, delay = 0, className = '' }) {
 
 export default function AIBoxProduct() {
   const { t } = useTranslation()
+  const cmsHeroDesc = useCmsContent('aibox', 'hero_desc')
   const modulesRef = useRef(null)
   const modulesInView = useInView(modulesRef, { once: true, margin: '-60px' })
   const kpiRef = useRef(null)
@@ -298,10 +300,13 @@ export default function AIBoxProduct() {
                 {t('aibox.product_subtitle')}
               </p>
 
-              <p className="mt-7 text-base text-slate-600 dark:text-slate-400 leading-[1.8] max-w-lg">
-                賦能企業具備<span className="text-slate-900 dark:text-slate-100 font-semibold">{t('aibox.product_desc_part1')}</span>與<span className="text-slate-900 dark:text-slate-100 font-semibold">{t('aibox.product_desc_part2')}</span>的完整 AI 生態。
-                從私有部署到數位員工調度，一機解決企業 AI 轉型的全部需求。
-              </p>
+              <div className="mt-7 text-base text-slate-600 dark:text-slate-400 leading-[1.8] max-w-lg">
+                {cmsHeroDesc ? (
+                  <span dangerouslySetInnerHTML={{ __html: cmsHeroDesc }} />
+                ) : (
+                  <>賦能企業具備<span className="text-slate-900 dark:text-slate-100 font-semibold">{t('aibox.product_desc_part1')}</span>與<span className="text-slate-900 dark:text-slate-100 font-semibold">{t('aibox.product_desc_part2')}</span>的完整 AI 生態。從私有部署到數位員工調度，一機解決企業 AI 轉型的全部需求。</>
+                )}
+              </div>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
