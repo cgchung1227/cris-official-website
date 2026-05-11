@@ -6,6 +6,12 @@ import {
   ScanLine, Settings2,
 } from 'lucide-react'
 
+export const ICON_MAP = {
+  TrendingUp, ShieldCheck, ShoppingCart, Headphones,
+  Activity, AlertTriangle, CalendarClock, Smartphone,
+  Package2, Leaf, BarChart2, FileText, ScanLine, Settings2,
+}
+
 export const CATEGORIES = {
   finance: {
     key: 'finance',

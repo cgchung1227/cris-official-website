@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { AlertCircle, Lightbulb, TrendingUp, X, Server, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { CASES_META, CATEGORIES } from '../constants/cases'
+import { CASES_META, CATEGORIES, ICON_MAP } from '../constants/cases'
+import { supabase } from '../lib/supabase'
 
 // ─── Filter tabs ──────────────────────────────────────────────────────────────
 
@@ -225,19 +226,51 @@ function CaseModal({ meta, data, onClose }) {
 // ─── Main section ─────────────────────────────────────────────────────────────
 
 export default function CaseStudies() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [activeFilter, setActiveFilter] = useState('all')
   const [selectedId, setSelectedId] = useState(null)
+  const [dbRows, setDbRows] = useState(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
 
-  const items = t('cases.items', { returnObjects: true })
+  useEffect(() => {
+    supabase.from('cases').select('*').order('sort_order', { ascending: true })
+      .then(({ data }) => setDbRows(data || []))
+  }, [])
 
-  const filtered = CASES_META.filter(
+  const langSuffix = i18n.language === 'zh-TW' ? '_tw'
+    : i18n.language === 'zh-CN' ? '_cn' : '_en'
+
+  const { caseMeta, caseItems } = useMemo(() => {
+    if (!dbRows || dbRows.length === 0) {
+      const fallbackItems = t('cases.items', { returnObjects: true })
+      return { caseMeta: CASES_META, caseItems: Array.isArray(fallbackItems) ? fallbackItems : [] }
+    }
+    return {
+      caseMeta: dbRows.map((row, idx) => ({
+        id: idx,
+        category: row.category,
+        icon: ICON_MAP[row.icon_name] || ICON_MAP.TrendingUp,
+      })),
+      caseItems: dbRows.map(row => ({
+        title:            row[`title${langSuffix}`]            || row.title_tw,
+        challenge:        row[`challenge${langSuffix}`]        || row.challenge_tw,
+        solution:         row[`solution${langSuffix}`]         || row.solution_tw,
+        benefit:          row[`benefit${langSuffix}`]          || row.benefit_tw,
+        detail_challenge: row[`detail_challenge${langSuffix}`] || row.detail_challenge_tw,
+        detail_solution:  row[`detail_solution${langSuffix}`]  || row.detail_solution_tw,
+        detail_benefit:   row[`detail_benefit${langSuffix}`]   || row.detail_benefit_tw,
+      })),
+    }
+  }, [dbRows, langSuffix, t])
+
+  const items = caseItems
+
+  const filtered = caseMeta.filter(
     m => activeFilter === 'all' || m.category === activeFilter
   )
 
-  const selectedMeta = selectedId !== null ? CASES_META[selectedId] : null
+  const selectedMeta = selectedId !== null ? caseMeta[selectedId] : null
   const selectedData = selectedId !== null && Array.isArray(items) ? items[selectedId] : null
 
   return (
