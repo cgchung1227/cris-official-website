@@ -97,12 +97,12 @@ function CaseCard({ meta, data, index, isInView, onClick }) {
 
 function CaseModal({ meta, data, onClose }) {
   const { t } = useTranslation()
-  const cat = CATEGORIES[meta.category]
-  const Icon = meta.icon
+  const cat = meta ? CATEGORIES[meta.category] : null
+  const Icon = meta ? meta.icon : null
 
   return (
     <AnimatePresence>
-      {data && (
+      {meta && data && cat && Icon && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
