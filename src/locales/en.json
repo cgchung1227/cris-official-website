@@ -309,6 +309,22 @@
       { "label": "Management Cost Reduction", "sublabel": "Reduced reliance on external consultants" },
       { "label": "Compliance Assurance", "sublabel": "90% reduction in policy violation risk" },
       { "label": "Financing Cost Reduction", "sublabel": "Excellent ESG rating earns preferential rates" }
+    ],
+    "sgs_tag": "International Authority Certification",
+    "sgs_title": "CRIS CeO Certified by SGS AUP Statement",
+    "sgs_subtitle": "Issued by SGS — the world's largest verification institution — an AUP (Agreed-Upon Procedures) Statement of Evaluation provides your carbon data with internationally recognized credibility.",
+    "sgs_note": "Built into the CRIS AI Appliance for on-premises compliant data processing",
+    "sgs_lightbox_close": "Close",
+    "sgs_img0_alt": "SGS AUP Statement of Evaluation — Page 1",
+    "sgs_img1_alt": "SGS AUP Statement of Evaluation — Page 2",
+    "sgs_advantages": [
+      { "title": "Superior Credibility & Validity", "desc": "Your carbon audit gains internationally recognized authority" },
+      { "title": "Precisely Meets Audit Requirements", "desc": "System workflows and KPIs fully comply with international audit standards" },
+      { "title": "Improved Audit Accuracy", "desc": "Reduces human error and increases data transparency" },
+      { "title": "Strengthens Global Supply Chain Collaboration", "desc": "Aligned with global decarbonization trends to win cross-border orders" },
+      { "title": "Supports International Disclosure", "desc": "Facilitates subsequent verification claims and IFRS sustainability disclosure" },
+      { "title": "Accelerates Audit Efficiency", "desc": "Significantly shortens verification cycles and reduces audit costs" },
+      { "title": "Reduces Audit Risk & Cost", "desc": "Enhances report transparency and effectively mitigates audit failure risk" }
     ]
   },
   "aibox": {

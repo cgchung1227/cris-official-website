@@ -309,6 +309,22 @@
       { "label": "管理成本降低", "sublabel": "減少外部顧問依賴" },
       { "label": "合規性保障", "sublabel": "降低 90% 政策違規風險" },
       { "label": "融資成本降低", "sublabel": "ESG 優異企業享受利率優惠" }
+    ],
+    "sgs_tag": "國際權威認證",
+    "sgs_title": "快思 CeO 通過 SGS AUP 評核",
+    "sgs_subtitle": "由全球最大驗證機構 SGS 出具 AUP（Agreed-Upon Procedures）查核聲明書，為您的碳數據提供國際級公信力。",
+    "sgs_note": "內建於 CRIS AI 一體機，實現地端合規數據處理",
+    "sgs_lightbox_close": "關閉",
+    "sgs_img0_alt": "SGS AUP 查核聲明書 第一頁",
+    "sgs_img1_alt": "SGS AUP 查核聲明書 第二頁",
+    "sgs_advantages": [
+      { "title": "極致信度與效度", "desc": "讓您的碳盤查內容具備國際級公信力" },
+      { "title": "精準符合稽核需求", "desc": "系統流程與關鍵指標完全符合國際查核規範" },
+      { "title": "增加稽核準確度", "desc": "降低人為誤差，增加數據透明度" },
+      { "title": "強化供應鏈國際合作", "desc": "符合全球減碳熱潮，爭取跨國訂單優勢" },
+      { "title": "助益國際揭露申請", "desc": "有助於後續申請查證聲明與 IFRS 永續揭露" },
+      { "title": "加速查核提升效率", "desc": "大幅縮短查證週期，降低稽核相關費用" },
+      { "title": "降低稽核風險與成本", "desc": "提升報告透明度，有效降低稽核失敗風險" }
     ]
   },
   "aibox": {

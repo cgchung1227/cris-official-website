@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import {
   Leaf, Database, FileCheck, BarChart3, Globe, ShieldCheck,
   ChevronDown, ChevronUp, ArrowRight, CheckCircle, AlertCircle,
-  Package, RefreshCw, Activity, Zap, Award
+  Package, RefreshCw, Activity, Zap, Award, X, Server, ZoomIn
 } from 'lucide-react'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -374,6 +374,153 @@ function FeatureCard({ feature, index }) {
   )
 }
 
+// ─── SGS Cert Section ─────────────────────────────────────────────────────────
+
+function SGSCertSection() {
+  const { t } = useTranslation()
+  const [lightboxIdx, setLightboxIdx] = useState(null)
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-60px' })
+
+  const advantages = t('esg.sgs_advantages', { returnObjects: true })
+  const imgs = [
+    { src: `${import.meta.env.BASE_URL}SGS AUP 證書_0.jpg`, alt: t('esg.sgs_img0_alt') },
+    { src: `${import.meta.env.BASE_URL}SGS AUP 證書_1.jpg`, alt: t('esg.sgs_img1_alt') },
+  ]
+
+  return (
+    <section className="relative py-24 bg-slate-50 dark:bg-slate-950 overflow-hidden">
+      {/* Shimmer ambient glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(16,185,129,0.07) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
+          <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">
+            {t('esg.sgs_tag')}
+          </span>
+          <h2 className="section-title mt-3">{t('esg.sgs_title')}</h2>
+          <p className="section-subtitle max-w-2xl mx-auto">{t('esg.sgs_subtitle')}</p>
+        </motion.div>
+
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+          {/* Left — Certificate images */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.55, delay: 0.1 }}
+            className="flex flex-col gap-4"
+          >
+            {imgs.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setLightboxIdx(i)}
+                className="group relative w-full rounded-2xl overflow-hidden border border-emerald-100 dark:border-emerald-900/40 shadow-md hover:shadow-lg hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-200 cursor-zoom-in"
+                aria-label={img.alt}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-emerald-900/0 group-hover:bg-emerald-900/10 transition-colors duration-200 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/90 dark:bg-slate-900/90 rounded-full p-2">
+                    <ZoomIn size={18} className="text-emerald-600 dark:text-emerald-400" />
+                  </div>
+                </div>
+              </button>
+            ))}
+
+            {/* CRIS AI Appliance note */}
+            <div className="flex items-center gap-2.5 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/40 rounded-xl px-4 py-3 mt-1">
+              <Server size={15} className="text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+              <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+                {t('esg.sgs_note')}
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Right — 7 advantages */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.55, delay: 0.15 }}
+            className="space-y-3"
+          >
+            {Array.isArray(advantages) && advantages.map((adv, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
+                className="flex items-start gap-3 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl px-4 py-3.5 shadow-sm hover:border-emerald-200 dark:hover:border-emerald-700/50 hover:shadow-md transition-all duration-200"
+              >
+                <CheckCircle size={16} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-sm font-bold text-slate-900 dark:text-white">{adv.title}</span>
+                  <span className="text-slate-400 dark:text-slate-500 mx-1.5 text-xs">·</span>
+                  <span className="text-sm text-slate-500 dark:text-slate-400">{adv.desc}</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIdx !== null && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightboxIdx(null)}
+          >
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+            <motion.div
+              className="relative max-w-3xl w-full"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+              onClick={e => e.stopPropagation()}
+            >
+              <img
+                src={imgs[lightboxIdx].src}
+                alt={imgs[lightboxIdx].alt}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+              <button
+                onClick={() => setLightboxIdx(null)}
+                aria-label={t('esg.sgs_lightbox_close')}
+                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors cursor-pointer"
+              >
+                <X size={16} className="text-white" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  )
+}
+
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ESGProduct() {
@@ -710,6 +857,9 @@ export default function ESGProduct() {
           </div>
         </div>
       </section>
+
+      {/* ── SGS Certification ── */}
+      <SGSCertSection />
 
       {/* ── KPIs ── */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950">
