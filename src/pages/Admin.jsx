@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   LogOut, Plus, Edit2, Trash2, ArrowLeft, Save,
   Eye, EyeOff, ImageIcon, AlertCircle, CheckCircle2, ChevronRight,
-  Mail, Newspaper, LayoutTemplate, Star,
+  Mail, Newspaper, LayoutTemplate, Star, Users,
 } from 'lucide-react'
 import { supabase } from '../lib/supabase'
 import ContentManagerView from './AdminContent'
 import AdminCasesView from './AdminCases'
+import AdminUsersView from './AdminUsers'
 
 const TABLE = 'posts'
 const BUCKET = 'media'
@@ -171,6 +172,16 @@ function AdminHeader({ session, crumb, section, onSection }) {
               }`}
             >
               <Star size={14} /> 成功案例
+            </button>
+            <button
+              onClick={() => onSection('users')}
+              className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                section === 'users'
+                  ? 'border-cris-blue text-cris-blue'
+                  : 'border-transparent text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              <Users size={14} /> 帳號管理
             </button>
           </div>
         )}
@@ -690,6 +701,16 @@ export default function Admin() {
   if (section === 'content')
     return (
       <ContentManagerView
+        session={session}
+        AdminHeader={AdminHeader}
+        onSection={s => { setSection(s); setView('list') }}
+      />
+    )
+
+  // Users section
+  if (section === 'users')
+    return (
+      <AdminUsersView
         session={session}
         AdminHeader={AdminHeader}
         onSection={s => { setSection(s); setView('list') }}
