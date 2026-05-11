@@ -37,7 +37,6 @@ function FilterPills({ active, onChange }) {
 
 function CaseCard({ meta, data, index, isInView, onClick }) {
   const { t } = useTranslation()
-  const cat = CATEGORIES[meta.category]
   const Icon = meta.icon
 
   return (
@@ -47,15 +46,15 @@ function CaseCard({ meta, data, index, isInView, onClick }) {
       transition={{ duration: 0.45, delay: (index % 3) * 0.1 }}
       layout
       onClick={onClick}
-      className="group relative bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 cursor-pointer overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+      className="group relative bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 cursor-pointer overflow-hidden hover:-translate-y-1 hover:shadow-md hover:border-cris-blue/30 dark:hover:border-cris-blue/30 transition-all duration-200"
     >
-      {/* Category colour bar */}
-      <div className={`h-1 w-full ${cat.barClass}`} />
+      {/* Subtle top accent line */}
+      <div className="h-0.5 w-full bg-slate-200 dark:bg-slate-700 group-hover:bg-cris-blue transition-colors duration-200" />
 
       <div className="p-6">
-        {/* Category tag + icon */}
+        {/* Category tag */}
         <div className="flex items-center justify-between mb-4">
-          <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full ${cat.tagClass}`}>
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600">
             <Icon size={11} strokeWidth={2} />
             {t(`cases.filter_${meta.category}`)}
           </span>
@@ -69,15 +68,15 @@ function CaseCard({ meta, data, index, isInView, onClick }) {
         {/* Challenge → Solution → Benefit summary */}
         <ul className="space-y-2.5">
           <li className="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400">
-            <AlertCircle size={14} className="text-red-400 mt-0.5 flex-shrink-0" />
+            <AlertCircle size={14} className="text-slate-400 dark:text-slate-500 mt-0.5 flex-shrink-0" />
             <span className="leading-relaxed">{data.challenge}</span>
           </li>
           <li className="flex items-start gap-2.5 text-sm text-slate-500 dark:text-slate-400">
-            <Lightbulb size={14} className="text-amber-400 mt-0.5 flex-shrink-0" />
+            <Lightbulb size={14} className="text-slate-400 dark:text-slate-500 mt-0.5 flex-shrink-0" />
             <span className="leading-relaxed">{data.solution}</span>
           </li>
-          <li className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300 font-medium">
-            <TrendingUp size={14} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+          <li className="flex items-start gap-2.5 text-sm text-cris-blue dark:text-cris-blue-light font-medium">
+            <TrendingUp size={14} className="mt-0.5 flex-shrink-0" />
             <span className="leading-relaxed">{data.benefit}</span>
           </li>
         </ul>
@@ -123,8 +122,8 @@ function CaseModal({ meta, data, onClose }) {
             transition={{ duration: 0.22, ease: 'easeOut' }}
             onClick={e => e.stopPropagation()}
           >
-            {/* Top colour bar */}
-            <div className={`h-1.5 w-full ${cat.barClass} rounded-t-2xl`} />
+            {/* Top accent line */}
+            <div className="h-0.5 w-full bg-cris-blue rounded-t-2xl" />
 
             <div className="p-7">
               {/* Header */}
@@ -134,7 +133,7 @@ function CaseModal({ meta, data, onClose }) {
                     <Icon size={20} className="text-slate-600 dark:text-slate-300" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full ${cat.tagClass} mb-2`}>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600 mb-2">
                       <Icon size={10} strokeWidth={2} />
                       {t(`cases.filter_${meta.category}`)}
                     </span>
@@ -161,11 +160,11 @@ function CaseModal({ meta, data, onClose }) {
               </div>
 
               {/* Detail sections */}
-              <div className="space-y-5">
-                <div className="rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-800/30 p-4">
+              <div className="space-y-4">
+                <div className="rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <AlertCircle size={14} className="text-red-500" />
-                    <span className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider">
+                    <AlertCircle size={13} className="text-slate-400 dark:text-slate-500" />
+                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                       {t('cases.challenge_label')}
                     </span>
                   </div>
@@ -174,10 +173,10 @@ function CaseModal({ meta, data, onClose }) {
                   </p>
                 </div>
 
-                <div className="rounded-xl bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-800/30 p-4">
+                <div className="rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <Lightbulb size={14} className="text-amber-500" />
-                    <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                    <Lightbulb size={13} className="text-slate-400 dark:text-slate-500" />
+                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                       {t('cases.solution_label')}
                     </span>
                   </div>
@@ -186,10 +185,10 @@ function CaseModal({ meta, data, onClose }) {
                   </p>
                 </div>
 
-                <div className="rounded-xl bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/30 p-4">
+                <div className="rounded-xl bg-cris-blue/[0.05] dark:bg-cris-blue/[0.10] border border-cris-blue/20 dark:border-cris-blue/30 p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <TrendingUp size={14} className="text-emerald-500" />
-                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                    <TrendingUp size={13} className="text-cris-blue dark:text-cris-blue-light" />
+                    <span className="text-xs font-bold text-cris-blue dark:text-cris-blue-light uppercase tracking-wider">
                       {t('cases.benefit_label')}
                     </span>
                   </div>
