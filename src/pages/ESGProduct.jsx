@@ -385,7 +385,6 @@ function SGSCertSection() {
   const advantages = t('esg.sgs_advantages', { returnObjects: true })
   const imgs = [
     { src: `${import.meta.env.BASE_URL}SGS AUP 證書_0.jpg`, alt: t('esg.sgs_img0_alt') },
-    { src: `${import.meta.env.BASE_URL}SGS AUP 證書_1.jpg`, alt: t('esg.sgs_img1_alt') },
   ]
 
   return (
