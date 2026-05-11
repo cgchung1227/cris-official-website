@@ -478,6 +478,151 @@
     "cta_demo": "Book AI Demo",
     "cta_learn": "Explore Architecture"
   },
+  "cases": {
+    "section_tag": "Case Studies",
+    "section_title": "Real-World Implementation Results",
+    "section_subtitle": "14 verified deployments across core manufacturing scenarios. All solutions support on-premise deployment on the CRIS AI Appliance — data never leaves your premises.",
+    "filter_all": "All",
+    "filter_finance": "Finance & ERP",
+    "filter_support": "Technical Support",
+    "filter_manufacturing": "Smart Manufacturing",
+    "filter_green": "Green Management",
+    "filter_special": "Specialized AI",
+    "challenge_label": "Challenge",
+    "solution_label": "Solution",
+    "benefit_label": "Outcome",
+    "view_detail": "View Details",
+    "close": "Close",
+    "appliance_badge": "CRIS AI Appliance Ready · On-Premise Deployment",
+    "items": [
+      {
+        "title": "ERP Financial Report Simulation",
+        "challenge": "Month-end financials took 3 days of manual work with high error rates",
+        "solution": "AI Agent auto-connects to major ERPs and generates all 5 core financial statements",
+        "benefit": "Report time cut from 3 days to 5 minutes — 80% labor savings",
+        "detail_challenge": "Finance teams spent 3+ working days each month manually exporting data from multiple ERP modules and calculating P&L, balance sheets, and other reports. Manual errors caused inconsistencies and high audit risk.",
+        "detail_solution": "AI Agent auto-connects to SAP, Yonyou, and Digiwin ERPs, pulling raw financial data in real time and generating all five core statements — P&L, Balance Sheet, Cash Flow, Equity Changes, and Financial Ratios — with zero manual intervention.",
+        "detail_benefit": "Report generation time dropped from 3 days to 5 minutes (864× efficiency). Finance staff workload reduced 80%, data accuracy reached 99.8%, and month-end stress was dramatically reduced."
+      },
+      {
+        "title": "IPO Compliance Agent",
+        "challenge": "IPO documentation was complex, and compliance review consumed excessive consultant hours",
+        "solution": "AI Agent auto-scans financial documents and flags non-compliant items",
+        "benefit": "Compliance review efficiency up 60%, advisory cycle shortened 2 months",
+        "detail_challenge": "Companies preparing for IPO needed to review massive volumes of financial and legal documents for regulatory compliance. Manual review was slow and prone to omissions, repeatedly delaying the advisory timeline.",
+        "detail_solution": "AI Agent automatically parses financial reports and prospectuses, performs semantic comparison against IPO regulatory requirements, flags non-compliant items, and provides specific correction recommendations. Consultants only need to review AI-flagged issues.",
+        "detail_benefit": "Compliance review efficiency up 60%, consultant review time per session reduced from 3 days to 1 day, overall IPO advisory cycle shortened by an average of 2 months, significantly reducing advisory costs."
+      },
+      {
+        "title": "Procurement Data Analytics",
+        "challenge": "Procurement data scattered across systems — no real-time visibility into supplier performance",
+        "solution": "AI integrates multi-source procurement data with dynamic dashboards and anomaly alerts",
+        "benefit": "Procurement cost down 12%, anomalous orders flagged 3 days in advance",
+        "detail_challenge": "Procurement data was scattered across ERP, email, and Excel. Managers lacked real-time visibility into supplier on-time rates, pricing trends, and costs — decisions were reactive rather than proactive.",
+        "detail_solution": "AI integrates ERP and supplier systems into a unified procurement intelligence layer, auto-builds supplier performance scoring models, provides real-time dashboards, and pushes alerts for pricing anomalies and delivery risks.",
+        "detail_benefit": "Procurement costs reduced 12%, supplier on-time delivery improved 18%, anomalous orders flagged an average of 3 days early, and procurement decision quality significantly improved."
+      },
+      {
+        "title": "n8n Smart Service System",
+        "challenge": "Support staff spent hours answering repetitive questions — customers waited 4+ hours",
+        "solution": "RAG knowledge base AI Agent providing 24/7 instant technical Q&A",
+        "benefit": "First-contact resolution up to 85%, support workload down 50%",
+        "detail_challenge": "Support teams received high volumes of repetitive technical inquiries — equipment operation guides, troubleshooting steps, etc. Manually searching documents and responding took hours, and customer satisfaction declined steadily.",
+        "detail_solution": "Built on n8n automation and RAG technology, product manuals, technical documents, and FAQs are ingested into a private knowledge base. AI Agent understands customer queries, retrieves relevant content instantly, and generates accurate responses with multi-turn conversation context.",
+        "detail_benefit": "First-contact resolution rate increased from 52% to 85%. Average response time dropped from 4 hours to 30 seconds. Support staff workload reduced 50%, freeing them to focus on complex technical cases."
+      },
+      {
+        "title": "Predictive Maintenance (PHM)",
+        "challenge": "Unexpected equipment failures caused line stoppages — averaging 4 hours of lost capacity per incident",
+        "solution": "AIoT continuous health monitoring with 48-hour fault prediction",
+        "benefit": "Unplanned downtime down 70%, equipment lifespan extended 20%",
+        "detail_challenge": "Manufacturing equipment lacked real-time monitoring. Fault symptoms were invisible until failure occurred. Each stoppage required emergency maintenance dispatch, costing 4+ hours of production capacity and substantial annual repair budgets.",
+        "detail_solution": "AIoT sensors continuously collect vibration, temperature, and current data. PHM (Prognostics and Health Management) AI models analyze trends and predict failure risk 48–72 hours in advance, automatically dispatching maintenance work orders.",
+        "detail_benefit": "Unplanned stoppages reduced 70%, prediction accuracy 88%, average equipment lifespan extended 20%, annual maintenance costs reduced 35%, and line utilization significantly improved."
+      },
+      {
+        "title": "Equipment Anomaly Trend Alerts",
+        "challenge": "Early equipment anomaly signals hidden in data — impossible to detect manually",
+        "solution": "AI multi-dimensional sensor analysis auto-identifies anomaly trends with push alerts",
+        "benefit": "Anomaly detection accuracy 92%, maintenance costs down 35%",
+        "detail_challenge": "Equipment anomalies initially manifest as subtle vibration increases, temperature fluctuations, or current deviations — changes buried in vast amounts of normal data. By the time anomalies become obvious, major repairs are often needed.",
+        "detail_solution": "AI integrates multi-dimensional sensor data, applies time-series analysis and anomaly detection algorithms, learns normal equipment baselines, and issues tiered push alerts to maintenance staff when deviations are detected.",
+        "detail_benefit": "Anomaly detection accuracy reached 92% with false positive rate below 5%. Average early warning lead time: 3 days. Maintenance costs down 35%. Critical equipment availability reached 99.2%."
+      },
+      {
+        "title": "AI+APS Smart Scheduling",
+        "challenge": "Multi-site scheduling complexity and frequent rush orders rendered plans ineffective",
+        "solution": "AI integrates finite-capacity constraints to auto-generate optimal multi-site schedules",
+        "benefit": "Efficiency up 35%, planning time cut from 8 hours to 20 minutes",
+        "detail_challenge": "Multi-site production required manual scheduling across machine capacity, material inventory, and staffing constraints. Frequent customer rush orders meant planners spent entire days rescheduling — and still couldn't reach optimal solutions.",
+        "detail_solution": "AI+APS integrates multi-site capacity, tooling, and material procurement plans. Heuristic algorithms auto-generate optimal schedules across all sites, support rapid rush-order rescheduling, and visualize Gantt charts for floor managers.",
+        "detail_benefit": "Production efficiency up 35%, inventory level down 28%, planning time cut from 8 hours to 20 minutes, rush order response time cut from next-day to within 1 hour, on-time delivery rate up to 95%."
+      },
+      {
+        "title": "Vibe Coding Mobile Reporting",
+        "challenge": "Paper-based floor reporting caused 4-hour data delays and high error rates",
+        "solution": "QR scan-to-report mobile app — AI auto-integrates real-time production actuals",
+        "benefit": "Reporting accuracy up to 98%, data synchronized in real time",
+        "detail_challenge": "Factory floor workers filled in paper report forms that office staff manually entered after each shift — causing 4+ hour delays in production actuals and an 8% manual entry error rate. Managers had no real-time visibility.",
+        "detail_solution": "Mobile reporting app allows workers to scan a work order QR code for instant one-tap reporting. AI integrates production actuals, calculates efficiency, and syncs in real time with ERP/APS. Managers monitor progress via live dashboard.",
+        "detail_benefit": "Reporting accuracy increased from 92% to 98%. Production data went from 4-hour delay to real-time. Floor anomaly response time cut 75%. Management decision quality significantly improved."
+      },
+      {
+        "title": "iPlan Supply Chain Collaboration",
+        "challenge": "Opaque supply chain information led to frequent material shortages and line stoppages",
+        "solution": "AI collaboration platform integrates supplier lead times and inventory with automatic risk alerts",
+        "benefit": "On-time delivery rate up 25%, material shortage incidents down 40%",
+        "detail_challenge": "No real-time data sharing existed between the company and suppliers. Buyers relied on phone calls and email to confirm lead times. Supply chain disruptions (material shortages, capacity issues) were only discovered at the last moment.",
+        "detail_solution": "iPlan provides a supplier-dedicated portal integrating purchase orders, delivery confirmations, and inventory levels. AI automatically analyzes supply chain risk, pre-warns of potential shortages or delays, and recommends buffer stock or alternative suppliers.",
+        "detail_benefit": "Order on-time delivery rate improved from 78% to 97.5% (+25%). Material shortage stoppages down 40%. Supplier management efficiency up 30%. Procurement accuracy significantly improved."
+      },
+      {
+        "title": "CeO Carbon Optimization System",
+        "challenge": "Carbon data scattered across departments — hard to meet ESG disclosure and reduction targets",
+        "solution": "AI auto-consolidates carbon data with scenario simulation and reduction pathway planning",
+        "benefit": "Carbon calculation efficiency up 90%, ESG reporting cut to 2 weeks",
+        "detail_challenge": "Manufacturing carbon emissions span energy, logistics, and supply chain — data scattered across departments. Traditional methods struggled to quantify accurately. ESG disclosure mandates and carbon neutrality targets made systematic carbon management urgent.",
+        "detail_solution": "CeO AI auto-integrates plant energy, material usage, and logistics carbon data, calculates Scope 1/2/3 emissions per GHG Protocol, and provides scenario simulation to help companies develop optimal carbon reduction pathways.",
+        "detail_benefit": "Carbon calculation efficiency up 90%, data accuracy improved 40%, annual reduction target achievement up 30%, ESG report creation reduced from 2 months to 2 weeks — effectively supporting investor and customer sustainability disclosure."
+      },
+      {
+        "title": "Product Carbon Footprint",
+        "challenge": "Multi-tier supply chain carbon footprint calculation took 2 weeks with large margins of error",
+        "solution": "AI tracks lifecycle carbon at each stage and auto-generates compliant footprint reports",
+        "benefit": "Calculation time cut from 2 weeks to 2 days, accuracy up 40%",
+        "detail_challenge": "Product carbon footprints require tracking emissions across raw material extraction, manufacturing, logistics, and end use — spanning multi-tier supply chains. Manual calculation took 2+ weeks, and inconsistent data formats across suppliers made error control difficult.",
+        "detail_solution": "AI auto-collects supplier carbon data (PDF, Excel, and other formats), calculates per-stage carbon footprints per ISO 14064 and PAS 2050 standards, and generates compliant carbon footprint declarations automatically.",
+        "detail_benefit": "Carbon footprint calculation time cut from 2 weeks to 2 days. Accuracy up 40%. ISO 14064 compliant. Directly usable for customer ESG audits or export compliance requirements."
+      },
+      {
+        "title": "IFRS Sustainability Disclosure Platform",
+        "challenge": "IFRS S1/S2 disclosure requirements were complex — companies didn't know how to systematically prepare",
+        "solution": "AI platform maps to the IFRS framework and guides step-by-step climate-related disclosure",
+        "benefit": "Report preparation time cut 60%, compliance risk significantly reduced",
+        "detail_challenge": "IFRS S1 (sustainability-related financial disclosure) and S2 (climate-related disclosure) require companies to disclose governance, strategy, risk management, and metrics across four dimensions — with extensive qualitative and quantitative data. Most companies didn't know where to start.",
+        "detail_solution": "The AI platform has the IFRS S1/S2 framework built in, guiding companies through each disclosure requirement step by step. It auto-extracts relevant indicators from existing carbon data and financial statements, and performs AI compliance review to ensure report quality.",
+        "detail_benefit": "Sustainability disclosure report preparation time cut 60% (from 3 months to 6 weeks). IFRS S1/S2 compliance pass rate significantly improved. Helped companies build sustainability credibility with investors and regulators."
+      },
+      {
+        "title": "AI Scrap Steel Grading",
+        "challenge": "Scrap quality grading relied on subjective manual visual inspection — slow and inconsistent",
+        "solution": "AI vision instantly analyzes scrap images and auto-grades quality and purity",
+        "benefit": "Grading accuracy 94%, grading speed up 10×",
+        "detail_challenge": "Scrap steel must be graded before purchase and smelting. Traditional grading relied on experienced workers visually judging scrap type, inclusion ratios, and grade — results were subjective, inconsistent, and slow, impacting purchasing efficiency.",
+        "detail_solution": "Industrial cameras capture scrap images. AI vision models analyze composition, inclusion ratios, and corrosion levels in real time, automatically output grade classifications and suggested purchase prices, and log results for quality traceability.",
+        "detail_benefit": "Grading accuracy reached 94% (surpassing human average of 85%). Per-batch grading time cut from 15 minutes to 90 seconds (10× faster). Consistency significantly improved. Annual scrap procurement costs reduced 8%."
+      },
+      {
+        "title": "Steering Wheel Foam Process Parameter Recommendation",
+        "challenge": "Foam process parameters depended on veteran expertise — yield rates were unstable",
+        "solution": "AI analyzes historical process data to auto-recommend optimal foam parameter sets",
+        "benefit": "Yield rate improved from 78% to 92%, material waste down 18%",
+        "detail_challenge": "Steering wheel foam molding involves multiple critical parameters — material ratios, temperature, pressure, and injection speed. Adjustments relied on veteran experience. New operator training took months, and environmental changes (humidity, temperature) caused yield fluctuations without scientific basis.",
+        "detail_solution": "AI collects historical process data (temperature, pressure, material ratios, ambient conditions) and corresponding yield records to build a predictive model linking parameters to yield. When environmental or batch conditions change, it auto-recommends optimal parameter sets with adjustment ranges.",
+        "detail_benefit": "Product yield improved from 78% to 92%. Material waste down 18%. New operator ramp-up time cut from 6 months to 2 months. Process adjustments evolved from 'by feel' to 'data-driven'. Quality stability greatly improved."
+      }
+    ]
+  },
   "about": {
     "hero_badge": "About CRIS",
     "hero_title": "About CRIS Technology",

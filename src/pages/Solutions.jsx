@@ -6,6 +6,7 @@ import {
   CheckCircle2, ArrowRight, Zap, Brain, Activity,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import CaseStudies from '../components/CaseStudies'
 
 // ─── Neural network nodes ─────────────────────────────────────────────────────
 const nodes = [
@@ -303,6 +304,9 @@ export default function Solutions() {
           </div>
         </div>
       </section>
+
+      {/* Case Studies */}
+      <CaseStudies />
 
       {/* Bottom CTA band */}
       <section className="py-16 bg-white dark:bg-slate-800">
