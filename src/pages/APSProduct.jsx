@@ -34,14 +34,14 @@ const materialStatus = [
 ]
 
 const integrationPartners = [
-  { name: '用友 ERP',        cat: 'ERP' },
-  { name: 'SAP S/4HANA',    cat: 'ERP' },
-  { name: '鼎新 Workflow',  cat: 'ERP' },
-  { name: 'Oracle NetSuite', cat: 'ERP' },
-  { name: 'Microsoft D365',  cat: 'ERP' },
-  { name: '勤業 MES',        cat: 'MES' },
-  { name: 'WMS 倉儲系統',    cat: 'WMS' },
-  { name: 'PLM 設計系統',    cat: 'PLM' },
+  { name: '主流 ERP 系統',  cat: 'ERP' },
+  { name: 'MES 製造執行',   cat: 'MES' },
+  { name: 'WMS 倉儲系統',   cat: 'WMS' },
+  { name: 'PLM 設計系統',   cat: 'PLM' },
+  { name: 'IoT 設備數據',   cat: 'IoT' },
+  { name: '模具管理系統',   cat: 'MTS' },
+  { name: 'CRM 訂單系統',   cat: 'CRM' },
+  { name: 'QMS 品質系統',   cat: 'QMS' },
 ]
 
 // Icon map for pain points (order matches pain_points array)
