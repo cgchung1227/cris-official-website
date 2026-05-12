@@ -20,6 +20,7 @@ import ESGProduct from './pages/ESGProduct'
 import AIBoxProduct from './pages/AIBoxProduct'
 import ContactPage from './pages/ContactPage'
 import Admin from './pages/Admin'
+import DesignSystem from './pages/DesignSystem'
 import NewsPost from './pages/NewsPost'
 import Solutions from './pages/Solutions'
 import AISolutions from './components/AISolutions'
@@ -61,6 +62,9 @@ export default function App() {
       <Routes>
         {/* Admin — no Navbar/Footer */}
         <Route path="/admin" element={<Admin />} />
+
+        {/* Design System — internal only, no Navbar/Footer */}
+        <Route path="/design-system" element={<DesignSystem />} />
 
         {/* Public site */}
         <Route path="*" element={

@@ -76,6 +76,22 @@ src/
 3. **動畫**：進場動畫使用 `framer-motion`，`useInView` 觸發，`once: true` 避免重複
 4. **響應式**：Mobile first，斷點 `sm → md → lg`
 
+## 設計系統文件頁
+
+路由：`/design-system`（不列入官網導覽，不加 Navbar / Footer）  
+檔案：`src/pages/DesignSystem.jsx`
+
+參考 Adobe Spectrum 結構，涵蓋：
+
+| 類型 | 項目 |
+|------|------|
+| **Tokens** | Color（品牌色 + 語意色票 + Category Palette）、Typography（字型/字重/行距）、Spacing（4pt grid）、Shadows（含著色陰影）、Border Radius、Animation（Spring 參數 / gradient timing）|
+| **Components** | Button（Primary / Outline / Size / State / Product CTA）、Type Styles（section-title / section-subtitle）、Card、Badge & Tag（5 種）、Filter Pill、Case Card、Modal、Toast、Lang Switcher、Gradient Text（3 種）、Dark Mode Toggle |
+
+每個元件均包含：**Live Preview · Code snippet · Anatomy table**
+
+> 新增元件或修改 token 時，請同步更新此頁面。
+
 ## 啟動指令
 
 ```bash
