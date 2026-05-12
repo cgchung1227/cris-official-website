@@ -82,17 +82,10 @@ function PipelineBoard({ inView }) {
           <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
           <span className="ml-3 text-sm font-mono text-slate-300 tracking-wide">
-            Pipeline Intelligence™ &mdash; 即時排程看板
+            APS 智慧排程
           </span>
         </div>
-        <span className="flex items-center gap-1.5">
-          <motion.span
-            className="w-1.5 h-1.5 rounded-full bg-emerald-400"
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
-          <span className="text-[10px] font-mono text-emerald-400 tracking-widest">LIVE</span>
-        </span>
+        <span className="text-[10px] font-mono text-slate-500 tracking-widest">CONCEPT</span>
       </div>
 
       {/* Board */}
@@ -578,13 +571,8 @@ export default function APSProduct() {
                   {t('aps.pipeline_subtitle')}
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
-                <motion.span
-                  className="w-2 h-2 rounded-full bg-emerald-400"
-                  animate={{ opacity: [0.4, 1, 0.4] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-                {t('aps.pipeline_live')}
+              <div className="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500 flex-shrink-0 italic">
+                {t('aps.pipeline_note')}
               </div>
             </div>
           </motion.div>
