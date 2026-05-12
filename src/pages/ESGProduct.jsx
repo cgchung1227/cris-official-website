@@ -734,6 +734,9 @@ export default function ESGProduct() {
             <p className="section-subtitle">
               {t('esg.roadmap_subtitle')}
             </p>
+            <p className="mt-4 text-xs italic text-slate-400 dark:text-slate-500">
+              以下為概念示意圖，實際畫面依導入環境而定
+            </p>
           </FadeUp>
 
           {/* macOS window chrome */}
@@ -751,9 +754,8 @@ export default function ESGProduct() {
               <span className="ml-3 text-xs font-medium text-slate-500 dark:text-slate-500">
                 {t('esg.roadmap_toolbar')}
               </span>
-              <div className="ml-auto flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                LIVE
+              <div className="ml-auto text-[11px] font-mono text-slate-400 dark:text-slate-600 tracking-widest">
+                CONCEPT
               </div>
             </div>
 
