@@ -33,14 +33,14 @@ const roadmapStages = [
     num: '02',
     icon: RefreshCw,
     title: '係數庫自動配對',
-    desc: 'IPCC / 台電最新排放因子',
+    desc: 'IPCC / 各國最新排放因子',
     topBorder: 'border-t-teal-500',
     badge: '動態更新',
     badgeCls: 'bg-teal-100 text-teal-700 dark:bg-teal-900/50 dark:text-teal-300',
     iconCls:  'bg-teal-50 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400',
     glowCls:  'dark:[box-shadow:0_0_28px_-8px_#2dd4bf55]',
     items: [
-      { name: '台電電力係數', value: '0.509 kgCO₂', status: 'ok' },
+      { name: '電力排放係數',  value: '0.509 kgCO₂', status: 'ok' },
       { name: 'IPCC CH₄ GWP', value: '27.9 (AR6)',   status: 'ok' },
       { name: '原料碳含量',   value: '自動比對',      status: 'ok' },
       { name: '運輸排放因子', value: '待確認',        status: 'warn' },
@@ -76,21 +76,20 @@ const roadmapStages = [
     items: [
       { name: 'CBAM 申報表格', value: '自動填充', status: 'ok' },
       { name: 'CSRD 數據架構', value: '對應完成', status: 'ok' },
-      { name: 'CDP 披露文件',  value: '準備就緒', status: 'ok' },
+      { name: 'ESG 披露文件',  value: '準備就緒', status: 'ok' },
       { name: 'ISO 14064 報告', value: 'PDF 輸出', status: 'ok' },
     ],
   },
 ]
 
 const integrationPartners = [
-  { name: '台電監測', desc: '電力數據' },
-  { name: 'SAP ERP',   desc: '採購 / 財務' },
-  { name: '用友 ERP',  desc: '生產 / 採購' },
-  { name: '鼎新 ERP',  desc: '製造數據' },
-  { name: 'AI 一體機', desc: 'RAG 係數查詢' },
-  { name: 'IPCC 數據庫', desc: '國際排放因子' },
-  { name: 'CDP 平台',  desc: '碳披露框架' },
-  { name: 'CBAM 海關', desc: '申報對接' },
+  { name: '主流 ERP 系統',  desc: '採購 / 財務數據' },
+  { name: '用友 ERP',       desc: '原生雙碳模組對接' },
+  { name: 'MES 系統',       desc: '製程排放數據' },
+  { name: '採購 / 財務系統', desc: '供應鏈碳足跡' },
+  { name: 'AI 一體機',      desc: 'RAG 係數查詢' },
+  { name: 'IPCC 數據庫',    desc: '國際排放因子' },
+  { name: 'CBAM 模組',      desc: '碳邊境調整機制' },
 ]
 
 const challenges = [
