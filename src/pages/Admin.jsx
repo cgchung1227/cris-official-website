@@ -349,7 +349,7 @@ function ContactsView({ session, onSection }) {
   async function load() {
     setLoading(true)
     const { data, error } = await supabase
-      .from('contacts')
+      .from('contact_forms')
       .select('*')
       .order('created_at', { ascending: false })
     if (error) showToast('載入失敗：' + error.message, 'error')
@@ -360,7 +360,7 @@ function ContactsView({ session, onSection }) {
   useEffect(() => { load() }, [])
 
   async function confirmDelete() {
-    const { error } = await supabase.from('contacts').delete().eq('id', deleteId)
+    const { error } = await supabase.from('contact_forms').delete().eq('id', deleteId)
     if (error) {
       showToast('刪除失敗：' + error.message, 'error')
     } else {

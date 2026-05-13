@@ -28,7 +28,7 @@ export default function Contact() {
     e.preventDefault()
     setSubmitting(true)
     setSubmitError('')
-    const { error } = await supabase.from('contacts').insert([{
+    const { error } = await supabase.from('contact_forms').insert([{
       name:    form.name,
       company: form.company,
       email:   form.email,

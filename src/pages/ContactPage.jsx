@@ -33,7 +33,7 @@ export default function ContactPage() {
     setSubmitting(true)
     setSubmitError('')
 
-    const { error } = await supabase.from('contacts').insert([{
+    const { error } = await supabase.from('contact_forms').insert([{
       name: form.name,
       company: form.company || null,
       email: form.email,
