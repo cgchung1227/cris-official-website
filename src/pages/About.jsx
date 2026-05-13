@@ -1,7 +1,7 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { MapPin, Award, Star, ArrowRight, Target, Heart, Zap, Leaf } from 'lucide-react'
+import { MapPin, Award, Star, ArrowRight, Target, Heart, Zap, Leaf, X, ZoomIn, ShieldCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 // Non-translatable metadata (icons, tiers, layout flags)
@@ -16,6 +16,27 @@ const milestonesMeta = [
 ]
 
 const valuesMeta = [Target, Heart, Leaf]
+
+const CERTS = [
+  {
+    img: '27001-2022.png',
+    name: 'ISO/IEC 27001:2022',
+    subtitle: '資訊安全管理系統',
+    issuer: '快思股份有限公司',
+    color: 'from-blue-50 to-slate-50 dark:from-blue-950/40 dark:to-slate-900',
+    border: 'border-blue-200 dark:border-blue-800/50',
+    iconCls: 'text-cris-blue',
+  },
+  {
+    img: 'SGS AUP 證書_0.jpg',
+    name: 'SGS AUP',
+    subtitle: 'AI 應用產品認證',
+    issuer: 'SGS Taiwan',
+    color: 'from-emerald-50 to-slate-50 dark:from-emerald-950/40 dark:to-slate-900',
+    border: 'border-emerald-200 dark:border-emerald-800/50',
+    iconCls: 'text-emerald-600',
+  },
+]
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
@@ -135,6 +156,132 @@ function TimelineItem({ meta, data, index }) {
         )}
       </div>
     </div>
+  )
+}
+
+// ─── Certifications & Awards ─────────────────────────────────────────────────
+
+function CertificationsSection() {
+  const { t } = useTranslation()
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const [lightbox, setLightbox] = useState(null)
+
+  return (
+    <section className="py-24 bg-slate-50 dark:bg-slate-950">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
+          <span className="text-sm font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">
+            認證與獲獎
+          </span>
+          <h2 className="section-title mt-3">Certifications & Awards</h2>
+          <p className="section-subtitle">
+            通過國際標準認證，以具體成果驗證技術實力與服務品質。
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <div className={`grid gap-6 ${CERTS.length === 1 ? 'grid-cols-1 max-w-sm mx-auto' : 'grid-cols-1 sm:grid-cols-2'}`}>
+          {CERTS.map((cert, i) => (
+            <motion.div
+              key={cert.name}
+              initial={{ opacity: 0, y: 28 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              onClick={() => setLightbox(cert)}
+              className={`group relative bg-gradient-to-br ${cert.color} border ${cert.border} rounded-2xl p-6 cursor-pointer
+                hover:-translate-y-1 hover:shadow-lg transition-all duration-300 overflow-hidden`}
+            >
+              {/* Subtle corner glow */}
+              <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/30 dark:bg-white/5 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="flex items-start gap-5">
+                {/* Thumbnail */}
+                <div className="relative flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-white shadow-sm">
+                  <img
+                    src={import.meta.env.BASE_URL + cert.img}
+                    alt={cert.name}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Zoom hint */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200 flex items-center justify-center">
+                    <ZoomIn size={18} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <ShieldCheck size={14} className={cert.iconCls} />
+                    <span className={`text-xs font-bold uppercase tracking-widest ${cert.iconCls}`}>認證</span>
+                  </div>
+                  <h3 className="text-lg font-extrabold text-slate-900 dark:text-white leading-tight">{cert.name}</h3>
+                  <p className="text-sm font-medium text-slate-600 dark:text-slate-300 mt-0.5">{cert.subtitle}</p>
+                  <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">{cert.issuer}</p>
+                </div>
+              </div>
+
+              <p className="mt-4 text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1 justify-end">
+                <ZoomIn size={11} /> 點擊查看證書
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightbox(null)}
+          >
+            <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+            <motion.div
+              className="relative max-w-lg w-full"
+              initial={{ opacity: 0, scale: 0.92, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 16 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Close */}
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute -top-4 -right-4 z-10 w-9 h-9 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+              >
+                <X size={16} className="text-slate-600 dark:text-slate-300" />
+              </button>
+
+              {/* Certificate image */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={import.meta.env.BASE_URL + lightbox.img}
+                  alt={lightbox.name}
+                  className="w-full object-contain"
+                />
+                <div className="px-6 py-4 border-t border-slate-100">
+                  <p className="font-bold text-slate-900 text-sm">{lightbox.name}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{lightbox.subtitle} · {lightbox.issuer}</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   )
 }
 
@@ -296,6 +443,9 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* ── Certifications & Awards ── */}
+      <CertificationsSection />
 
       {/* ── Team & Culture ── */}
       <section className="py-24 bg-white dark:bg-slate-900">
