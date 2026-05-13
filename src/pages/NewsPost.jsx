@@ -86,7 +86,7 @@ export default function NewsPost() {
                 <img
                   src={post.image_url}
                   alt={post.title}
-                  className="w-full h-64 sm:h-80 object-cover"
+                  className="w-full object-contain"
                 />
               </div>
             )}
