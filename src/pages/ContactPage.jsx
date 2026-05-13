@@ -6,6 +6,7 @@ import {
   Send, MapPin, Phone, Mail, CheckCircle,
   Clock, Users, Award, Calendar, BarChart3, Cpu,
 } from 'lucide-react'
+import { supabase } from '../lib/supabase'
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -13,13 +14,33 @@ export default function ContactPage() {
   const { t } = useTranslation()
   const formRef   = useRef(null)
   const formInView = useInView(formRef, { once: true, margin: '-60px' })
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted]   = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [form, setForm] = useState({
     name: '', company: '', email: '', phone: '', product: '', message: '',
   })
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true) }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setSubmitError('')
+    const { error } = await supabase.from('contacts').insert([{
+      name: form.name,
+      company: form.company || null,
+      email: form.email,
+      phone: form.phone || null,
+      message: [form.product ? `產品：${form.product}` : '', form.message].filter(Boolean).join('\n') || null,
+    }])
+    setSubmitting(false)
+    if (error) {
+      setSubmitError('送出失敗，請稍後再試。')
+    } else {
+      setSubmitted(true)
+    }
+  }
 
   const contactInfo = [
     { icon: MapPin, label: t('contact.address_label'), value: '臺中市西屯區市政北七路186號22樓之5' },
@@ -341,8 +362,12 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button type="submit" className="btn-primary w-full justify-center text-base py-3.5">
-                      <Send size={18} /> {t('contact.submit')}
+                    {submitError && (
+                      <p className="text-sm text-red-500 text-center">{submitError}</p>
+                    )}
+
+                    <button type="submit" disabled={submitting} className="btn-primary w-full justify-center text-base py-3.5 disabled:opacity-60 disabled:cursor-not-allowed">
+                      <Send size={18} /> {submitting ? '送出中…' : t('contact.submit')}
                     </button>
 
                     <p className="text-xs text-slate-400 dark:text-slate-500 text-center">
