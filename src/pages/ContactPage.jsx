@@ -7,6 +7,11 @@ import {
   Clock, Users, Award, Calendar, BarChart3, Cpu,
 } from 'lucide-react'
 import { supabase } from '../lib/supabase'
+import emailjs from '@emailjs/browser'
+
+const EJS_SERVICE  = 'service_f1yvsnm'
+const EJS_TEMPLATE = 'template_aop47zn'
+const EJS_KEY      = 'eJq0ZLip4618kLRLb'
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -27,6 +32,7 @@ export default function ContactPage() {
     e.preventDefault()
     setSubmitting(true)
     setSubmitError('')
+
     const { error } = await supabase.from('contacts').insert([{
       name: form.name,
       company: form.company || null,
@@ -34,12 +40,23 @@ export default function ContactPage() {
       phone: form.phone || null,
       message: [form.product ? `產品：${form.product}` : '', form.message].filter(Boolean).join('\n') || null,
     }])
-    setSubmitting(false)
+
     if (error) {
+      setSubmitting(false)
       setSubmitError('送出失敗，請稍後再試。')
-    } else {
-      setSubmitted(true)
+      return
     }
+
+    await emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+      from_name: form.name,
+      company:   form.company || '-',
+      reply_to:  form.email,
+      phone:     form.phone || '-',
+      message:   [form.product ? `產品：${form.product}` : '', form.message].filter(Boolean).join('\n') || '-',
+    }, EJS_KEY)
+
+    setSubmitting(false)
+    setSubmitted(true)
   }
 
   const contactInfo = [
