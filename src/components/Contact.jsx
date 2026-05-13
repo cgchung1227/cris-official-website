@@ -3,6 +3,11 @@ import { motion, useInView } from 'framer-motion'
 import { Send, MapPin, Phone, Mail, CheckCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabase'
+import emailjs from '@emailjs/browser'
+
+const EJS_SERVICE  = 'service_f1yvsnm'
+const EJS_TEMPLATE = 'template_aop47zn'
+const EJS_KEY      = 'eJq0ZLip4618kLRLb'
 
 const contactInfoIcons = [MapPin, Phone, Mail]
 const contactInfoValues = [
@@ -35,12 +40,23 @@ export default function Contact() {
       phone:   form.phone   || null,
       message: form.message || null,
     }])
-    setSubmitting(false)
+
     if (error) {
+      setSubmitting(false)
       setSubmitError('送出失敗，請稍後再試。')
-    } else {
-      setSubmitted(true)
+      return
     }
+
+    await emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+      from_name: form.name,
+      company:   form.company || '-',
+      reply_to:  form.email,
+      phone:     form.phone || '-',
+      message:   form.message || '-',
+    }, EJS_KEY)
+
+    setSubmitting(false)
+    setSubmitted(true)
   }
 
   return (
