@@ -33,13 +33,13 @@ export default function ContactPage() {
     setSubmitting(true)
     setSubmitError('')
 
-    const { error } = await supabase.from('contact_forms').insert([{
-      name: form.name,
-      company: form.company || null,
-      email: form.email,
-      phone: form.phone || null,
-      message: [form.product ? `產品：${form.product}` : '', form.message].filter(Boolean).join('\n') || null,
-    }])
+    const { error } = await supabase.rpc('submit_contact', {
+      p_name:    form.name,
+      p_company: form.company || null,
+      p_email:   form.email,
+      p_phone:   form.phone || null,
+      p_message: [form.product ? `產品：${form.product}` : '', form.message].filter(Boolean).join('\n') || null,
+    })
 
     if (error) {
       setSubmitting(false)

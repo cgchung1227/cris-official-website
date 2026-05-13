@@ -28,13 +28,13 @@ export default function Contact() {
     e.preventDefault()
     setSubmitting(true)
     setSubmitError('')
-    const { error } = await supabase.from('contact_forms').insert([{
-      name:    form.name,
-      company: form.company,
-      email:   form.email,
-      phone:   form.phone   || null,
-      message: form.message || null,
-    }])
+    const { error } = await supabase.rpc('submit_contact', {
+      p_name:    form.name,
+      p_company: form.company || null,
+      p_email:   form.email,
+      p_phone:   form.phone   || null,
+      p_message: form.message || null,
+    })
     setSubmitting(false)
     if (error) {
       setSubmitError('送出失敗，請稍後再試。')
