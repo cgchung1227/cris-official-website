@@ -56,6 +56,7 @@ export default function Navbar({ dark, setDark }) {
     { name: t('navbar.aps_name'), desc: t('navbar.aps_desc'), href: '/products/aps' },
     { name: t('navbar.esg_name'), desc: t('navbar.esg_desc'), href: '/products/esg' },
     { name: t('navbar.aibox_name'), desc: t('navbar.aibox_desc'), href: '/products/ai-box' },
+    { name: t('navbar.mc_name'), desc: t('navbar.mc_desc'), href: '/products/mission-control' },
   ]
 
   useEffect(() => {

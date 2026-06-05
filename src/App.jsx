@@ -23,6 +23,7 @@ import Admin from './pages/Admin'
 import DesignSystem from './pages/DesignSystem'
 import NewsPost from './pages/NewsPost'
 import Solutions from './pages/Solutions'
+import MissionControl from './pages/MissionControl'
 import AISolutions from './components/AISolutions'
 
 function HomePage() {
@@ -79,6 +80,7 @@ export default function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/news/:id" element={<NewsPost />} />
               <Route path="/solutions" element={<Solutions />} />
+              <Route path="/products/mission-control" element={<MissionControl />} />
             </Routes>
             <Footer />
           </div>

@@ -11,7 +11,9 @@
     "esg_name": "IMPACTs CeO",
     "esg_desc": "AI-powered carbon analytics",
     "aibox_name": "CRIS AI Appliance",
-    "aibox_desc": "On-premise deployment · Data sovereignty"
+    "aibox_desc": "On-premise deployment · Data sovereignty",
+    "mc_name": "CRIS Mission Control",
+    "mc_desc": "Factory AI Command Center"
   },
   "hero": {
     "badge": "Enterprise AI Agent Solutions",

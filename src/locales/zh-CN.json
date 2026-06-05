@@ -11,7 +11,9 @@
     "esg_name": "IMPACTs CeO",
     "esg_desc": "AI 精准碳排放分析",
     "aibox_name": "CRIS AI 一体机",
-    "aibox_desc": "私有化部署 · 数据主权掌控"
+    "aibox_desc": "私有化部署 · 数据主权掌控",
+    "mc_name": "CRIS Mission Control",
+    "mc_desc": "工厂 AI 任务指挥中心"
   },
   "hero": {
     "badge": "企业 AI Agent 解决方案",
