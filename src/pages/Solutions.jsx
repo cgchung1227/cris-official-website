@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import {
   BarChart2, HeadphonesIcon, Wrench,
   CheckCircle2, ArrowRight, Zap, Brain, Activity,
+  ChevronDown, ChevronUp,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useCmsPageContent } from '../hooks/useCmsContent'
@@ -243,7 +244,10 @@ function ModuleCard({ meta, index, isInView, cms = {} }) {
         {/* Footer */}
         <div className="mt-6 flex items-center justify-between">
           <span className="text-xs text-slate-400 dark:text-slate-500">
-            {expanded ? '收起 ↑' : '展開功能 ↓'}
+            <span className="inline-flex items-center gap-1">
+              {expanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+              {expanded ? t('solutions.collapse') : t('solutions.expand')}
+            </span>
           </span>
           <Link
             to="/contact"
@@ -325,20 +329,20 @@ export default function Solutions() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-xs font-semibold text-cris-blue dark:text-cris-blue-light uppercase tracking-widest">
-              Powered by Argox AI Engine
+              {t('solutions.aibox_powered_by')}
             </span>
             <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
-              所有模組均可搭載 CRIS AI 一體機
+              {t('solutions.aibox_cta_title')}
             </h3>
             <p className="section-subtitle mt-3 text-sm">
-              私有化部署，數據永不離開企業內網。從導入評估到上線僅需 7 天，顧問團隊全程陪伴。
+              {t('solutions.aibox_cta_subtitle')}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link to="/contact" className="btn-primary text-sm px-6 py-3">
-                預約 AI 落地顧問 <ArrowRight size={16} />
+                {t('solutions.aibox_cta_btn')} <ArrowRight size={16} />
               </Link>
               <Link to="/products/ai-box" className="btn-outline text-sm px-6 py-3">
-                了解一體機規格
+                {t('solutions.aibox_learn_more')}
               </Link>
             </div>
           </motion.div>

@@ -691,7 +691,7 @@ export default function ESGProduct() {
                 />
                 {/* Floating badge */}
                 <motion.div
-                  className="absolute -bottom-3 -right-3 bg-emerald-600 dark:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-emerald-200 dark:shadow-emerald-900/60"
+                  className="absolute -top-3 -right-3 bg-emerald-600 dark:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-emerald-200 dark:shadow-emerald-900/60"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1, type: 'spring', stiffness: 280 }}

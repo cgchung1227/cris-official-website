@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 const featureMeta = [
-  { icon: Calendar, color: 'bg-blue-500',   lightBg: 'bg-blue-50 dark:bg-blue-900/20',    href: '/products/aps' },
-  { icon: BarChart3, color: 'bg-emerald-500', lightBg: 'bg-emerald-50 dark:bg-emerald-900/20', href: '/products/esg' },
-  { icon: Cpu,       color: 'bg-violet-500', lightBg: 'bg-violet-50 dark:bg-violet-900/20', href: '/products/ai-box' },
+  { icon: Calendar, iconColor: 'text-blue-500',    lightBg: 'bg-blue-50 dark:bg-blue-900/20',    href: '/products/aps' },
+  { icon: BarChart3, iconColor: 'text-emerald-500', lightBg: 'bg-emerald-50 dark:bg-emerald-900/20', href: '/products/esg' },
+  { icon: Cpu,       iconColor: 'text-violet-500',  lightBg: 'bg-violet-50 dark:bg-violet-900/20', href: '/products/ai-box' },
 ]
 
 function FeatureCard({ meta, data, index }) {
@@ -27,7 +27,7 @@ function FeatureCard({ meta, data, index }) {
         className="card group cursor-pointer h-full"
       >
         <div className={`inline-flex p-3 rounded-xl ${meta.lightBg} mb-6`}>
-          <Icon size={28} className={`text-${meta.color.replace('bg-', '')}`} strokeWidth={1.5} />
+          <Icon size={28} className={meta.iconColor} strokeWidth={1.5} />
         </div>
 
         <h3 className="text-xl font-bold text-slate-900 dark:text-white">{data.title}</h3>

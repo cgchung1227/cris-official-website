@@ -270,9 +270,9 @@ export default function AIBoxProduct() {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-2 text-sm text-slate-400 dark:text-slate-500 mb-14"
           >
-            <Link to="/" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors text-slate-500 dark:text-slate-500">首頁</Link>
+            <Link to="/" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors text-slate-500 dark:text-slate-500">{t('navbar.home')}</Link>
             <span>/</span>
-            <span>產品</span>
+            <span>{t('navbar.products')}</span>
             <span>/</span>
             <span className="text-violet-600 dark:text-violet-400">{t('aibox.breadcrumb')}</span>
           </motion.div>

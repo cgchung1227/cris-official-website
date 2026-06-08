@@ -494,7 +494,14 @@
     "module_3_features": ["Multi-source AIoT sensor integration", "AI health scoring & trend analysis", "Anomaly alert push notifications", "Auto maintenance order dispatch"],
     "feature_label": "Core Capabilities",
     "cta_demo": "Book AI Demo",
-    "cta_learn": "Explore Architecture"
+    "cta_learn": "Explore Architecture",
+    "expand": "Show Features",
+    "collapse": "Collapse",
+    "aibox_powered_by": "Powered by Argox AI Engine",
+    "aibox_cta_title": "All Modules Run on CRIS AI Appliance",
+    "aibox_cta_subtitle": "On-premise deployment — your data never leaves the network. From evaluation to go-live in 7 days, with full consultant support.",
+    "aibox_cta_btn": "Book AI Consultant",
+    "aibox_learn_more": "View Appliance Specs"
   },
   "cases": {
     "section_tag": "Case Studies",
