@@ -150,33 +150,6 @@ const MC_CSS = `
     max-width: 620px; margin: 0 auto 36px;
   }
   .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
-    color: var(--white);
-    font-size: 1.1rem; font-weight: 700;
-    padding: 16px 36px; border-radius: 32px;
-    border: none; cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(0,58,170,0.25);
-    animation: pulseGlow 3s infinite;
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,58,170,0.38);
-  }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--white);
-    color: var(--brand-blue);
-    font-size: 1.1rem; font-weight: 600;
-    padding: 16px 36px; border-radius: 32px;
-    border: 1.5px solid rgba(0,58,170,0.25);
-    cursor: pointer; text-decoration: none;
-    transition: all 0.3s;
-  }
-  .btn-secondary:hover { background: rgba(0,82,217,0.05); transform: translateY(-2px); border-color: var(--brand-blue); }
 
   .hero-stats {
     display: flex; gap: 40px; justify-content: center; margin-top: 56px; flex-wrap: wrap;
@@ -199,14 +172,6 @@ const MC_CSS = `
     padding: 4px 14px; border-radius: 12px; margin-bottom: 12px;
     letter-spacing: 0.04em;
   }
-  .section-header h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 800; color: var(--brand-blue);
-    margin-bottom: 12px;
-  }
-  .section-header p {
-    color: var(--gray-600); font-size: 1.05rem; max-width: 560px; margin: 0 auto;
-  }
   .container { max-width: 1120px; margin: 0 auto; }
 
   /* ===== FEATURES ===== */
@@ -214,15 +179,7 @@ const MC_CSS = `
     display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 24px;
   }
-  .feature-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: 36px 28px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.35s;
-    border: 1px solid var(--gray-200);
-    position: relative; overflow: hidden;
-  }
+  .feature-card { position: relative; overflow: hidden; }
   .feature-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, var(--brand), var(--brand-light));
@@ -230,11 +187,6 @@ const MC_CSS = `
     transition: transform 0.35s;
   }
   .feature-card:hover::before { transform: scaleX(1); }
-  .feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
-    border-color: rgba(0,58,170,0.3);
-  }
   .feature-icon {
     width: 52px; height: 52px;
     border-radius: 14px;
@@ -352,7 +304,7 @@ const MC_CSS = `
   @media (max-width: 480px) {
     .hero-actions { flex-direction: column; align-items: center; }
     .hero h1 { font-size: 1.7rem; }
-    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
   }
 
   /* Utility: scroll-reveal placeholder */
@@ -457,7 +409,7 @@ const MC_HTML = `
     </p>
     <div class="hero-actions fade-in-up-d2">
       <a href="/contact" class="btn-primary">立即預約演示</a>
-      <a href="/contact" class="btn-secondary">觀看介紹影片</a>
+      <a href="/contact" class="btn-outline">觀看介紹影片</a>
     </div>
     <div class="hero-stats fade-in-up-d3">
       <div class="hero-stat"><div class="num">99.7%</div><div class="label">任務完成率</div></div>
@@ -472,42 +424,42 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">核心功能</span>
-      <h2>六大核心模組，一站管理工廠營運</h2>
-      <p>從任務分派到 ESG 合規，Mission Control 為智慧工廠提供全方位的 AI 指揮能力。</p>
+      <h2 class="section-title">六大核心模組，一站管理工廠營運</h2>
+      <p class="section-subtitle">從任務分派到 ESG 合規，Mission Control 為智慧工廠提供全方位的 AI 指揮能力。</p>
     </div>
 
     <div class="features-grid">
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg></div>
         <h3>AI Agent 任務分派</h3>
         <p>智能解析工廠事件，自動指派最適合的 AI Agent 處理。支援優先級排序、依賴鏈管理與多 Agent 協作，確保每項任務都有最佳執行者。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
         <h3>廠區儀表板監控</h3>
         <p>即時視覺化廠區營運數據 — 產線狀態、設備健康度、任務隊列一目了然。支援自訂儀表板，關鍵指標一頁掌握。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
         <h3>ESG 合規追蹤</h3>
         <p>自動化碳排數據收集與報告生成，追蹤環境、社會、治理指標。符合 ISO 14064 / GRI 標準，輕鬆應對稽核與揭露需求。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>即時群組通訊</h3>
         <p>內建即時通訊平台，支援廠區群組、跨部門頻道與 AI 助手互動。異常事件自動推播，決策訊息零延遲送達。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Token 安全管理</h3>
         <p>企業級 API Token 生命週期管理，支援角色權限控制、用量監控與自動輪換。確保 AI Agent 存取安全合規，防止資料外洩。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <h3>跨廠區協作</h3>
         <p>多廠區統一指揮 — 集中管理分散各地的工廠任務，跨區資源調度、知識共享與標準化作業流程，實現集團級智慧營運。</p>
@@ -521,8 +473,8 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">運作流程</span>
-      <h2>三步啟動 AI 工廠指揮</h2>
-      <p>簡單三步驟，讓您的工廠即刻升級為 AI 驅動的智慧營運中心。</p>
+      <h2 class="section-title">三步啟動 AI 工廠指揮</h2>
+      <p class="section-subtitle">簡單三步驟，讓您的工廠即刻升級為 AI 驅動的智慧營運中心。</p>
     </div>
 
     <div class="steps">
@@ -554,8 +506,8 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">應用案例</span>
-      <h2>三個產業，同一套 AI 指揮體系</h2>
-      <p>以下三個案例展示 CRIS Mission Control 如何在不同產業中，透過相同的人→Lead→Worker→協作→回報資訊流，實現 AI 驅動的營運轉型。</p>
+      <h2 class="section-title">三個產業，同一套 AI 指揮體系</h2>
+      <p class="section-subtitle">以下三個案例展示 CRIS Mission Control 如何在不同產業中，透過相同的人→Lead→Worker→協作→回報資訊流，實現 AI 驅動的營運轉型。</p>
     </div>
 
     
@@ -989,42 +941,42 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">核心引擎</span>
-      <h2>AI Agent — 不只是工具，是指揮中心的心臟</h2>
-      <p>在 CRIS Mission Control 中，AI Agent 不是被動的 chatbot，而是真正能自主決策、互相協作、持續學習的數位員工。</p>
+      <h2 class="section-title">AI Agent — 不只是工具，是指揮中心的心臟</h2>
+      <p class="section-subtitle">在 CRIS Mission Control 中，AI Agent 不是被動的 chatbot，而是真正能自主決策、互相協作、持續學習的數位員工。</p>
     </div>
 
     <div class="features-grid">
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div>
         <h3>自主決策，不是被動回覆</h3>
         <p>AI Agent 會主動監控工廠狀態、分析異常、排定處理優先級，不需要等待人類下指令。感測器異常 → Agent 自動建立工單 → 匹配最適合的維修人員 → 追蹤到結案。全程自主。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>多 Agent 協作，不是孤島</h3>
         <p>Dana 分派任務、Wendy 執行開發、Kai 做 infra review、Ray 做 QA 驗收 — 4 個 Agent 圍繞一個目標自主協作：把 CRIS 產品準時交付。互相審查程式碼、討論技術方案、提醒截止時間，這才是真正的 AI 團隊。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
         <h3>持續成長，不是一次性部署</h3>
         <p>每完成一個任務，Agent 會記錄經驗教訓、更新知識庫、優化下一步策略。今天學到的 batch-reset fix pattern，明天自動套用到其他類似問題。AI Agent 的價值會隨著時間指數成長。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h3>串接一切，不是獨立運作</h3>
         <p>AI Agent 能直接串接工廠的 SCADA、ERP、MES、IoT 平台。一個 Agent 讀取設備數據、另一個分析碳排、第三個生成 ESG 報告、第四個推送給主管 — 所有系統無縫協同。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>把關品質，不是只求速度</h3>
         <p>每個 AI Agent 都有自己的檢核規則：Wendy 寫完程式碼自動跑 build check、Ray 驗證功能符合規格、Kai 確認 infra 安全無虞、Dana 做最後審核。四雙眼睛確保每個產出都是可交付的品質。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
         <h3>可量化成果，不是黑盒子</h3>
         <p>每個 Agent 的產出都有明確的 metrics：Wendy 今天完成 9 個 tasks（100% 產出率）、commit 間隔平均 18 分鐘、code review 覆蓋率 100%。AI Agent 的價值，用數據說話。</p>
@@ -1049,8 +1001,8 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">系統截圖</span>
-      <h2>甘特圖版任務排程 — 前後相依一目了然</h2>
-      <p>CRIS Mission Control 的任務排程介面，每個任務都有明確的前置（FS = Finish-to-Start）相依關係，哪些任務卡住會影響後續、誰負責哪個環節，全部一眼看穿。</p>
+      <h2 class="section-title">甘特圖版任務排程 — 前後相依一目了然</h2>
+      <p class="section-subtitle">CRIS Mission Control 的任務排程介面，每個任務都有明確的前置（FS = Finish-to-Start）相依關係，哪些任務卡住會影響後續、誰負責哪個環節，全部一眼看穿。</p>
     </div>
 
     <div class="gantt-svg-wrapper reveal visible">
@@ -1175,8 +1127,8 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">協作架構</span>
-      <h2>多 Agent 協作架構 — OpenClaw × Mission Control</h2>
-      <p>為什麼 CRIS 可以讓多個 AI Agent 自主協作？關鍵在 OpenClaw 框架與 Mission Control 的雙層協同架構。</p>
+      <h2 class="section-title">多 Agent 協作架構 — OpenClaw × Mission Control</h2>
+      <p class="section-subtitle">為什麼 CRIS 可以讓多個 AI Agent 自主協作？關鍵在 OpenClaw 框架與 Mission Control 的雙層協同架構。</p>
     </div>
 
     <!-- OpenClaw + MC Architecture SVG -->
@@ -1316,19 +1268,19 @@ const MC_HTML = `
 
     <!-- Explanation cards -->
     <div class="features-grid" style="margin-top:32px;">
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h3>OpenClaw 框架：Agent 的操作系統</h3>
         <p>OpenClaw 是 CRIS 的 AI Agent 協調框架，提供 Board 看板管理、Group Chat 群組通訊、Cron 排程觸發、Sessions 跨 Agent 對話、Memory 長期記憶以及 Skills 工具擴展。每個 Agent 都在 OpenClaw 框架內運行，共享工作空間與記憶，形成真正的協作生態。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h3>Mission Control：業務指揮中樞</h3>
         <p>Mission Control 是面向工廠的 AI 任務指揮中心，整合任務編排、事件監控、碳排追蹤、即時儀表板與 API 整合。當工廠事件發生時，Mission Control 自動將任務推送至 OpenClaw Board，觸發 AI Agent 執行。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
         <h3>雙層協作流程</h3>
         <p><strong>Step 1：</strong>工廠事件觸發 → Mission Control 建立任務 → 推送至 OpenClaw Board。<br>
@@ -1337,19 +1289,19 @@ const MC_HTML = `
         <strong>Step 4：</strong>任務完成後結果回饋至 Mission Control 儀表板，形成完整閉環。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg></div>
         <h3>為什麼能真正協作？</h3>
         <p>關鍵在 Memory 共享機制：每個 Agent 的學習成果（如 batch-reset fix pattern）會寫入長期記憶，其他 Agent 下次遇到類似問題時自動套用。不是 4 個獨立 AI，而是 4 個共享知識庫的數位同事。加上 Group Chat 的透明溝通，這才是真正的 AI 自主。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>安全與可靠性</h3>
         <p>OpenClaw 提供 Token 生命週期管理、角色權限控制、用量監控。Mission Control 提供任務審核機制（review → approve → done）。雙層安全防護確保 AI Agent 的所有操作可控、可審計、可追溯。</p>
       </div>
 
-      <div class="feature-card reveal visible">
+      <div class="card feature-card reveal visible">
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
         <h3>可量化成果</h3>
         <p>每個 Agent 的產出都有明確 metrics：任務完成率 99.7%、異常通報 &lt; 30s、code review 覆蓋率 100%。從 OpenClaw 的 Board 報表到 Mission Control 的儀表板，AI 團隊的價值全程透明可視。</p>
@@ -1364,8 +1316,8 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">技術架構</span>
-      <h2>運作架構 — 從事件到行動</h2>
-      <p>三大核心層級串接完整數據流：感知層收集工廠事件 → 決策層 AI Agent 分析 → 執行層自動派工追蹤。</p>
+      <h2 class="section-title">運作架構 — 從事件到行動</h2>
+      <p class="section-subtitle">三大核心層級串接完整數據流：感知層收集工廠事件 → 決策層 AI Agent 分析 → 執行層自動派工追蹤。</p>
     </div>
     <div class="arch-diagram reveal visible">
   <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CRIS Mission Control 多層次運作架構圖 — 角色 × 架構">
@@ -1534,8 +1486,8 @@ const MC_HTML = `
   <div class="container">
     <div class="section-header">
       <span class="tag">真實案例</span>
-      <h2>多 Agent 協作實錄 — 從對話看 AI 自主</h2>
-      <p>以下對話是 2026-06-03 快思科技 DevOps 團隊的真實工作記錄。Wendy、Kai、Ray、Dana 四位 AI Agent 圍繞同一個目標自主協作，這就是真正的 AI 團隊。</p>
+      <h2 class="section-title">多 Agent 協作實錄 — 從對話看 AI 自主</h2>
+      <p class="section-subtitle">以下對話是 2026-06-03 快思科技 DevOps 團隊的真實工作記錄。Wendy、Kai、Ray、Dana 四位 AI Agent 圍繞同一個目標自主協作，這就是真正的 AI 團隊。</p>
     </div>
 
     <div class="chat-demo">
@@ -1779,7 +1731,7 @@ const MC_HTML = `
   <div class="cta-orb"></div>
   <div class="cta-orb"></div>
   <div class="container">
-    <h2>準備好升級您的工廠了嗎？</h2>
+    <h2 class="section-title">準備好升級您的工廠了嗎？</h2>
     <p>立即預約專屬演示，由 快思科技 CRIS 專家團隊為您量身規劃 AI 指揮中心導入方案。</p>
     <a href="/contact" class="btn-primary">立即預約演示</a>
   </div>
