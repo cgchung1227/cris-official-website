@@ -107,47 +107,46 @@ const MC_CSS = `
   /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--brand-blue-dark) 0%, var(--brand-blue) 40%, #1a3c5e 70%, #15484e 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #f1f5f9 100%);
     display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 100px 24px 80px;
     position: relative; overflow: hidden;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(0,58,170,0.18) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 80%, rgba(0,42,128,0.5) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 30% 20%, rgba(0,82,217,0.07) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(0,58,170,0.05) 0%, transparent 60%);
   }
   .hero-grid {
-    position: absolute; inset: 0; opacity: 0.04;
+    position: absolute; inset: 0; opacity: 0.5;
     background-image:
-      linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
-    background-size: 60px 60px;
+      radial-gradient(circle, rgba(0,58,170,0.12) 1px, transparent 1px);
+    background-size: 36px 36px;
   }
   .hero-content { position: relative; z-index: 1; max-width: 820px; }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(0,58,170,0.2);
-    border: 1px solid rgba(0,58,170,0.4);
-    color: var(--brand-light);
+    background: rgba(0,82,217,0.08);
+    border: 1px solid rgba(0,82,217,0.2);
+    color: var(--brand-blue);
     padding: 6px 18px; border-radius: 20px;
     font-size: 0.9rem; font-weight: 500;
     margin-bottom: 28px;
   }
   .hero h1 {
     font-size: clamp(2rem, 5.5vw, 3.4rem);
-    font-weight: 800; color: var(--white);
+    font-weight: 800; color: var(--brand-blue-dark);
     line-height: 1.25; margin-bottom: 20px;
     letter-spacing: -0.02em;
   }
   .hero h1 .accent {
-    background: linear-gradient(135deg, var(--brand-light) 0%, #2dd4bf 50%, #5eead4 100%);
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-light) 60%, #4C86E3 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .hero-subtitle {
     font-size: clamp(1.05rem, 2vw, 1.25rem);
-    color: rgba(255,255,255,0.78);
+    color: var(--gray-600);
     max-width: 620px; margin: 0 auto 36px;
   }
   .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
@@ -160,25 +159,24 @@ const MC_CSS = `
     border: none; cursor: pointer;
     text-decoration: none;
     transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(0,58,170,0.35);
+    box-shadow: 0 4px 20px rgba(0,58,170,0.25);
     animation: pulseGlow 3s infinite;
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,58,170,0.45);
+    box-shadow: 0 8px 30px rgba(0,58,170,0.38);
   }
   .btn-secondary {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.1);
-    color: var(--white);
+    background: var(--white);
+    color: var(--brand-blue);
     font-size: 1.1rem; font-weight: 600;
     padding: 16px 36px; border-radius: 32px;
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1.5px solid rgba(0,58,170,0.25);
     cursor: pointer; text-decoration: none;
     transition: all 0.3s;
-    backdrop-filter: blur(8px);
   }
-  .btn-secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+  .btn-secondary:hover { background: rgba(0,82,217,0.05); transform: translateY(-2px); border-color: var(--brand-blue); }
 
   .hero-stats {
     display: flex; gap: 40px; justify-content: center; margin-top: 56px; flex-wrap: wrap;
@@ -186,11 +184,11 @@ const MC_CSS = `
   .hero-stat { text-align: center; }
   .hero-stat .num {
     font-size: 2rem; font-weight: 800;
-    background: linear-gradient(135deg, var(--brand-light), #5eead4);
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-light));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .hero-stat .label { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 4px; }
+  .hero-stat .label { color: var(--gray-600); font-size: 0.85rem; margin-top: 4px; }
 
   /* ===== SECTION COMMON ===== */
   .section { padding: 80px 24px; }
@@ -238,11 +236,17 @@ const MC_CSS = `
     border-color: rgba(0,58,170,0.3);
   }
   .feature-icon {
-    font-size: 2.8rem; margin-bottom: 20px;
-    display: inline-block;
-    transition: transform 0.3s;
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: rgba(0,82,217,0.08);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    color: var(--brand-blue);
+    flex-shrink: 0;
+    transition: transform 0.3s, background 0.3s;
   }
-  .feature-card:hover .feature-icon { transform: scale(1.1) rotate(-3deg); }
+  .feature-card:hover .feature-icon { transform: scale(1.08); background: rgba(0,82,217,0.14); }
+  .feature-icon svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 1.75; fill: none; stroke-linecap: round; stroke-linejoin: round; }
   .feature-card h3 {
     font-size: 1.2rem; font-weight: 700; color: var(--brand-blue); margin-bottom: 10px;
   }
@@ -442,9 +446,9 @@ const MC_HTML = `
 <header class="hero">
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-badge fade-in">🏭 AI Agent × ESG — 專為工廠打造</div>
+    <div class="hero-badge fade-in"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/></svg> AI Agent × ESG — 專為工廠打造</div>
     <h1 class="fade-in-up">
-      <span class="brand-logo-inline">CR</span> <span class="accent">Mission Control</span><br>
+      <span class="accent">Mission Control</span><br>
       工廠 AI 任務指揮中心
     </h1>
     <p class="hero-subtitle fade-in-up-d1">
@@ -452,8 +456,8 @@ const MC_HTML = `
       追蹤 ESG 合規指標，一台儀表板全面掌控工廠營運。
     </p>
     <div class="hero-actions fade-in-up-d2">
-      <a href="/contact" class="btn-primary">🎯 立即預約演示</a>
-      <a href="/contact" class="btn-secondary">▶️ 觀看介紹影片</a>
+      <a href="/contact" class="btn-primary">立即預約演示</a>
+      <a href="/contact" class="btn-secondary">觀看介紹影片</a>
     </div>
     <div class="hero-stats fade-in-up-d3">
       <div class="hero-stat"><div class="num">99.7%</div><div class="label">任務完成率</div></div>
@@ -474,37 +478,37 @@ const MC_HTML = `
 
     <div class="features-grid">
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🤖</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg></div>
         <h3>AI Agent 任務分派</h3>
         <p>智能解析工廠事件，自動指派最適合的 AI Agent 處理。支援優先級排序、依賴鏈管理與多 Agent 協作，確保每項任務都有最佳執行者。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
         <h3>廠區儀表板監控</h3>
         <p>即時視覺化廠區營運數據 — 產線狀態、設備健康度、任務隊列一目了然。支援自訂儀表板，關鍵指標一頁掌握。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🌱</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
         <h3>ESG 合規追蹤</h3>
         <p>自動化碳排數據收集與報告生成，追蹤環境、社會、治理指標。符合 ISO 14064 / GRI 標準，輕鬆應對稽核與揭露需求。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">💬</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>即時群組通訊</h3>
         <p>內建即時通訊平台，支援廠區群組、跨部門頻道與 AI 助手互動。異常事件自動推播，決策訊息零延遲送達。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🔐</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Token 安全管理</h3>
         <p>企業級 API Token 生命週期管理，支援角色權限控制、用量監控與自動輪換。確保 AI Agent 存取安全合規，防止資料外洩。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🏗️</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <h3>跨廠區協作</h3>
         <p>多廠區統一指揮 — 集中管理分散各地的工廠任務，跨區資源調度、知識共享與標準化作業流程，實現集團級智慧營運。</p>
       </div>
@@ -525,20 +529,20 @@ const MC_HTML = `
       <div class="step reveal visible">
         <div class="step-num">1</div>
         <span class="step-arrow">→</span>
-        <h3>📝 創建任務</h3>
+        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--brand-blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;margin-right:6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>創建任務</h3>
         <p>透過儀表板或 API 建立工廠任務，定義目標、優先級與執行條件。支援排程、批次建立與模板快速部署。</p>
       </div>
 
       <div class="step reveal visible">
         <div class="step-num">2</div>
         <span class="step-arrow">→</span>
-        <h3>⚡ AI Agent 自動執行</h3>
+        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--brand-blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;margin-right:6px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>AI Agent 自動執行</h3>
         <p>CRIS 智能引擎自動匹配最佳 AI Agent，協調多 Agent 並行處理。任務狀態即時更新，異常自動觸發備援機制。</p>
       </div>
 
       <div class="step reveal visible">
         <div class="step-num">3</div>
-        <h3>📡 即時監控回報</h3>
+        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--brand-blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;margin-right:6px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>即時監控回報</h3>
         <p>執行過程全程可視化 — 進度條、日誌串流、效能指標。任務完成後自動生成摘要報告並推播至指定頻道。</p>
       </div>
     </div>
@@ -633,7 +637,7 @@ const MC_HTML = `
 <!-- Case 1: 電子製造 -->
     <div style="background:white; border-radius:18px; padding:40px 36px; margin-bottom:32px; box-shadow:var(--shadow-md); border:1px solid #e2e8f0;">
       <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
-        <div style="font-size:2.4rem;">🏭</div>
+        <div style="width:56px;height:56px;background:rgba(0,58,170,0.08);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#003AAA;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:30px;height:30px;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
         <div>
           <h3 style="color:#003AAA; font-size:1.25rem; margin-bottom:4px;">案例一：電子製造業 — 產線異常 30 分鐘內自動排除</h3>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
@@ -765,7 +769,7 @@ const MC_HTML = `
 <!-- Case 2: 鋼鐵製造 -->
     <div style="background:white; border-radius:18px; padding:40px 36px; margin-bottom:32px; box-shadow:var(--shadow-md); border:1px solid #e2e8f0;">
       <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
-        <div style="font-size:2.4rem;">🌱</div>
+        <div style="width:56px;height:56px;background:rgba(5,150,105,0.08);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#059669;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:30px;height:30px;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
         <div>
           <h3 style="color:#003AAA; font-size:1.25rem; margin-bottom:4px;">案例二：鋼鐵製造業 — ESG 碳排報告從 3 個月 → 1 天</h3>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
@@ -897,7 +901,7 @@ const MC_HTML = `
 <!-- Case 3: 塑膠製造 -->
     <div style="background:white; border-radius:18px; padding:40px 36px; margin-bottom:32px; box-shadow:var(--shadow-md); border:1px solid #e2e8f0;">
       <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
-        <div style="font-size:2.4rem;">🤖</div>
+        <div style="width:56px;height:56px;background:rgba(124,58,237,0.08);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#7c3aed;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:30px;height:30px;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div>
         <div>
           <h3 style="color:#003AAA; font-size:1.25rem; margin-bottom:4px;">案例三：塑膠製造業 — 3 Agent 協作實現品質預測 91%</h3>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
@@ -958,7 +962,7 @@ const MC_HTML = `
 
     <!-- Summary: How to integrate with factory -->
     <div style="background:linear-gradient(135deg, #003AAA, #0052D9); border-radius:18px; padding:36px; color:white; margin-top:32px;">
-      <h3 style="font-size:1.2rem; margin-bottom:16px;">🔌 如何串接您的工廠？</h3>
+      <h3 style="font-size:1.2rem; margin-bottom:16px; display:flex; align-items:center; gap:8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--brand-blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8h-2a2 2 0 0 1-2 2v5a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V9a2 2 0 0 1-2-2H6"/><path d="M6 8h12"/></svg>如何串接您的工廠？</h3>
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; font-size:0.93rem; line-height:1.7; opacity:0.95;">
         <div>
           <strong style="color:#93c5fd;">1. 數據接入</strong><br>
@@ -991,37 +995,37 @@ const MC_HTML = `
 
     <div class="features-grid">
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🧠</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div>
         <h3>自主決策，不是被動回覆</h3>
         <p>AI Agent 會主動監控工廠狀態、分析異常、排定處理優先級，不需要等待人類下指令。感測器異常 → Agent 自動建立工單 → 匹配最適合的維修人員 → 追蹤到結案。全程自主。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🤝</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>多 Agent 協作，不是孤島</h3>
         <p>Dana 分派任務、Wendy 執行開發、Kai 做 infra review、Ray 做 QA 驗收 — 4 個 Agent 圍繞一個目標自主協作：把 CRIS 產品準時交付。互相審查程式碼、討論技術方案、提醒截止時間，這才是真正的 AI 團隊。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🔄</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
         <h3>持續成長，不是一次性部署</h3>
         <p>每完成一個任務，Agent 會記錄經驗教訓、更新知識庫、優化下一步策略。今天學到的 batch-reset fix pattern，明天自動套用到其他類似問題。AI Agent 的價值會隨著時間指數成長。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🔗</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h3>串接一切，不是獨立運作</h3>
         <p>AI Agent 能直接串接工廠的 SCADA、ERP、MES、IoT 平台。一個 Agent 讀取設備數據、另一個分析碳排、第三個生成 ESG 報告、第四個推送給主管 — 所有系統無縫協同。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🛡️</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>把關品質，不是只求速度</h3>
         <p>每個 AI Agent 都有自己的檢核規則：Wendy 寫完程式碼自動跑 build check、Ray 驗證功能符合規格、Kai 確認 infra 安全無虞、Dana 做最後審核。四雙眼睛確保每個產出都是可交付的品質。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
         <h3>可量化成果，不是黑盒子</h3>
         <p>每個 Agent 的產出都有明確的 metrics：Wendy 今天完成 9 個 tasks（100% 產出率）、commit 間隔平均 18 分鐘、code review 覆蓋率 100%。AI Agent 的價值，用數據說話。</p>
       </div>
@@ -1313,19 +1317,19 @@ const MC_HTML = `
     <!-- Explanation cards -->
     <div class="features-grid" style="margin-top:32px;">
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🔗</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h3>OpenClaw 框架：Agent 的操作系統</h3>
         <p>OpenClaw 是 CRIS 的 AI Agent 協調框架，提供 Board 看板管理、Group Chat 群組通訊、Cron 排程觸發、Sessions 跨 Agent 對話、Memory 長期記憶以及 Skills 工具擴展。每個 Agent 都在 OpenClaw 框架內運行，共享工作空間與記憶，形成真正的協作生態。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🎯</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h3>Mission Control：業務指揮中樞</h3>
         <p>Mission Control 是面向工廠的 AI 任務指揮中心，整合任務編排、事件監控、碳排追蹤、即時儀表板與 API 整合。當工廠事件發生時，Mission Control 自動將任務推送至 OpenClaw Board，觸發 AI Agent 執行。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🔄</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
         <h3>雙層協作流程</h3>
         <p><strong>Step 1：</strong>工廠事件觸發 → Mission Control 建立任務 → 推送至 OpenClaw Board。<br>
         <strong>Step 2：</strong>Board 自動分派給最適合的 AI Agent（Dana 分派、Wendy 開發、Kai 守 infrar、Ray 驗收）。<br>
@@ -1334,19 +1338,19 @@ const MC_HTML = `
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🧠</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg></div>
         <h3>為什麼能真正協作？</h3>
         <p>關鍵在 Memory 共享機制：每個 Agent 的學習成果（如 batch-reset fix pattern）會寫入長期記憶，其他 Agent 下次遇到類似問題時自動套用。不是 4 個獨立 AI，而是 4 個共享知識庫的數位同事。加上 Group Chat 的透明溝通，這才是真正的 AI 自主。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">🛡️</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>安全與可靠性</h3>
         <p>OpenClaw 提供 Token 生命週期管理、角色權限控制、用量監控。Mission Control 提供任務審核機制（review → approve → done）。雙層安全防護確保 AI Agent 的所有操作可控、可審計、可追溯。</p>
       </div>
 
       <div class="feature-card reveal visible">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div>
         <h3>可量化成果</h3>
         <p>每個 Agent 的產出都有明確 metrics：任務完成率 99.7%、異常通報 &lt; 30s、code review 覆蓋率 100%。從 OpenClaw 的 Board 報表到 Mission Control 的儀表板，AI 團隊的價值全程透明可視。</p>
       </div>
@@ -1775,18 +1779,9 @@ const MC_HTML = `
   <div class="cta-orb"></div>
   <div class="cta-orb"></div>
   <div class="container">
-    <h2>🚀 準備好升級您的工廠了嗎？</h2>
+    <h2>準備好升級您的工廠了嗎？</h2>
     <p>立即預約專屬演示，由 快思科技 CRIS 專家團隊為您量身規劃 AI 指揮中心導入方案。</p>
-    <a href="/contact" class="btn-primary">🎯 立即預約演示</a>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>🚀 準備好升級您的工廠了嗎？</h2>
-    <p>立即預約專屬演示，由 快思科技 CRIS 專家團隊為您量身規劃 AI 指揮中心導入方案。</p>
-    <a href="/contact" class="btn-primary">🎯 立即預約演示</a>
+    <a href="/contact" class="btn-primary">立即預約演示</a>
   </div>
 </section>
 
