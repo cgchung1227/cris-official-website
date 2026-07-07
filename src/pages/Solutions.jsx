@@ -9,6 +9,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { useCmsPageContent } from '../hooks/useCmsContent'
 import CaseStudies from '../components/CaseStudies'
+import GovProgramCases from '../components/GovProgramCases'
 
 // ─── Neural network nodes ─────────────────────────────────────────────────────
 const nodes = [
@@ -319,6 +320,9 @@ export default function Solutions() {
 
       {/* Case Studies */}
       <CaseStudies />
+
+      {/* Gov Program Cases */}
+      <GovProgramCases />
 
       {/* Bottom CTA band */}
       <section className="py-16 bg-white dark:bg-slate-800">
